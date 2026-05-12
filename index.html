@@ -1,0 +1,1441 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>НейроКонтент на автопилоте — мини-курс</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800;900&family=Unbounded:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --pink: #D73876;
+  --pink-bright: #F13684;
+  --pink-light: #FF67A7;
+  --pink-pale: #FFCBE0;
+  --bg-dark: #2F2E2E;
+  --bg-near-black: #1D1D1D;
+  --bg-black: #121212;
+  --bg-light: #F5F5F5;
+  --on-dark: #F5F5F5;
+  --muted: #C9C9C9;
+  --muted-2: #8a8585;
+  --gradient-tier: linear-gradient(180deg, #D9D9D9 0%, #FF67A7 100%);
+  --gradient-vip: linear-gradient(180deg, #F8C8DC 0%, #D73876 100%);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: #0a0a0a;
+  font-family: 'Inter', sans-serif;
+  color: var(--on-dark);
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.page {
+  width: 100%;
+  max-width: 560px;
+  background: var(--bg-near-black);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 80px rgba(0,0,0,0.6);
+}
+
+/* ---------- TYPOGRAPHY ---------- */
+.display {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+}
+.eyebrow {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.section-h {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 800;
+  font-size: 36px;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: var(--on-dark);
+}
+.section-h .pink { color: var(--pink-bright); }
+
+/* ---------- HERO ---------- */
+.hero {
+  position: relative;
+  padding: 22px 22px 36px;
+  background: radial-gradient(ellipse at 70% 30%, rgba(241,54,132,0.22), transparent 55%), var(--bg-near-black);
+  overflow: hidden;
+}
+
+.hero-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 26px;
+  position: relative;
+  z-index: 3;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.brand-dot {
+  width: 10px; height: 10px; border-radius: 50%;
+  background: var(--pink-bright);
+  box-shadow: 0 0 12px var(--pink-bright);
+  animation: pulse 1.8s infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.85); }
+}
+.start-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: 100px;
+  background: rgba(241,54,132,0.12);
+  border: 1px solid rgba(241,54,132,0.4);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--pink-light);
+  text-transform: uppercase;
+}
+
+.hero-photo-wrap {
+  position: relative;
+  margin: 0 -22px;
+  height: 480px;
+  overflow: hidden;
+}
+.hero-photo {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+}
+.hero-photo-wrap::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 35%, rgba(29,29,29,0.4) 70%, var(--bg-near-black) 100%);
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 18px;
+  left: 22px;
+  right: 22px;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.hero-tag {
+  align-self: flex-end;
+  background: var(--pink-bright);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 700;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transform: rotate(2deg);
+}
+
+.hero-headline {
+  margin-top: -110px;
+  position: relative;
+  z-index: 5;
+  padding: 0 4px;
+}
+.hero-headline h1 {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 900;
+  font-size: 54px;
+  line-height: 0.88;
+  letter-spacing: -0.035em;
+  text-transform: uppercase;
+}
+.hero-headline h1 .ai {
+  display: inline-block;
+  color: var(--pink-bright);
+  font-style: italic;
+  position: relative;
+}
+.hero-headline h1 .ai::after {
+  content: '';
+  position: absolute;
+  left: -4px; right: -4px;
+  bottom: 8px; height: 2px;
+  background: var(--pink-bright);
+  opacity: 0.5;
+}
+
+.hero-sub {
+  margin-top: 18px;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--on-dark);
+  opacity: 0.92;
+}
+.hero-sub b { color: var(--pink-light); font-weight: 700; }
+
+.hero-cta-row {
+  margin-top: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.btn {
+  appearance: none;
+  border: none;
+  cursor: pointer;
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 22px 24px;
+  border-radius: 100px;
+  transition: transform 0.15s, box-shadow 0.15s;
+  text-decoration: none;
+  text-align: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.btn:active { transform: scale(0.98); }
+.btn-primary {
+  background: var(--pink-bright);
+  color: white;
+  box-shadow: 0 8px 30px rgba(241,54,132,0.4), inset 0 1px 0 rgba(255,255,255,0.2);
+}
+.btn-primary:hover {
+  box-shadow: 0 12px 40px rgba(241,54,132,0.55), inset 0 1px 0 rgba(255,255,255,0.2);
+}
+.btn-ghost {
+  background: transparent;
+  color: var(--on-dark);
+  border: 1.5px solid rgba(255,255,255,0.18);
+}
+.btn-ghost:hover { border-color: var(--pink-light); color: var(--pink-light); }
+
+.btn-arrow {
+  width: 18px; height: 18px;
+  flex-shrink: 0;
+}
+
+/* countdown */
+.countdown {
+  margin-top: 22px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.countdown-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+  margin-right: 8px;
+}
+.cd-box {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 8px;
+  padding: 8px 10px;
+  min-width: 44px;
+  text-align: center;
+}
+.cd-val {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1;
+  color: var(--on-dark);
+}
+.cd-unit {
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  text-transform: uppercase;
+  margin-top: 3px;
+}
+
+/* hero stat row */
+.hero-final {
+  margin-top: 26px;
+  padding: 16px 16px;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.06);
+  text-align: center;
+}
+.hero-final p {
+  font-size: 14px;
+  line-height: 1.45;
+  color: var(--muted);
+}
+.hero-final b { color: var(--pink-light); }
+
+/* ---------- MARQUEE STRIPE ---------- */
+.marquee {
+  background: var(--pink-bright);
+  overflow: hidden;
+  padding: 14px 0;
+  border-top: 1px solid var(--bg-near-black);
+  border-bottom: 1px solid var(--bg-near-black);
+}
+.marquee-track {
+  display: flex;
+  white-space: nowrap;
+  gap: 28px;
+  animation: scroll 22s linear infinite;
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 800;
+  font-size: 16px;
+  color: white;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.marquee-track span { display: inline-flex; align-items: center; gap: 28px; }
+.marquee-star { color: rgba(255,255,255,0.6); font-size: 14px; }
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* ---------- SECTION SHELL ---------- */
+section {
+  padding: 60px 22px;
+  position: relative;
+}
+.section-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+.section-eyebrow::before {
+  content: '';
+  width: 28px; height: 1px;
+  background: var(--pink-bright);
+}
+
+/* ---------- FOR-WHO ---------- */
+.for-who {
+  background: var(--bg-near-black);
+}
+.audience-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 30px;
+}
+.audience-item {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 18px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 18px;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.audience-item:hover {
+  border-color: var(--pink-bright);
+  transform: translateY(-2px);
+}
+.audience-num {
+  flex-shrink: 0;
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--pink-bright), var(--pink));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 800;
+  font-size: 16px;
+  color: white;
+}
+.audience-text {
+  font-size: 15px;
+  line-height: 1.45;
+  color: var(--on-dark);
+  padding-top: 8px;
+}
+.audience-text b { color: var(--pink-light); font-weight: 700; }
+
+/* ---------- WHAT'S INSIDE ---------- */
+.inside {
+  background: linear-gradient(180deg, var(--bg-near-black) 0%, #161616 100%);
+}
+.modules {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 30px;
+}
+.module {
+  position: relative;
+  padding: 22px 22px 24px;
+  background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+  border-radius: 22px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+.module::before {
+  content: '';
+  position: absolute;
+  top: -30px; right: -30px;
+  width: 120px; height: 120px;
+  background: radial-gradient(circle, rgba(241,54,132,0.25), transparent 65%);
+  border-radius: 50%;
+}
+.module-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.module-tag {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  color: var(--pink-bright);
+  text-transform: uppercase;
+  padding: 5px 10px;
+  background: rgba(241,54,132,0.15);
+  border-radius: 6px;
+}
+.module h3 {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  color: var(--on-dark);
+  margin-bottom: 10px;
+}
+.module p {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+/* Bonus block */
+.bonus-block {
+  margin-top: 28px;
+  background: var(--pink-bright);
+  border-radius: 26px;
+  padding: 28px 22px;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+.bonus-block::before, .bonus-block::after {
+  content: 'БОНУСЫ';
+  position: absolute;
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 900;
+  font-size: 140px;
+  color: rgba(255,255,255,0.07);
+  letter-spacing: -0.04em;
+  top: -50px;
+  left: -20px;
+  z-index: 0;
+  line-height: 1;
+}
+.bonus-block::after {
+  top: auto;
+  bottom: -50px;
+  left: auto;
+  right: -20px;
+}
+.bonus-head {
+  position: relative; z-index: 1;
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 800;
+  font-size: 28px;
+  letter-spacing: -0.02em;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+.bonus-sub {
+  position: relative; z-index: 1;
+  font-size: 13px;
+  opacity: 0.92;
+  margin-bottom: 18px;
+}
+.bonus-list {
+  position: relative; z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.bonus-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 14px;
+  line-height: 1.35;
+  font-weight: 500;
+}
+.bonus-check {
+  flex-shrink: 0;
+  width: 22px; height: 22px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1px;
+}
+.bonus-row b {
+  font-weight: 800;
+  background: rgba(255,255,255,0.18);
+  padding: 1px 6px;
+  border-radius: 4px;
+  margin-right: 4px;
+}
+.bonus-row.vip {
+  padding-top: 14px;
+  margin-top: 8px;
+  border-top: 1px dashed rgba(255,255,255,0.3);
+}
+.bonus-row.vip .vip-tag {
+  display: inline-block;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: white;
+  color: var(--pink-bright);
+  margin-right: 6px;
+  vertical-align: middle;
+  text-transform: uppercase;
+}
+
+/* ---------- TARIFFS ---------- */
+.tariffs {
+  background: #131313;
+}
+.tariff-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-top: 30px;
+}
+.tariff {
+  position: relative;
+  border-radius: 28px;
+  overflow: hidden;
+  background: #1c1c1c;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+.tariff.vip {
+  border-color: var(--pink-bright);
+  box-shadow: 0 20px 60px rgba(241,54,132,0.25);
+}
+.tariff-head {
+  padding: 28px 24px 22px;
+  position: relative;
+  overflow: hidden;
+}
+.tariff.basic .tariff-head {
+  background: linear-gradient(135deg, #3a3a3a 0%, #1c1c1c 70%);
+}
+.tariff.vip .tariff-head {
+  background: linear-gradient(135deg, #ff8fc7 0%, var(--pink) 65%, var(--pink-bright) 100%);
+  color: white;
+}
+.tariff-label {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  opacity: 0.7;
+  margin-bottom: 6px;
+}
+.tariff.vip .tariff-label { color: white; opacity: 0.9; }
+.tariff-name {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 900;
+  font-size: 44px;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  line-height: 0.9;
+  margin-bottom: 18px;
+}
+.tariff.vip .tariff-name { color: white; }
+
+.tariff.vip .vip-crown {
+  position: absolute;
+  top: 22px; right: 22px;
+  background: white;
+  color: var(--pink-bright);
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 800;
+  font-size: 10px;
+  padding: 6px 12px;
+  border-radius: 100px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+}
+.price-original {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 600;
+  font-size: 22px;
+  text-decoration: line-through;
+  opacity: 0.5;
+  letter-spacing: -0.03em;
+}
+.price-sale {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 900;
+  font-size: 54px;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+.tariff.basic .price-sale { color: var(--pink-bright); }
+.tariff.vip .price-sale { color: white; }
+.price-currency {
+  font-size: 22px;
+  font-weight: 700;
+  opacity: 0.7;
+  margin-left: 2px;
+}
+
+.tariff-body {
+  padding: 20px 24px 26px;
+}
+.tariff-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.tariff-list li {
+  font-size: 14px;
+  line-height: 1.35;
+  color: var(--on-dark);
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding-left: 0;
+}
+.tariff-list li::before {
+  content: '';
+  flex-shrink: 0;
+  width: 18px; height: 18px;
+  margin-top: 1px;
+  background: var(--pink-bright);
+  border-radius: 50%;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='white'%3E%3Cpath d='M7.5 13.5L4 10l1.4-1.4 2.1 2.1L14.6 3.6 16 5z'/%3E%3C/svg%3E");
+  background-size: cover;
+}
+.tariff-list li.muted {
+  color: var(--muted);
+  opacity: 0.7;
+}
+.tariff-list li.muted::before {
+  background: transparent;
+  border: 1.5px solid var(--muted);
+  background-image: none;
+}
+.tariff-list li.vip-feature {
+  font-weight: 700;
+}
+.tariff-list li.vip-feature::before {
+  background: white;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%23D73876'%3E%3Cpath d='M7.5 13.5L4 10l1.4-1.4 2.1 2.1L14.6 3.6 16 5z'/%3E%3C/svg%3E");
+}
+.tariff.vip .tariff-list li {
+  color: var(--on-dark);
+}
+.tariff.vip .tariff-list li::before {
+  background: var(--pink-light);
+}
+.tariff.vip .tariff-list li.vip-feature::before {
+  background: white;
+}
+
+.tariff-cta {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 20px 20px;
+  border-radius: 100px;
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 800;
+  font-size: 14px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.tariff.basic .tariff-cta {
+  background: var(--pink-bright);
+  color: white;
+  box-shadow: 0 6px 20px rgba(241,54,132,0.3);
+}
+.tariff.vip .tariff-cta {
+  background: white;
+  color: var(--pink-bright);
+}
+.tariff-cta:hover { transform: translateY(-2px); }
+
+.tariff-meta {
+  margin-top: 12px;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted-2);
+  text-align: center;
+}
+
+/* ---------- BEFORE / AFTER ---------- */
+.results {
+  background: #0e0e0e;
+  padding-bottom: 80px;
+}
+.compare-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-top: 30px;
+}
+.compare {
+  position: relative;
+  border-radius: 22px;
+  overflow: hidden;
+  aspect-ratio: 16 / 11;
+  background: #1a1a1a;
+  cursor: ew-resize;
+  user-select: none;
+  touch-action: none;
+}
+.compare img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  pointer-events: none;
+}
+.compare .before {
+  clip-path: inset(0 50% 0 0);
+  transition: none;
+}
+.compare-handle {
+  position: absolute;
+  top: 0; bottom: 0;
+  left: 50%;
+  width: 3px;
+  background: white;
+  transform: translateX(-50%);
+  pointer-events: none;
+  box-shadow: 0 0 20px rgba(0,0,0,0.6);
+}
+.compare-handle::after {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: var(--pink-bright);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M9 5l-7 7 7 7zm6 14l7-7-7-7z'/%3E%3C/svg%3E");
+  background-size: 24px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.compare-tag {
+  position: absolute;
+  top: 14px;
+  padding: 5px 12px;
+  border-radius: 6px;
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 700;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  pointer-events: none;
+}
+.compare-tag.left {
+  left: 14px;
+  background: rgba(255,255,255,0.12);
+  color: white;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+.compare-tag.right {
+  right: 14px;
+  background: var(--pink-bright);
+  color: white;
+}
+
+.results-note {
+  margin-top: 18px;
+  text-align: center;
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+.results-note b { color: var(--pink-light); }
+
+/* ---------- FINAL CTA ---------- */
+.final-cta {
+  background: var(--bg-near-black);
+  padding: 60px 22px 70px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.final-cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 0%, rgba(241,54,132,0.2), transparent 60%);
+}
+.final-cta-content { position: relative; z-index: 1; }
+.final-cta .section-h { margin-bottom: 14px; font-size: 32px; }
+.final-cta p { color: var(--muted); font-size: 15px; line-height: 1.5; margin-bottom: 26px; }
+
+/* ---------- FOOTER ---------- */
+footer {
+  padding: 36px 22px 100px;
+  background: #0a0a0a;
+  text-align: center;
+}
+footer .brand { justify-content: center; margin-bottom: 10px; }
+.footer-tag {
+  font-size: 12px;
+  color: var(--muted-2);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+}
+.legal-block {
+  text-align: left;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 16px;
+  padding: 18px 18px;
+  margin-bottom: 22px;
+}
+.legal-title {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--pink-bright);
+  margin-bottom: 14px;
+}
+.legal-grid {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 8px 12px;
+  font-size: 11.5px;
+  line-height: 1.4;
+}
+.legal-grid dt {
+  color: var(--muted-2);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 10.5px;
+  padding-top: 1px;
+}
+.legal-grid dd {
+  color: var(--on-dark);
+  font-weight: 500;
+  word-break: break-word;
+}
+.legal-grid a { color: var(--pink-light); text-decoration: none; }
+.legal-grid a:hover { text-decoration: underline; }
+
+.legal-links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: left;
+  margin-bottom: 24px;
+}
+.legal-links a {
+  font-size: 12px;
+  color: var(--muted);
+  text-decoration: none;
+  padding: 10px 14px;
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: border-color 0.15s, color 0.15s;
+}
+.legal-links a::after {
+  content: '↗';
+  font-size: 13px;
+  opacity: 0.5;
+}
+.legal-links a:hover {
+  border-color: var(--pink-bright);
+  color: var(--pink-light);
+}
+.copyright {
+  font-size: 11px;
+  color: var(--muted-2);
+  line-height: 1.6;
+}
+
+/* Cookie banner */
+.cookie-banner {
+  position: fixed;
+  left: 50%;
+  bottom: 16px;
+  transform: translateX(-50%);
+  width: calc(100% - 32px);
+  max-width: 520px;
+  background: rgba(20,20,20,0.95);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(241,54,132,0.35);
+  border-radius: 18px;
+  padding: 14px 16px 14px 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 9999;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6), 0 0 40px rgba(241,54,132,0.15);
+  animation: cookieIn 0.4s cubic-bezier(.2,.8,.2,1);
+}
+.cookie-banner[hidden] { display: none; }
+@keyframes cookieIn {
+  from { opacity: 0; transform: translate(-50%, 20px); }
+  to { opacity: 1; transform: translate(-50%, 0); }
+}
+.cookie-icon {
+  flex-shrink: 0;
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  background: rgba(241,54,132,0.18);
+  color: var(--pink-light);
+  display: flex; align-items: center; justify-content: center;
+}
+.cookie-icon svg { width: 22px; height: 22px; }
+.cookie-text {
+  flex: 1;
+  font-size: 12px;
+  line-height: 1.4;
+  color: var(--on-dark);
+  min-width: 0;
+}
+.cookie-text a {
+  color: var(--pink-light);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.cookie-btn {
+  flex-shrink: 0;
+  appearance: none;
+  border: none;
+  background: var(--pink-bright);
+  color: white;
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 12px 16px;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: transform 0.15s;
+}
+.cookie-btn:hover { transform: translateY(-1px); }
+.cookie-close {
+  position: absolute;
+  top: 6px; right: 8px;
+  background: transparent;
+  border: none;
+  color: var(--muted-2);
+  font-size: 18px;
+  cursor: pointer;
+  width: 24px; height: 24px;
+  line-height: 1;
+  padding: 0;
+}
+.cookie-close:hover { color: var(--on-dark); }
+@media (max-width: 480px) {
+  .cookie-banner { flex-wrap: wrap; }
+  .cookie-icon { width: 36px; height: 36px; }
+  .cookie-btn { width: 100%; padding: 14px; }
+}
+
+/* ---------- NOISE / TEXTURE ---------- */
+.page::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='1'/%3E%3CfeColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.5 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity: 0.05;
+  z-index: 1000;
+  mix-blend-mode: overlay;
+}
+</style>
+</head>
+<body>
+
+<div class="page" data-screen-label="01 Landing">
+
+  <!-- ============================================ HERO -->
+  <section class="hero" data-screen-label="Hero">
+    <div class="hero-top">
+      <div class="brand">
+        <span class="brand-dot"></span>
+        <span>НЕЙРО · АНЯ</span>
+      </div>
+      <div class="start-badge">
+        <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><circle cx="5" cy="5" r="3.5" stroke="currentColor" stroke-width="1.5"/></svg>
+        Старт 18.05
+      </div>
+    </div>
+
+    <div class="hero-photo-wrap">
+      <div class="hero-overlay">
+        <div class="hero-tag">МИНИ-КУРС</div>
+      </div>
+      <img class="hero-photo" src="assets/host-hero.png" alt="Аня — преподаватель курса">
+    </div>
+
+    <div class="hero-headline">
+      <h1>Нейро<br>контент<br>на <span class="ai">автопилоте</span></h1>
+    </div>
+
+    <p class="hero-sub">
+      Создай <b>SMM-отдел в нейросетях</b>, который приводит клиентов за тебя 24/7. Хватит часами сидеть над постами, которые никто не читает — пора делегировать контент нейронкам.
+    </p>
+
+    <div class="countdown" id="countdown">
+      <div class="countdown-label">До старта:</div>
+      <div class="cd-box"><div class="cd-val" id="cd-d">07</div><div class="cd-unit">дней</div></div>
+      <div class="cd-box"><div class="cd-val" id="cd-h">14</div><div class="cd-unit">часов</div></div>
+      <div class="cd-box"><div class="cd-val" id="cd-m">22</div><div class="cd-unit">мин</div></div>
+    </div>
+
+    <div class="hero-cta-row">
+      <a href="#tariffs" class="btn btn-primary">
+        Выбрать тариф
+        <svg class="btn-arrow" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="#inside" class="btn btn-ghost">Что внутри</a>
+    </div>
+
+    <div class="hero-final">
+      <p>Научишься создавать <b>цепляющий продающий контент за 5 минут</b> — посты, рилс, сторис, визуал. Без копирайтера, без дизайнера, без бюджета.</p>
+    </div>
+  </section>
+
+  <!-- ============================================ MARQUEE -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>Посты <span class="marquee-star">✦</span> Рилс <span class="marquee-star">✦</span> Сторис <span class="marquee-star">✦</span> Визуал <span class="marquee-star">✦</span> Реклама <span class="marquee-star">✦</span> Карусели <span class="marquee-star">✦</span> Промпты <span class="marquee-star">✦</span></span>
+      <span>Посты <span class="marquee-star">✦</span> Рилс <span class="marquee-star">✦</span> Сторис <span class="marquee-star">✦</span> Визуал <span class="marquee-star">✦</span> Реклама <span class="marquee-star">✦</span> Карусели <span class="marquee-star">✦</span> Промпты <span class="marquee-star">✦</span></span>
+    </div>
+  </div>
+
+  <!-- ============================================ FOR WHO -->
+  <section class="for-who" data-screen-label="Для кого">
+    <div class="section-eyebrow">
+      <span class="eyebrow">для кого</span>
+    </div>
+    <h2 class="section-h">Этот мини-курс<br>для тех, <span class="pink">кто</span></h2>
+
+    <div class="audience-list">
+      <div class="audience-item">
+        <div class="audience-num">01</div>
+        <div class="audience-text">
+          Устал тратить часы на сторис, которые <b>не приводят клиентов</b> и сливаются в общей ленте
+        </div>
+      </div>
+      <div class="audience-item">
+        <div class="audience-num">02</div>
+        <div class="audience-text">
+          Хочет <b>делегировать контент</b> SMM-специалисту, но не готов отдавать по 50К в месяц
+        </div>
+      </div>
+      <div class="audience-item">
+        <div class="audience-num">03</div>
+        <div class="audience-text">
+          Готов создавать <b>цепляющий продающий контент за 5 минут</b> с помощью нейросетей
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ INSIDE -->
+  <section class="inside" id="inside" data-screen-label="Что внутри">
+    <div class="section-eyebrow">
+      <span class="eyebrow">программа</span>
+    </div>
+    <h2 class="section-h">4 модуля,<br>чтобы превратить нейронку<br>в <span class="pink">личного SMM</span></h2>
+
+    <div class="modules">
+
+      <div class="module">
+        <div class="module-head">
+          <div class="module-tag">Модуль 01</div>
+        </div>
+        <h3>Профиль и лента</h3>
+        <p>Поймёшь, как ставить задачу нейросетям, чтобы упаковать сильный продающий профиль и собрать цепляющую ленту, которая удерживает внимание.</p>
+      </div>
+
+      <div class="module">
+        <div class="module-head">
+          <div class="module-tag">Модуль 02</div>
+        </div>
+        <h3>Посты, рилс, сторис</h3>
+        <p>Начнёшь создавать посты, рилс и сторис, не тратя на это больше 30 минут в день. Обучишь нейронку под себя — и она станет твоим карманным SMM.</p>
+      </div>
+
+      <div class="module">
+        <div class="module-head">
+          <div class="module-tag">Модуль 03</div>
+        </div>
+        <h3>Визуал и редактура фото</h3>
+        <p>Получишь готовые промты, чтобы создавать цепляющий визуал с нуля и дорабатывать исходники — даже если ты снимаешь на телефон в плохом свете.</p>
+      </div>
+
+      <div class="module">
+        <div class="module-head">
+          <div class="module-tag">Модуль 04</div>
+        </div>
+        <h3>Реклама и карусели</h3>
+        <p>Поймёшь, как делать вирусные посты-карусели и цепляющие рекламные оферы, чтобы привлекать больше клиентов и стабильно расти.</p>
+      </div>
+
+    </div>
+
+    <div class="bonus-block">
+      <div class="bonus-head">+ 10 бонусов</div>
+      <div class="bonus-sub">Уже включены в тариф «Базовый». Подключаются автоматически.</div>
+      <div class="bonus-list">
+        <div class="bonus-row"><div class="bonus-check">✓</div><span><b>50</b> промптов для текстов и сценариев</span></div>
+        <div class="bonus-row"><div class="bonus-check">✓</div><span><b>50</b> промптов для редактуры фото</span></div>
+        <div class="bonus-row"><div class="bonus-check">✓</div><span><b>20</b> промптов для рекламы</span></div>
+        <div class="bonus-row"><div class="bonus-check">✓</div><span><b>30</b> шаблонов постов-каруселей</span></div>
+        <div class="bonus-row"><div class="bonus-check">✓</div><span><b>10</b> шаблонов шапок профиля под разные ниши</span></div>
+        <div class="bonus-row"><div class="bonus-check">✓</div><span>30-дневный контент-план</span></div>
+        <div class="bonus-row"><div class="bonus-check">✓</div><span>Сравнительная таблица нейросетей — что для чего</span></div>
+        <div class="bonus-row"><div class="bonus-check">✓</div><span>Файл «Куда пойти за платежом без банковской карты в РФ»</span></div>
+        <div class="bonus-row"><div class="bonus-check">✓</div><span>Бонус-разбор «Я разобрала 10 профилей моих учениц — вот что не работает» (запись)</span></div>
+        <div class="bonus-row"><div class="bonus-check">✓</div><span>Бриф «О моём бизнесе для AI» — заполняешь один раз, используешь везде</span></div>
+
+        <div class="bonus-row vip">
+          <div class="bonus-check">★</div>
+          <span><span class="vip-tag">VIP</span>Личный разбор профиля от Ани — видео 10–12 минут с рекомендациями по визуалу и упаковке</span>
+        </div>
+        <div class="bonus-row">
+          <div class="bonus-check">★</div>
+          <span><span class="vip-tag">VIP</span>Персональный 30-дневный контент-план под твою нишу</span>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ============================================ TARIFFS -->
+  <section class="tariffs" id="tariffs" data-screen-label="Тарифы">
+    <div class="section-eyebrow">
+      <span class="eyebrow">тарифы</span>
+    </div>
+    <h2 class="section-h">Выбери свой <span class="pink">формат</span></h2>
+
+    <div class="tariff-grid">
+
+      <!-- BASIC -->
+      <div class="tariff basic">
+        <div class="tariff-head">
+          <div class="tariff-label">Тариф 01</div>
+          <div class="tariff-name">Базовый</div>
+          <div class="price-row">
+            <span class="price-original">4 900<span class="price-currency">₽</span></span>
+            <span class="price-sale">2 900<span class="price-currency">₽</span></span>
+          </div>
+        </div>
+        <div class="tariff-body">
+          <ul class="tariff-list">
+            <li>Модуль 01 — Профиль и лента</li>
+            <li>Модуль 02 — Посты, рилс, сторис</li>
+            <li>Модуль 03 — Визуал и редактура фото</li>
+            <li>Модуль 04 — Реклама и карусели</li>
+            <li>10 бонусных файлов и промптов</li>
+            <li class="muted">Без обратной связи</li>
+          </ul>
+          <a href="#" class="tariff-cta">Занять место</a>
+          <div class="tariff-meta">Доступ 3 месяца</div>
+        </div>
+      </div>
+
+      <!-- VIP -->
+      <div class="tariff vip">
+        <div class="vip-crown">★ Хит</div>
+        <div class="tariff-head">
+          <div class="tariff-label">Тариф 02 · VIP</div>
+          <div class="tariff-name">VIP</div>
+          <div class="price-row">
+            <span class="price-original">9 900<span class="price-currency">₽</span></span>
+            <span class="price-sale">5 900<span class="price-currency">₽</span></span>
+          </div>
+        </div>
+        <div class="tariff-body">
+          <ul class="tariff-list">
+            <li>Все 4 модуля курса</li>
+            <li>10 бонусных файлов и промптов</li>
+            <li class="vip-feature">Личный видео-разбор профиля от Ани (10–12 мин)</li>
+            <li class="vip-feature">Персональный 30-дневный контент-план под твою нишу</li>
+            <li>Доступ 6 месяцев</li>
+          </ul>
+          <a href="#" class="tariff-cta">Занять место</a>
+          <div class="tariff-meta" style="color: rgba(255,255,255,0.5)">Осталось 12 мест</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================ BEFORE / AFTER -->
+  <section class="results" data-screen-label="До и после">
+    <div class="section-eyebrow">
+      <span class="eyebrow">до / после</span>
+    </div>
+    <h2 class="section-h">Что умеют<br>нейронки <span class="pink">прямо сейчас</span></h2>
+
+    <div class="compare-stack">
+
+      <div class="compare" data-compare>
+        <img class="after" src="assets/work-2.jpeg" alt="После — атмосферный кадр на красном фоне с тюлем">
+        <img class="before" src="assets/work-1.jpeg" alt="До — съёмка в студии на белом">
+        <div class="compare-tag left">До</div>
+        <div class="compare-tag right">После AI</div>
+        <div class="compare-handle"></div>
+      </div>
+
+      <div class="compare" data-compare>
+        <img class="after" src="assets/work-4.jpeg" alt="После — кадр с пионами для соцсетей">
+        <img class="before" src="assets/work-3.jpeg" alt="До — обычная съёмка работы">
+        <div class="compare-tag left">До</div>
+        <div class="compare-tag right">После AI</div>
+        <div class="compare-handle"></div>
+      </div>
+
+    </div>
+
+    <p class="results-note">
+      Обычное фото работы → <b>атмосферный кадр для соцсетей</b>: новый фон, аксессуары, свет. Всё в нейросетях, без студии и реквизита.
+    </p>
+  </section>
+
+  <!-- ============================================ FINAL CTA -->
+  <section class="final-cta" data-screen-label="Финальный CTA">
+    <div class="final-cta-content">
+      <h2 class="section-h">Старт <span class="pink">18.05</span></h2>
+      <p>Места ограничены. После старта цена вырастет.<br>Забирай свой тариф сейчас.</p>
+      <a href="#tariffs" class="btn btn-primary" style="width: 100%;">
+        Выбрать тариф
+        <svg class="btn-arrow" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="brand"><span class="brand-dot"></span><span>НЕЙРО · АНЯ</span></div>
+    <div class="footer-tag">Мини-курс «НейроКонтент на автопилоте»</div>
+
+    <div class="legal-block">
+      <div class="legal-title">Реквизиты</div>
+      <dl class="legal-grid">
+        <dt>Исполнитель</dt><dd>ИП Ерофеева Анна Николаевна</dd>
+        <dt>ИНН</dt><dd>631929783160</dd>
+        <dt>ОГРНИП</dt><dd>317631300021263</dd>
+        <dt>Юр. адрес</dt><dd>—</dd>
+        <dt>Расчётный счёт</dt><dd>40802810900000686750</dd>
+        <dt>Корр. счёт</dt><dd>30101810145250000974</dd>
+        <dt>Банк</dt><dd>АО «ТИНЬКОФФ БАНК»</dd>
+        <dt>Телефон</dt><dd><a href="tel:+79277264655">+7 927 726 46 55</a></dd>
+        <dt>E-mail</dt><dd><a href="mailto:ann_erof@mail.ru">ann_erof@mail.ru</a></dd>
+      </dl>
+    </div>
+
+    <div class="legal-links">
+      <a href="#" target="_blank" rel="noopener">Публичная оферта</a>
+      <a href="https://docs.google.com/document/d/1F_DLK9DRTPJNxPd7LzYrIxpaucqWeCGS0ktywNkFMYM/edit?usp=drive_link" target="_blank" rel="noopener">Политика обработки персональных данных</a>
+      <a href="https://docs.google.com/document/d/1lhKyt49c6SH1SFCoCR2Q9A1sr4A2X8nvl9xUVZJ4RDU/edit?usp=sharing" target="_blank" rel="noopener">Согласие на обработку персональных данных</a>
+      <a href="https://docs.google.com/document/d/1zp6k4oNz7NcVNjAD1n7zG3Bjz1C1ZWI71kNeCizoGhI/edit?usp=drive_link" target="_blank" rel="noopener">Согласие на новостную и рекламную рассылку</a>
+      <a href="https://docs.google.com/document/d/1ZShjWHBTGiNarlAjVPBNe-xMuC-LImIAL3SlJDIpkks/edit?usp=drive_link" target="_blank" rel="noopener">Согласие на обработку файлов cookies</a>
+    </div>
+
+    <p class="copyright">© 2026 ИП Ерофеева А.Н. · Все права защищены</p>
+  </footer>
+
+  <!-- Cookie consent banner -->
+  <div class="cookie-banner" id="cookieBanner" hidden>
+    <div class="cookie-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.598 11.063A10 10 0 1 1 12.94 2.4a6 6 0 0 0 5.66 5.66a6 6 0 0 0 3 3.001Z"/><circle cx="8.5" cy="14.5" r=".5" fill="currentColor"/><circle cx="14.5" cy="15.5" r=".5" fill="currentColor"/><circle cx="15.5" cy="10.5" r=".5" fill="currentColor"/></svg>
+    </div>
+    <div class="cookie-text">
+      Мы используем cookies, чтобы сайт работал лучше. Продолжая, ты соглашаешься с
+      <a href="https://docs.google.com/document/d/1ZShjWHBTGiNarlAjVPBNe-xMuC-LImIAL3SlJDIpkks/edit?usp=drive_link" target="_blank" rel="noopener">обработкой cookies</a>.
+    </div>
+    <button class="cookie-btn" id="cookieAccept">Принять</button>
+    <button class="cookie-close" id="cookieClose" aria-label="Закрыть">×</button>
+  </div>
+
+</div>
+
+<script>
+// ============== COUNTDOWN ==============
+(function() {
+  // Course starts 18.05.2026
+  const target = new Date('2026-05-18T10:00:00+03:00').getTime();
+  const dEl = document.getElementById('cd-d');
+  const hEl = document.getElementById('cd-h');
+  const mEl = document.getElementById('cd-m');
+  function pad(n) { return String(Math.max(0, n)).padStart(2, '0'); }
+  function tick() {
+    const now = Date.now();
+    let diff = Math.max(0, target - now);
+    const days = Math.floor(diff / 86400000); diff -= days * 86400000;
+    const hours = Math.floor(diff / 3600000); diff -= hours * 3600000;
+    const mins = Math.floor(diff / 60000);
+    dEl.textContent = pad(days);
+    hEl.textContent = pad(hours);
+    mEl.textContent = pad(mins);
+  }
+  tick();
+  setInterval(tick, 30000);
+})();
+
+// ============== COOKIE BANNER ==============
+(function() {
+  const KEY = 'cookie_consent_v1';
+  const banner = document.getElementById('cookieBanner');
+  const accept = document.getElementById('cookieAccept');
+  const close = document.getElementById('cookieClose');
+  if (!banner) return;
+  try {
+    if (!localStorage.getItem(KEY)) {
+      setTimeout(() => { banner.hidden = false; }, 800);
+    }
+  } catch (e) {
+    setTimeout(() => { banner.hidden = false; }, 800);
+  }
+  function hide(val) {
+    banner.style.transition = 'opacity 0.3s, transform 0.3s';
+    banner.style.opacity = '0';
+    banner.style.transform = 'translate(-50%, 20px)';
+    setTimeout(() => { banner.hidden = true; }, 300);
+    try { localStorage.setItem(KEY, val); } catch (e) {}
+  }
+  accept.addEventListener('click', () => hide('accepted'));
+  close.addEventListener('click', () => hide('dismissed'));
+})();
+
+// ============== BEFORE/AFTER SLIDER ==============
+document.querySelectorAll('[data-compare]').forEach(el => {
+  const before = el.querySelector('.before');
+  const handle = el.querySelector('.compare-handle');
+  let active = false;
+
+  function setPos(clientX) {
+    const rect = el.getBoundingClientRect();
+    let p = ((clientX - rect.left) / rect.width) * 100;
+    p = Math.max(2, Math.min(98, p));
+    before.style.clipPath = `inset(0 ${100 - p}% 0 0)`;
+    handle.style.left = p + '%';
+  }
+
+  el.addEventListener('mousedown', e => { active = true; setPos(e.clientX); });
+  window.addEventListener('mousemove', e => { if (active) setPos(e.clientX); });
+  window.addEventListener('mouseup', () => { active = false; });
+
+  el.addEventListener('touchstart', e => { active = true; setPos(e.touches[0].clientX); }, {passive: true});
+  el.addEventListener('touchmove', e => { if (active) setPos(e.touches[0].clientX); }, {passive: true});
+  el.addEventListener('touchend', () => { active = false; });
+
+  // auto-demo on first appearance
+  let demoed = false;
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !demoed) {
+        demoed = true;
+        let p = 50, dir = -1;
+        let count = 0;
+        const id = setInterval(() => {
+          p += dir * 1.6;
+          if (p < 25) { dir = 1; count++; }
+          if (p > 75) { dir = -1; count++; }
+          before.style.clipPath = `inset(0 ${100 - p}% 0 0)`;
+          handle.style.left = p + '%';
+          if (count >= 3) {
+            clearInterval(id);
+            // settle at 50
+            const settle = setInterval(() => {
+              if (Math.abs(p - 50) < 1) { clearInterval(settle); p = 50; }
+              else { p += (50 - p) * 0.15; }
+              before.style.clipPath = `inset(0 ${100 - p}% 0 0)`;
+              handle.style.left = p + '%';
+            }, 30);
+          }
+        }, 30);
+      }
+    });
+  }, { threshold: 0.5 });
+  io.observe(el);
+});
+</script>
+
+</body>
+</html>
