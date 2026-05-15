@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>10 промптов · Реклама — НейроКонтент на автопилоте</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Unbounded:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --pink: #D73876;
+  --pink-bright: #F13684;
+  --pink-light: #FF67A7;
+  --pink-pale: #FFCBE0;
+  --bg-near-black: #1D1D1D;
+  --bg-black: #121212;
+  --bg-card: #1c1c1c;
+  --on-dark: #F5F5F5;
+  --muted: #C9C9C9;
+  --muted-2: #8a8585;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  background: #0a0a0a;
+  font-family: 'Inter', sans-serif;
+  color: var(--on-dark);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.5;
+}
+.page-wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  background: var(--bg-near-black);
+  position: relative;
+  min-height: 100vh;
+}
+
+/* HERO */
+.hero {
+  position: relative;
+  padding: 48px 32px 56px;
+  background: radial-gradient(ellipse at 80% 20%, rgba(241,54,132,0.22), transparent 55%), var(--bg-near-black);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.hero-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 32px;
+}
+.brand {
+  display: flex; align-items: center; gap: 10px;
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.brand-dot {
+  width: 10px; height: 10px; border-radius: 50%;
+  background: var(--pink-bright);
+  box-shadow: 0 0 12px var(--pink-bright);
+}
+.hero-tag {
+  display: inline-flex; align-items: center;
+  padding: 6px 12px;
+  border-radius: 100px;
+  background: rgba(241,54,132,0.12);
+  border: 1px solid rgba(241,54,132,0.4);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--pink-light);
+  text-transform: uppercase;
+}
+.hero-eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 14px;
+}
+.hero-title {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 900;
+  font-size: clamp(48px, 8vw, 92px);
+  line-height: 0.88;
+  letter-spacing: -0.035em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+.hero-title .num { color: var(--pink-bright); font-style: italic; }
+.hero-sub-title {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 700;
+  font-size: clamp(18px, 2.2vw, 26px);
+  letter-spacing: -0.01em;
+  color: var(--muted);
+  margin-bottom: 24px;
+  text-transform: uppercase;
+}
+.hero-desc {
+  font-size: 16px;
+  line-height: 1.5;
+  max-width: 640px;
+  opacity: 0.92;
+  margin-bottom: 28px;
+}
+.hero-desc b { color: var(--pink-light); font-weight: 700; }
+.hero-stats {
+  display: flex;
+  gap: 32px;
+  margin-top: 32px;
+  padding-top: 28px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  flex-wrap: wrap;
+}
+.hero-stat-val {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 800;
+  font-size: 34px;
+  color: var(--pink-bright);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.hero-stat-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--muted-2);
+  margin-top: 6px;
+}
+
+/* MARQUEE */
+.marquee {
+  background: var(--pink-bright);
+  overflow: hidden;
+  padding: 14px 0;
+}
+.marquee-track {
+  display: flex;
+  white-space: nowrap;
+  gap: 28px;
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 800;
+  font-size: 16px;
+  color: white;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0 32px;
+}
+.marquee-star { color: rgba(255,255,255,0.6); font-size: 14px; }
+
+/* SECTIONS */
+section.content { padding: 64px 32px; }
+.section-eyebrow {
+  display: flex; align-items: center; gap: 10px;
+  margin-bottom: 14px;
+}
+.section-eyebrow::before {
+  content: ''; width: 28px; height: 1px;
+  background: var(--pink-bright);
+}
+.eyebrow {
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.section-h {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 800;
+  font-size: clamp(28px, 4vw, 44px);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  margin-bottom: 36px;
+}
+.section-h .pink { color: var(--pink-bright); }
+
+/* HOW TO USE - simplified */
+.how-to .rules {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 14px;
+  margin-bottom: 28px;
+}
+.rule-card {
+  padding: 24px 22px 22px;
+  background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+  border-radius: 22px;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+.rule-num {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 800;
+  font-size: 12px;
+  color: var(--pink-bright);
+  letter-spacing: 0.12em;
+  margin-bottom: 10px;
+}
+.rule-title {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 1.15;
+  margin-bottom: 8px;
+}
+.rule-text {
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+.tip-box {
+  background: linear-gradient(135deg, rgba(241,54,132,0.1) 0%, rgba(241,54,132,0.04) 100%);
+  border: 1px solid rgba(241,54,132,0.25);
+  border-radius: 18px;
+  padding: 20px 24px;
+}
+.tip-box-label {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--pink-bright);
+  margin-bottom: 8px;
+}
+.tip-box-text { font-size: 14px; line-height: 1.5; }
+
+/* TOC */
+.toc { background: linear-gradient(180deg, var(--bg-near-black) 0%, #161616 100%); }
+.toc-list { display: flex; flex-direction: column; gap: 8px; }
+.toc-row {
+  display: grid;
+  grid-template-columns: 56px 1fr auto;
+  align-items: center;
+  gap: 18px;
+  padding: 18px 22px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 16px;
+  text-decoration: none;
+  color: var(--on-dark);
+}
+.toc-num {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 800;
+  font-size: 22px;
+  color: var(--pink-bright);
+}
+.toc-name {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 600;
+  font-size: 17px;
+}
+.toc-count {
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted-2);
+  font-weight: 500;
+}
+
+/* CATEGORY SECTIONS */
+.cat-section {
+  padding: 56px 32px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+.cat-section:nth-child(odd) {
+  background: linear-gradient(180deg, #131313 0%, var(--bg-near-black) 100%);
+}
+.cat-header {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+}
+.cat-num-badge {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 800;
+  font-size: 56px;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--pink-bright);
+}
+.cat-title {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 800;
+  font-size: clamp(24px, 3.5vw, 36px);
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  flex: 1;
+}
+.cat-count-badge {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 8px 14px;
+  background: rgba(241,54,132,0.15);
+  border: 1px solid rgba(241,54,132,0.3);
+  color: var(--pink-light);
+  border-radius: 100px;
+}
+
+/* PROMPTS */
+.prompts-grid { display: flex; flex-direction: column; gap: 16px; }
+.prompt {
+  background: var(--bg-card);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 20px;
+  padding: 24px 26px 22px;
+}
+.prompt-head {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+}
+.prompt-num {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 800;
+  font-size: 13px;
+  color: var(--pink-bright);
+  background: rgba(241,54,132,0.12);
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+.prompt-title {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 700;
+  font-size: clamp(17px, 2vw, 21px);
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+}
+.prompt-when {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+}
+.prompt-where { margin-bottom: 18px; padding-bottom: 18px; border-bottom: 1px dashed rgba(255,255,255,0.08); }
+.when-label {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 700;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--pink-light);
+  white-space: nowrap;
+}
+.where-label { color: #aaa; }
+.when-text { font-size: 14px; color: var(--muted); font-style: italic; }
+.prompt-box {
+  position: relative;
+  background: var(--bg-black);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 14px;
+  margin-bottom: 18px;
+  overflow: hidden;
+}
+.copy-btn-static {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 5px 12px;
+  border-radius: 8px;
+  background: rgba(241,54,132,0.15);
+  border: 1px solid rgba(241,54,132,0.35);
+  color: var(--pink-light);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.prompt-text {
+  font-family: 'JetBrains Mono', 'Consolas', monospace;
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: #d4d4d4;
+  padding: 18px 22px 18px 22px;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+.prompt-meta { display: flex; flex-direction: column; gap: 8px; }
+.meta-row { display: flex; gap: 10px; align-items: baseline; font-size: 13px; flex-wrap: wrap; }
+.meta-label {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 700;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--pink-bright);
+  padding: 3px 8px;
+  background: rgba(241,54,132,0.1);
+  border-radius: 5px;
+  white-space: nowrap;
+}
+.meta-value { color: var(--on-dark); flex: 1; }
+
+/* FOOTER */
+.footer {
+  padding: 48px 32px 56px;
+  background: var(--bg-black);
+  text-align: center;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+.footer .brand { justify-content: center; margin-bottom: 16px; }
+.footer-msg {
+  max-width: 560px;
+  margin: 0 auto 28px;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+.footer-msg b { color: var(--pink-light); font-weight: 700; }
+.footer-sign {
+  display: inline-block;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+.footer-name {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 800;
+  font-size: 16px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.footer-role {
+  font-size: 12px;
+  color: var(--muted-2);
+  margin-top: 6px;
+}
+
+@media (max-width: 720px) {
+  .hero { padding: 36px 22px 44px; }
+  section.content { padding: 48px 22px; }
+  .cat-section { padding: 44px 22px; }
+  .footer { padding: 40px 22px; }
+  .toc-row { grid-template-columns: 48px 1fr; }
+  .toc-count { grid-column: 2; margin-top: 2px; }
+  .cat-num-badge { font-size: 44px; }
+  .prompt { padding: 20px 18px 18px; }
+  .prompt-text { font-size: 12.5px; padding: 16px 18px; }
+  .meta-row { flex-direction: column; gap: 4px; }
+}
+
+@media print {
+  body, .page-wrap { background: white; color: #111; }
+  .prompt { break-inside: avoid; }
+  .cat-section { break-inside: avoid-page; }
+}
+</style>
+</head>
+<body>
+<div class="page-wrap">
+
+  <section class="hero">
+    <div class="hero-top">
+      <div class="brand">
+        <span class="brand-dot"></span>
+        <span>НЕЙРО · АНЯ</span>
+      </div>
+      <div class="hero-tag">Бонус курса</div>
+    </div>
+    <div class="hero-eyebrow">НейроКонтент на автопилоте</div>
+    <h1 class="hero-title"><span class="num">10</span> промптов</h1>
+    <div class="hero-sub-title">для рекламы</div>
+    <p class="hero-desc">
+      Готовые промпты под <b>весь платный трафик</b>: Авито (3 ценовых уровня), Threads, реклама в Telegram-каналах и пабликах, чаты домов, ВК-таргет, реферальная программа и сарафан без денег.
+    </p>
+    <div class="hero-stats">
+      <div>
+        <div class="hero-stat-val">10</div>
+        <div class="hero-stat-label">Промптов</div>
+      </div>
+      <div>
+        <div class="hero-stat-val">07</div>
+        <div class="hero-stat-label">Площадок</div>
+      </div>
+      <div>
+        <div class="hero-stat-val">05</div>
+        <div class="hero-stat-label">Категорий</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="marquee">
+    <div class="marquee-track">
+      <span>Авито <span class="marquee-star">✦</span> Threads <span class="marquee-star">✦</span> Telegram <span class="marquee-star">✦</span> ВК <span class="marquee-star">✦</span> Паблики <span class="marquee-star">✦</span> Чаты районов <span class="marquee-star">✦</span> Рефералка <span class="marquee-star">✦</span> Сарафан <span class="marquee-star">✦</span></span>
+    </div>
+  </div>
+
+  <section class="content how-to">
+    <div class="section-eyebrow"><span class="eyebrow">Инструкция</span></div>
+    <h2 class="section-h">Как <span class="pink">пользоваться</span></h2>
+
+    <div class="rules">
+      <div class="rule-card">
+        <div class="rule-num">Правило 01</div>
+        <div class="rule-title">Бриф - сначала</div>
+        <div class="rule-text">Перед каждым промптом загружай в ChatGPT бриф «О моём бизнесе для AI». Иначе тексты получатся обезличенные.</div>
+      </div>
+      <div class="rule-card">
+        <div class="rule-num">Правило 02</div>
+        <div class="rule-title">Площадка важна</div>
+        <div class="rule-text">Каждый промпт заточен под формат конкретной площадки. Не переноси Авито-текст в Threads дословно - тон и длина другие.</div>
+      </div>
+      <div class="rule-card">
+        <div class="rule-num">Правило 03</div>
+        <div class="rule-title">Цифры и факты</div>
+        <div class="rule-text">Реклама без конкретных цифр - вода. Замени все «качество» и «индивидуальный подход» на длительность услуги, стаж, гарантию.</div>
+      </div>
+    </div>
+
+    <div class="tip-box">
+      <div class="tip-box-label">Что особенного в этом бонусе</div>
+      <div class="tip-box-text">
+        К каждому промпту указано «Куда вставить» - точное поле или место на конкретной площадке. Не нужно гадать, в какое поле Авито идёт заголовок, а в какое описание. Делаешь по инструкции и публикуешь.
+      </div>
+    </div>
+  </section>
+
+  <section class="content toc">
+    <div class="section-eyebrow"><span class="eyebrow">Содержание</span></div>
+    <h2 class="section-h">5 категорий, <span class="pink">10 промптов</span></h2>
+    <div class="toc-list">
+            <a class="toc-row" href="#cat-1">
+              <div class="toc-num">01</div>
+              <div class="toc-name">Авито</div>
+              <div class="toc-count">3 промпта</div>
+            </a>
+            <a class="toc-row" href="#cat-2">
+              <div class="toc-num">02</div>
+              <div class="toc-name">Социальные сети</div>
+              <div class="toc-count">3 промпта</div>
+            </a>
+            <a class="toc-row" href="#cat-3">
+              <div class="toc-num">03</div>
+              <div class="toc-name">Локальная реклама</div>
+              <div class="toc-count">1 промпт</div>
+            </a>
+            <a class="toc-row" href="#cat-4">
+              <div class="toc-num">04</div>
+              <div class="toc-name">Таргетированная реклама</div>
+              <div class="toc-count">1 промпт</div>
+            </a>
+            <a class="toc-row" href="#cat-5">
+              <div class="toc-num">05</div>
+              <div class="toc-name">Реферальная программа и сарафан</div>
+              <div class="toc-count">2 промпта</div>
+            </a>
+    </div>
+  </section>
+
+
+    <section class="cat-section" id="cat-1">
+      <div class="cat-header">
+        <div class="cat-num-badge">01</div>
+        <h2 class="cat-title">Авито</h2>
+        <div class="cat-count-badge">3 промпта</div>
+      </div>
+      <div class="prompts-grid">
+        <article class="prompt" id="prompt-1">
+          <div class="prompt-head">
+            <div class="prompt-num">№1</div>
+            <h3 class="prompt-title">Объявление · прайс ниже рынка</h3>
+          </div>
+          <div class="prompt-when">
+            <span class="when-label">Когда использовать</span>
+            <span class="when-text">Когда моя цена ниже среднего по городу</span>
+          </div>
+          <div class="prompt-when prompt-where">
+            <span class="when-label where-label">Куда вставить</span>
+            <span class="when-text">Поле «Название объявления» + «Описание». Категория: Услуги / Красота</span>
+          </div>
+          <div class="prompt-box">
+            <div class="copy-btn-static">Промпт</div>
+            <pre class="prompt-text">Ты - копирайтер для бьюти-мастеров с акцентом на платный трафик. Используй бриф о моём бизнесе.
+
+Мой прайс - НИЖЕ среднего по городу. Причина: [новичок / возвращаюсь из декрета / привлекаю первых клиентов / другое]
+
+Напиши объявление на Авито для категории «Красота».
+
+Требования:
+- Заголовок: до 50 знаков, цепляющий, без слов &quot;акция&quot;, &quot;только сегодня&quot;
+- Текст объявления: 400-700 знаков
+- Структура: для кого → что делаю → почему дешевле (честно, без оправданий) → что важно знать → как записаться
+- Без &quot;качество на высоте&quot;, &quot;лучший мастер города&quot;, &quot;индивидуальный подход&quot;
+- 2-3 конкретные цифры (длительность услуги, стаж, гарантия покрытия)
+- Финал - простой призыв с контактом или формой
+
+Куда вставить:
+- Заголовок → &quot;Название объявления&quot;
+- Текст → &quot;Описание&quot;
+- Категория → &quot;Предложение услуг / Красота / Маникюр и педикюр&quot;
+
+Готовое объявление полностью.</pre>
+          </div>
+          <div class="prompt-meta">
+            <div class="meta-row"><span class="meta-label">Заменить</span><span class="meta-value">[ПРИЧИНА НИЗКОЙ ЦЕНЫ]</span></div>
+            <div class="meta-row"><span class="meta-label">На выходе</span><span class="meta-value">готовое объявление - заголовок + текст</span></div>
+          </div>
+        </article>
+        <article class="prompt" id="prompt-2">
+          <div class="prompt-head">
+            <div class="prompt-num">№2</div>
+            <h3 class="prompt-title">Объявление · средний прайс</h3>
+          </div>
+          <div class="prompt-when">
+            <span class="when-label">Когда использовать</span>
+            <span class="when-text">Когда цена в районе среднего по городу</span>
+          </div>
+          <div class="prompt-when prompt-where">
+            <span class="when-label where-label">Куда вставить</span>
+            <span class="when-text">Поле «Название объявления» + «Описание»</span>
+          </div>
+          <div class="prompt-box">
+            <div class="copy-btn-static">Промпт</div>
+            <pre class="prompt-text">Ты - копирайтер для бьюти-мастеров с акцентом на платный трафик. Используй бриф о моём бизнесе.
+
+Мой прайс - СРЕДНИЙ по городу. Я не дешёвая, не премиум.
+
+Главная задача объявления: выделиться среди десятков таких же.
+
+Сегмент, под который пишу: [например, мамы в декрете / девушки 25-35 / офисные сотрудники / подростки 14-17]
+
+Напиши объявление на Авито.
+
+Требования:
+- Заголовок: до 50 знаков, с привязкой к сегменту
+- Текст: 400-700 знаков
+- Структура: для кого конкретно → что получает (результат + ощущения) → почему я → 2-3 факта обо мне → как записаться
+- Никаких клише
+- Финал - простой призыв
+
+Куда вставить:
+- Заголовок → &quot;Название объявления&quot;
+- Текст → &quot;Описание&quot;
+
+Готовое объявление.</pre>
+          </div>
+          <div class="prompt-meta">
+            <div class="meta-row"><span class="meta-label">Заменить</span><span class="meta-value">[СЕГМЕНТ ЦА]</span></div>
+            <div class="meta-row"><span class="meta-label">На выходе</span><span class="meta-value">готовое объявление под сегмент</span></div>
+          </div>
+        </article>
+        <article class="prompt" id="prompt-3">
+          <div class="prompt-head">
+            <div class="prompt-num">№3</div>
+            <h3 class="prompt-title">Объявление · прайс выше рынка</h3>
+          </div>
+          <div class="prompt-when">
+            <span class="when-label">Когда использовать</span>
+            <span class="when-text">Когда я премиум-сегмент, цена выше среднего</span>
+          </div>
+          <div class="prompt-when prompt-where">
+            <span class="when-label where-label">Куда вставить</span>
+            <span class="when-text">Поле «Название объявления» + «Описание» + цена в поле «Стоимость»</span>
+          </div>
+          <div class="prompt-box">
+            <div class="copy-btn-static">Промпт</div>
+            <pre class="prompt-text">Ты - копирайтер для бьюти-мастеров с акцентом на платный трафик. Используй бриф о моём бизнесе.
+
+Мой прайс - ВЫШЕ среднего по городу. Я премиум-сегмент.
+
+Главная задача объявления: оттолкнуть халявщиц, привлечь свою аудиторию.
+
+Чем я реально отличаюсь от конкурентов: [перечисли 3-5 пунктов: оборудование, материалы, дизайны, опыт, гарантии, локация]
+
+Напиши объявление на Авито.
+
+Требования:
+- Заголовок: до 50 знаков, без &quot;элитный&quot;, &quot;VIP&quot; - спокойно и уверенно
+- Текст: 500-800 знаков
+- Структура: для кого (точный портрет) → что получает (не &quot;качество&quot;, а конкретные вещи) → почему стоит этих денег → 3-5 фактов про процесс/материалы → цена и условия → как записаться
+- Указать цену прямо в объявлении - отсекает торгующихся
+
+Куда вставить:
+- Заголовок → &quot;Название объявления&quot;
+- Текст → &quot;Описание&quot;
+- Поле &quot;Стоимость&quot; → [МОЯ ЦЕНА]
+
+Готовое объявление.</pre>
+          </div>
+          <div class="prompt-meta">
+            <div class="meta-row"><span class="meta-label">Заменить</span><span class="meta-value">[3-5 ОТЛИЧИЙ], [МОЯ ЦЕНА]</span></div>
+            <div class="meta-row"><span class="meta-label">На выходе</span><span class="meta-value">готовое премиум-объявление</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="cat-section" id="cat-2">
+      <div class="cat-header">
+        <div class="cat-num-badge">02</div>
+        <h2 class="cat-title">Социальные сети</h2>
+        <div class="cat-count-badge">3 промпта</div>
+      </div>
+      <div class="prompts-grid">
+        <article class="prompt" id="prompt-4">
+          <div class="prompt-head">
+            <div class="prompt-num">№4</div>
+            <h3 class="prompt-title">Пост для Threads</h3>
+          </div>
+          <div class="prompt-when">
+            <span class="when-label">Когда использовать</span>
+            <span class="when-text">Для нишевого охвата в Threads</span>
+          </div>
+          <div class="prompt-when prompt-where">
+            <span class="when-label where-label">Куда вставить</span>
+            <span class="when-text">Threads · обычный пост (до 500 знаков)</span>
+          </div>
+          <div class="prompt-box">
+            <div class="copy-btn-static">Промпт</div>
+            <pre class="prompt-text">Ты - копирайтер для бьюти-мастеров. Используй бриф о моём бизнесе.
+
+Напиши пост для Threads (текстовая соц.сеть).
+
+Тема / повод: [что произошло / мысль / реакция на тренд]
+
+Особенности Threads:
+- Длина строго до 500 знаков
+- Тон разговорный, как в личной переписке
+- Без хештегов или максимум 1
+- Без призыва &quot;записывайтесь&quot; - продаёшь через узнавание
+- Можно эмоции и резкие формулировки, без официоза
+
+Структура:
+- Первая строка - хук (без вопроса в лоб)
+- Тело - 2-3 предложения мысли или истории
+- Финал - открытый вопрос или эмоция
+
+Готовый пост.</pre>
+          </div>
+          <div class="prompt-meta">
+            <div class="meta-row"><span class="meta-label">Заменить</span><span class="meta-value">[ТЕМА / ПОВОД]</span></div>
+            <div class="meta-row"><span class="meta-label">На выходе</span><span class="meta-value">пост до 500 знаков</span></div>
+          </div>
+        </article>
+        <article class="prompt" id="prompt-5">
+          <div class="prompt-head">
+            <div class="prompt-num">№5</div>
+            <h3 class="prompt-title">Реклама в Telegram-канале</h3>
+          </div>
+          <div class="prompt-when">
+            <span class="when-label">Когда использовать</span>
+            <span class="when-text">Для размещения у блогеров и в каналах за деньги или бартер</span>
+          </div>
+          <div class="prompt-when prompt-where">
+            <span class="when-label where-label">Куда вставить</span>
+            <span class="when-text">Отправить владельцу канала с пометкой «реклама»</span>
+          </div>
+          <div class="prompt-box">
+            <div class="copy-btn-static">Промпт</div>
+            <pre class="prompt-text">Ты - копирайтер для бьюти-мастеров. Используй бриф о моём бизнесе.
+
+Напиши рекламный пост для размещения в Telegram-канале.
+
+Канал-площадка: [тип канала - городской / мамский / женский / новостной]
+Длина поста: [короткий 400-600 / средний 600-1000 / длинный 1000-1500]
+
+Требования:
+- Заголовок: цепляет с первой строки (видно в превью уведомления)
+- Структура: проблема читательницы → моё решение → доказательство (цифры/факты/кейс) → оффер для подписчиц канала (скидка, бонус первым) → CTA с прямой ссылкой
+- Тон: подстраиваемся под стиль канала-площадки
+- Без рекламного &quot;глянца&quot;, читается как органический пост
+- Без точек в конце абзацев
+
+Куда вставить: владельцу канала для публикации с пометкой &quot;реклама&quot; и моими контактами.
+
+Готовый пост.</pre>
+          </div>
+          <div class="prompt-meta">
+            <div class="meta-row"><span class="meta-label">Заменить</span><span class="meta-value">[ТИП КАНАЛА], [ДЛИНА]</span></div>
+            <div class="meta-row"><span class="meta-label">На выходе</span><span class="meta-value">готовый пост под площадку</span></div>
+          </div>
+        </article>
+        <article class="prompt" id="prompt-6">
+          <div class="prompt-head">
+            <div class="prompt-num">№6</div>
+            <h3 class="prompt-title">Реклама в паблике (ВК / Instagram)</h3>
+          </div>
+          <div class="prompt-when">
+            <span class="when-label">Когда использовать</span>
+            <span class="when-text">Городские, мамские, тематические паблики</span>
+          </div>
+          <div class="prompt-when prompt-where">
+            <span class="when-label where-label">Куда вставить</span>
+            <span class="when-text">Отправить админу паблика для размещения</span>
+          </div>
+          <div class="prompt-box">
+            <div class="copy-btn-static">Промпт</div>
+            <pre class="prompt-text">Ты - копирайтер для бьюти-мастеров. Используй бриф о моём бизнесе.
+
+Напиши рекламный пост для размещения в паблике.
+
+Площадка: [городской паблик / мамский паблик / женский паблик / тематический]
+Формат: ВК или Instagram
+
+Требования:
+- Адаптация под аудиторию паблика (язык, темы, что важно подписчицам)
+- Заголовок: цепляющий, без &quot;рекомендую мастера&quot;
+- Структура: вопрос или ситуация, узнаваемая для подписчиц → решение через меня → почему именно я → специальное предложение для подписчиц паблика → CTA
+- Длина 500-800 знаков
+- Эмодзи: если паблик их активно использует, иначе без
+
+Готовый пост для отправки админу паблика.</pre>
+          </div>
+          <div class="prompt-meta">
+            <div class="meta-row"><span class="meta-label">Заменить</span><span class="meta-value">[ТИП ПАБЛИКА], [ФОРМАТ - ВК/IG]</span></div>
+            <div class="meta-row"><span class="meta-label">На выходе</span><span class="meta-value">готовый пост под паблик</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="cat-section" id="cat-3">
+      <div class="cat-header">
+        <div class="cat-num-badge">03</div>
+        <h2 class="cat-title">Локальная реклама</h2>
+        <div class="cat-count-badge">1 промпт</div>
+      </div>
+      <div class="prompts-grid">
+        <article class="prompt" id="prompt-7">
+          <div class="prompt-head">
+            <div class="prompt-num">№7</div>
+            <h3 class="prompt-title">Сообщение в чат дома / района</h3>
+          </div>
+          <div class="prompt-when">
+            <span class="when-label">Когда использовать</span>
+            <span class="when-text">В чатах жителей и районных группах</span>
+          </div>
+          <div class="prompt-when prompt-where">
+            <span class="when-label where-label">Куда вставить</span>
+            <span class="when-text">Чат жителей в Telegram / WhatsApp / Viber</span>
+          </div>
+          <div class="prompt-box">
+            <div class="copy-btn-static">Промпт</div>
+            <pre class="prompt-text">Ты - копирайтер для бьюти-мастеров. Используй бриф о моём бизнесе.
+
+Напиши сообщение в чат жителей моего дома или района.
+
+Контекст: соседи знают друг друга, агрессивная реклама вызовет негатив.
+
+Требования:
+- Длина 200-400 знаков
+- Личное обращение &quot;соседи&quot; или &quot;девочки&quot; (как в чате принято)
+- Начать с обозначения что я тоже из этого дома/района
+- Кратко: что делаю, где принимаю, как записаться
+- Бонус для соседей (скидка / приоритетная запись)
+- Без агрессии, как будто между делом
+- Без точек в конце абзацев
+
+Готовое сообщение.</pre>
+          </div>
+          <div class="prompt-meta">
+            <div class="meta-row"><span class="meta-label">Заменить</span><span class="meta-value">ничего, бриф даёт всю информацию</span></div>
+            <div class="meta-row"><span class="meta-label">На выходе</span><span class="meta-value">сообщение для соседей</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="cat-section" id="cat-4">
+      <div class="cat-header">
+        <div class="cat-num-badge">04</div>
+        <h2 class="cat-title">Таргетированная реклама</h2>
+        <div class="cat-count-badge">1 промпт</div>
+      </div>
+      <div class="prompts-grid">
+        <article class="prompt" id="prompt-8">
+          <div class="prompt-head">
+            <div class="prompt-num">№8</div>
+            <h3 class="prompt-title">Кампания ВК-таргет (промо-пост + лид-форма + А/Б тест)</h3>
+          </div>
+          <div class="prompt-when">
+            <span class="when-label">Когда использовать</span>
+            <span class="when-text">Запуск платного таргета в ВК</span>
+          </div>
+          <div class="prompt-when prompt-where">
+            <span class="when-label where-label">Куда вставить</span>
+            <span class="when-text">Рекламный кабинет ВКонтакте: универсальная запись + лид-форма</span>
+          </div>
+          <div class="prompt-box">
+            <div class="copy-btn-static">Промпт</div>
+            <pre class="prompt-text">Ты - копирайтер для бьюти-мастеров. Используй бриф о моём бизнесе.
+
+Подготовь материалы для рекламной кампании ВК.
+
+Цель кампании: [запись на услугу / сбор базы / промо акции]
+ЦА из настроек: [возраст / география / интересы]
+
+Дай мне:
+
+1. ПРОМО-ПОСТ (универсальная запись с картинкой)
+- Хук в первой строке
+- 800-1200 знаков
+- Структура: проблема → решение → почему я → оффер → CTA
+- Текст для кнопки-призыва
+
+2. ЛИД-ФОРМА
+- Заголовок формы (до 60 знаков)
+- Описание (до 200 знаков)
+- 3-5 полей формы (имя, телефон + что ещё)
+- Текст благодарственного экрана
+
+3. А/Б ТЕСТ
+- 2 версии заголовка под разные триггеры (страх vs выгода)
+
+Готовая упаковка кампании.</pre>
+          </div>
+          <div class="prompt-meta">
+            <div class="meta-row"><span class="meta-label">Заменить</span><span class="meta-value">[ЦЕЛЬ], [ЦА]</span></div>
+            <div class="meta-row"><span class="meta-label">На выходе</span><span class="meta-value">промо-пост + лид-форма + 2 варианта А/Б</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="cat-section" id="cat-5">
+      <div class="cat-header">
+        <div class="cat-num-badge">05</div>
+        <h2 class="cat-title">Реферальная программа и сарафан</h2>
+        <div class="cat-count-badge">2 промпта</div>
+      </div>
+      <div class="prompts-grid">
+        <article class="prompt" id="prompt-9">
+          <div class="prompt-head">
+            <div class="prompt-num">№9</div>
+            <h3 class="prompt-title">Реферальная программа · условия + приглашение</h3>
+          </div>
+          <div class="prompt-when">
+            <span class="when-label">Когда использовать</span>
+            <span class="when-text">Запускаю программу «приведи подругу» для постоянных клиенток</span>
+          </div>
+          <div class="prompt-when prompt-where">
+            <span class="when-label where-label">Куда вставить</span>
+            <span class="when-text">Условия публикую в закрепе профиля. Приглашение - в рассылку и сторис</span>
+          </div>
+          <div class="prompt-box">
+            <div class="copy-btn-static">Промпт</div>
+            <pre class="prompt-text">Ты - копирайтер для бьюти-мастеров. Используй бриф о моём бизнесе.
+
+Хочу запустить реферальную программу для постоянных клиенток.
+
+Принцип работы: [какие условия - что получает приведшая клиентка, что получает новая]
+
+Дай мне:
+
+1. УСЛОВИЯ ПРОГРАММЫ (для публикации)
+- 4-6 пунктов, чётко
+- Что получает существующая клиентка за каждую приведённую
+- Что получает новая клиентка по рекомендации
+- Срок действия / ограничения
+- Без мелкого шрифта и &quot;звёздочек&quot;
+
+2. ТЕКСТ-РАССЫЛКА постоянным клиенткам
+- Длина 400-600 знаков
+- Личный тон, не &quot;уважаемая клиентка&quot;
+- Простое объяснение: что они получают и как это работает
+
+3. ТЕКСТ-НАПОМИНАНИЕ через 2 недели для тех, кто ещё не привёл
+
+Готовая упаковка программы.</pre>
+          </div>
+          <div class="prompt-meta">
+            <div class="meta-row"><span class="meta-label">Заменить</span><span class="meta-value">[УСЛОВИЯ - что и кому]</span></div>
+            <div class="meta-row"><span class="meta-label">На выходе</span><span class="meta-value">условия + рассылка + напоминание</span></div>
+          </div>
+        </article>
+        <article class="prompt" id="prompt-10">
+          <div class="prompt-head">
+            <div class="prompt-num">№10</div>
+            <h3 class="prompt-title">Сарафанное радио без денежных бонусов</h3>
+          </div>
+          <div class="prompt-when">
+            <span class="when-label">Когда использовать</span>
+            <span class="when-text">Чтобы клиентки рекомендовали без скидок и подарков</span>
+          </div>
+          <div class="prompt-when prompt-where">
+            <span class="when-label where-label">Куда вставить</span>
+            <span class="when-text">Стратегия для применения в работе с каждой клиенткой</span>
+          </div>
+          <div class="prompt-box">
+            <div class="copy-btn-static">Промпт</div>
+            <pre class="prompt-text">Ты - стратегический консультант для бьюти-мастеров. Используй бриф о моём бизнесе.
+
+Хочу запустить сарафанное радио. Денежных бонусов давать не планирую.
+
+Дай мне план из 5 действий, чтобы клиентки начали рекомендовать меня сами:
+
+1-5. Конкретные действия (что именно я делаю с клиенткой во время записи / на услуге / после)
+- Каждое действие: что делаю, когда, почему это работает
+- Без манипуляций и &quot;впихнуть карточку с просьбой рекомендовать&quot;
+- Только то, что реально вызывает желание рассказать о мастере
+
+ДОПОЛНИТЕЛЬНО:
+- 3 фразы, которые я могу сказать клиентке после услуги, чтобы естественно подвести к рекомендации
+- 2 неочевидных триггера, которые превращают довольную клиентку в адвоката бренда
+
+Готовая стратегия с конкретикой.</pre>
+          </div>
+          <div class="prompt-meta">
+            <div class="meta-row"><span class="meta-label">Заменить</span><span class="meta-value">ничего, бриф даёт всю информацию</span></div>
+            <div class="meta-row"><span class="meta-label">На выходе</span><span class="meta-value">5 действий + 3 фразы + 2 триггера</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+  <footer class="footer">
+    <div class="brand">
+      <span class="brand-dot"></span>
+      <span>НЕЙРО · АНЯ</span>
+    </div>
+    <p class="footer-msg">
+      Реклама работает, когда <b>текст под площадку</b>. Один и тот же оффер на Авито и в чате района подаётся по-разному. Эти 10 промптов закрывают всё, что бывает у бьюти-мастера в платном трафике.
+      <br><br>
+      <b>Тестируй 2-3 версии</b> на каждой площадке. То, что зашло в одном районе, может не зайти в другом. Замеряй заявки, не охваты.
+    </p>
+    <div class="footer-sign">
+      <div class="footer-name">Анна Ерофеева</div>
+      <div class="footer-role">Автор курса «НейроКонтент на автопилоте»</div>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>

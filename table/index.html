@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Сравнение нейросетей · 2026 — НейроКонтент на автопилоте</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Unbounded:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --pink: #D73876;
+  --pink-bright: #F13684;
+  --pink-light: #FF67A7;
+  --bg-near-black: #1D1D1D;
+  --bg-black: #121212;
+  --bg-card: #1c1c1c;
+  --bg-cell: #1f1f1f;
+  --bg-row-alt: #181818;
+  --on-dark: #F5F5F5;
+  --muted: #C9C9C9;
+  --muted-2: #8a8585;
+  --ok: #22C55E;
+  --warn: #F59E0B;
+  --err: #EF4444;
+  --border: rgba(255,255,255,0.08);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  background: #0a0a0a;
+  font-family: 'Inter', sans-serif;
+  color: var(--on-dark);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.5;
+}
+.page-wrap {
+  max-width: 1280px;
+  margin: 0 auto;
+  background: var(--bg-near-black);
+  min-height: 100vh;
+}
+
+/* HERO - минимальный */
+.hero {
+  padding: 56px 32px 48px;
+  background: radial-gradient(ellipse at 80% 20%, rgba(241,54,132,0.22), transparent 55%), var(--bg-near-black);
+  border-bottom: 1px solid var(--border);
+}
+.hero-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 32px; }
+.brand {
+  display: flex; align-items: center; gap: 10px;
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 700; font-size: 13px;
+  letter-spacing: 0.06em; text-transform: uppercase;
+}
+.brand-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--pink-bright); box-shadow: 0 0 12px var(--pink-bright); }
+.hero-tag {
+  display: inline-flex; align-items: center;
+  padding: 6px 12px; border-radius: 100px;
+  background: rgba(241,54,132,0.12);
+  border: 1px solid rgba(241,54,132,0.4);
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 0.1em; color: var(--pink-light);
+  text-transform: uppercase;
+}
+.hero-eyebrow {
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 14px;
+}
+.hero-title {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 900;
+  font-size: clamp(44px, 7vw, 84px);
+  line-height: 0.9; letter-spacing: -0.035em;
+  text-transform: uppercase;
+}
+.hero-title .pink { color: var(--pink-bright); }
+.hero-year {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 800;
+  font-size: 16px;
+  letter-spacing: 0.1em;
+  color: var(--pink-light);
+  margin-top: 18px;
+  display: inline-flex;
+  padding: 8px 16px;
+  background: rgba(241,54,132,0.1);
+  border: 1px solid rgba(241,54,132,0.3);
+  border-radius: 100px;
+  text-transform: uppercase;
+}
+
+/* MARQUEE */
+.marquee { background: var(--pink-bright); overflow: hidden; padding: 14px 0; }
+.marquee-track {
+  display: flex; white-space: nowrap; gap: 28px;
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 800; font-size: 15px;
+  color: white; letter-spacing: 0.04em;
+  text-transform: uppercase; padding: 0 32px;
+}
+.marquee-star { color: rgba(255,255,255,0.6); font-size: 14px; }
+
+/* SECTIONS */
+section {
+  padding: 56px 32px;
+  border-top: 1px solid var(--border);
+}
+section:nth-child(odd) {
+  background: linear-gradient(180deg, #131313 0%, var(--bg-near-black) 100%);
+}
+.section-eyebrow { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+.section-eyebrow::before { content: ''; width: 28px; height: 1px; background: var(--pink-bright); }
+.eyebrow {
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--muted);
+}
+.section-h {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 800;
+  font-size: clamp(26px, 4vw, 40px);
+  line-height: 1; letter-spacing: -0.02em;
+  text-transform: uppercase; margin-bottom: 28px;
+}
+.section-h .pink { color: var(--pink-bright); }
+.section-intro {
+  font-size: 15px; line-height: 1.55;
+  max-width: 800px; color: var(--muted);
+  margin-bottom: 28px;
+}
+.section-intro b { color: var(--pink-light); font-weight: 700; }
+
+/* COMPARE TABLE */
+.table-wrap {
+  overflow-x: auto;
+  background: var(--bg-card);
+  border-radius: 18px;
+  border: 1px solid var(--border);
+}
+.table-wrap::-webkit-scrollbar { height: 10px; }
+.table-wrap::-webkit-scrollbar-track { background: var(--bg-card); }
+.table-wrap::-webkit-scrollbar-thumb { background: var(--pink-bright); border-radius: 5px; }
+
+.compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 880px;
+}
+.compare-table th, .compare-table td {
+  text-align: left;
+  vertical-align: top;
+  padding: 16px 18px;
+  border-bottom: 1px solid var(--border);
+}
+.compare-table thead th {
+  background: linear-gradient(135deg, rgba(241,54,132,0.12) 0%, rgba(241,54,132,0.04) 100%);
+  border-bottom: 2px solid rgba(241,54,132,0.3);
+  padding: 22px 18px;
+}
+.param-col {
+  width: 170px;
+  background: linear-gradient(135deg, rgba(241,54,132,0.06) 0%, transparent 100%);
+}
+.model-th {
+  border-top: 4px solid var(--accent);
+}
+.model-th-name {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 800;
+  font-size: clamp(20px, 2.5vw, 26px);
+  letter-spacing: -0.02em;
+  line-height: 1;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 6px;
+}
+.model-th-by {
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted-2);
+  font-weight: 600;
+}
+.compare-table tbody tr:nth-child(even) { background: var(--bg-row-alt); }
+.compare-table tbody tr:last-child td { border-bottom: none; }
+
+.param-cell { width: 170px; }
+.param-label {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--pink-light);
+  display: inline-block;
+}
+.data-cell { font-size: 13.5px; line-height: 1.5; }
+
+/* CELL TYPES */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 700;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid;
+  white-space: nowrap;
+}
+.badge-ok { color: var(--ok); border-color: rgba(34,197,94,0.4); background: rgba(34,197,94,0.08); }
+.badge-warn { color: var(--warn); border-color: rgba(245,158,11,0.4); background: rgba(245,158,11,0.08); }
+.badge-err { color: var(--err); border-color: rgba(239,68,68,0.4); background: rgba(239,68,68,0.08); }
+
+.cell-mono {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+}
+
+.cell-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  font-size: 13px;
+  line-height: 1.45;
+}
+.cell-list li {
+  padding-left: 18px;
+  position: relative;
+  color: var(--on-dark);
+}
+.cell-pros li::before {
+  content: '+';
+  position: absolute;
+  left: 0; top: 0;
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 800; font-size: 14px;
+  color: var(--ok); line-height: 1.4;
+}
+.cell-cons li::before {
+  content: '−';
+  position: absolute;
+  left: 0; top: 0;
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 800; font-size: 14px;
+  color: var(--err); line-height: 1.4;
+}
+
+.cell-text {
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: var(--on-dark);
+}
+
+.cell-query {
+  font-size: 13px;
+  line-height: 1.5;
+  font-style: italic;
+  padding: 10px 12px;
+  background: rgba(241,54,132,0.06);
+  border-left: 2px solid var(--pink-bright);
+  border-radius: 0 6px 6px 0;
+  color: var(--on-dark);
+}
+
+.cell-tip {
+  font-size: 13px;
+  line-height: 1.55;
+  padding: 12px 14px;
+  background: linear-gradient(135deg, rgba(241,54,132,0.08) 0%, rgba(241,54,132,0.02) 100%);
+  border: 1px solid rgba(241,54,132,0.2);
+  border-radius: 10px;
+  color: var(--on-dark);
+}
+
+/* MATRIX TABLE */
+.matrix-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 760px;
+}
+.matrix-table thead {
+  background: linear-gradient(135deg, rgba(241,54,132,0.15) 0%, rgba(241,54,132,0.05) 100%);
+}
+.matrix-table th {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--pink-bright);
+  padding: 18px 18px;
+  text-align: left;
+  border-bottom: 2px solid rgba(241,54,132,0.3);
+}
+.matrix-table td {
+  padding: 16px 18px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+  font-size: 13px;
+  line-height: 1.5;
+}
+.matrix-table tr:last-child td { border-bottom: none; }
+.matrix-table tr:nth-child(even) { background: var(--bg-row-alt); }
+.matrix-task-cell { min-width: 200px; }
+.matrix-task-name {
+  font-weight: 700;
+  color: var(--on-dark);
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+.matrix-best {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--pink-bright);
+  letter-spacing: -0.01em;
+}
+.matrix-alt {
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 500;
+}
+.matrix-note {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.5;
+}
+.matrix-non-ai {
+  display: inline-block;
+  font-family: 'Unbounded', sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--warn);
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: rgba(245,158,11,0.1);
+  border: 1px solid rgba(245,158,11,0.3);
+}
+
+/* FOOTER */
+.footer {
+  padding: 48px 32px 56px;
+  background: var(--bg-black);
+  text-align: center;
+  border-top: 1px solid var(--border);
+}
+.footer .brand { justify-content: center; margin-bottom: 16px; }
+.footer-msg {
+  max-width: 620px; margin: 0 auto 28px;
+  font-size: 14px; line-height: 1.55;
+  color: var(--muted);
+}
+.footer-msg b { color: var(--pink-light); font-weight: 700; }
+.footer-sign {
+  display: inline-block;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+}
+.footer-name {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 800;
+  font-size: 16px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.footer-role { font-size: 12px; color: var(--muted-2); margin-top: 6px; }
+
+@media (max-width: 720px) {
+  .hero { padding: 36px 22px 36px; }
+  section { padding: 40px 22px; }
+  .footer { padding: 40px 22px; }
+  .compare-table th, .compare-table td { padding: 12px 12px; font-size: 12.5px; }
+  .matrix-table th, .matrix-table td { padding: 12px 12px; font-size: 12.5px; }
+  .param-col, .param-cell { width: 140px; }
+}
+
+@media print {
+  body, .page-wrap { background: white; color: #111; }
+  .table-wrap { break-inside: avoid-page; }
+  section { break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+<div class="page-wrap">
+
+  <section class="hero">
+    <div class="hero-top">
+      <div class="brand"><span class="brand-dot"></span><span>НЕЙРО · АНЯ</span></div>
+      <div class="hero-tag">Бонус курса</div>
+    </div>
+    <div class="hero-eyebrow">НейроКонтент на автопилоте</div>
+    <h1 class="hero-title">Сравнение <span class="pink">нейросетей</span></h1>
+    <div class="hero-year">актуально на 2026 год</div>
+  </section>
+
+  <div class="marquee">
+    <div class="marquee-track">
+      <span>DeepSeek V3.2 <span class="marquee-star">✦</span> GPT-5 <span class="marquee-star">✦</span> Claude Sonnet 4.6 <span class="marquee-star">✦</span> Gemini 3.0 <span class="marquee-star">✦</span> Nano Banana 2 <span class="marquee-star">✦</span> Veo 4 <span class="marquee-star">✦</span> Kling 3.0 <span class="marquee-star">✦</span> Seedance 3.0 <span class="marquee-star">✦</span></span>
+    </div>
+  </div>
+
+  <section>
+    <div class="section-eyebrow"><span class="eyebrow">Языковые модели</span></div>
+    <h2 class="section-h">Тексты, идеи, <span class="pink">контент-план</span></h2>
+    <p class="section-intro">
+      4 главные языковые модели на 2026 год. <b>DeepSeek</b> - единственная из четырёх, кто работает напрямую из РФ без VPN. <b>GPT-5</b>, <b>Claude Sonnet 4.6</b> и <b>Gemini 3.0</b> требуют VPN. Сравнение по доступу, моделям внутри и задачам бьюти-мастера.
+    </p>
+    
+    <div class="table-wrap">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th class="param-col"></th>
+            
+        <th class="model-th" style="--accent:#7E5FFF">
+          <div class="model-th-name">DeepSeek</div>
+          <div class="model-th-by">DeepSeek · Китай</div>
+        </th>
+        <th class="model-th" style="--accent:#10A37F">
+          <div class="model-th-name">ChatGPT</div>
+          <div class="model-th-by">OpenAI · США</div>
+        </th>
+        <th class="model-th" style="--accent:#C96442">
+          <div class="model-th-name">Claude</div>
+          <div class="model-th-by">Anthropic · США</div>
+        </th>
+        <th class="model-th" style="--accent:#4285F4">
+          <div class="model-th-name">Gemini</div>
+          <div class="model-th-by">Google · США</div>
+        </th>
+          </tr>
+        </thead>
+        <tbody>
+      <tr>
+        <td class="param-cell"><span class="param-label">Доступ из РФ</span></td>
+        <td class="data-cell"><span class="badge badge-ok">Без VPN</span></td><td class="data-cell"><span class="badge badge-err">Нужен VPN</span></td><td class="data-cell"><span class="badge badge-err">VPN + спец.регистрация</span></td><td class="data-cell"><span class="badge badge-err">Нужен VPN</span></td>
+      </tr>
+      <tr>
+        <td class="param-cell"><span class="param-label">Бесплатный тариф</span></td>
+        <td class="data-cell"><div class="cell-text">Без лимитов на всех режимах</div></td><td class="data-cell"><div class="cell-text">GPT-5: ~10/день, mini: без лимита</div></td><td class="data-cell"><div class="cell-text">Sonnet 4.6: ~30 в 5 часов</div></td><td class="data-cell"><div class="cell-text">3.0 Flash: без лимита, 3.0 Pro: 5/день</div></td>
+      </tr>
+      <tr>
+        <td class="param-cell"><span class="param-label">Главная модель 2026</span></td>
+        <td class="data-cell"><div class="cell-mono" style="color:#7E5FFF">DeepSeek V3.2</div></td><td class="data-cell"><div class="cell-mono" style="color:#10A37F">GPT-5</div></td><td class="data-cell"><div class="cell-mono" style="color:#C96442">Claude Sonnet 4.6</div></td><td class="data-cell"><div class="cell-mono" style="color:#4285F4">Gemini 3.0 Pro</div></td>
+      </tr>
+      <tr>
+        <td class="param-cell"><span class="param-label">Reasoning-режим</span></td>
+        <td class="data-cell"><div class="cell-mono" style="color:#7E5FFF">DeepSeek R2 (DeepThink)</div></td><td class="data-cell"><div class="cell-mono" style="color:#10A37F">GPT-5 Thinking (встроено)</div></td><td class="data-cell"><div class="cell-mono" style="color:#C96442">Extended Thinking</div></td><td class="data-cell"><div class="cell-mono" style="color:#4285F4">Gemini 3.0 Deep Think</div></td>
+      </tr>
+      <tr>
+        <td class="param-cell"><span class="param-label">Доп. возможности</span></td>
+        <td class="data-cell"><div class="cell-text">Только текст</div></td><td class="data-cell"><div class="cell-text">Картинки (GPT-Image-2), голос, code interpreter</div></td><td class="data-cell"><div class="cell-text">Code, артефакты, файлы, проекты</div></td><td class="data-cell"><div class="cell-text">Nano Banana 2, Veo 4, поиск в Google</div></td>
+      </tr>
+      <tr>
+        <td class="param-cell"><span class="param-label">Сильные стороны</span></td>
+        <td class="data-cell"><ul class="cell-list cell-pros"><li>Без лимитов и без VPN</li><li>Лучший reasoning среди free</li><li>Аналитика и расчёты</li><li>Скорость в обычном режиме</li></ul></td><td class="data-cell"><ul class="cell-list cell-pros"><li>Самые креативные тексты</li><li>Эмоции, разговорный язык</li><li>Картинки прямо в чате</li><li>Универсальный под 80% задач</li></ul></td><td class="data-cell"><ul class="cell-list cell-pros"><li>Длинные тексты без штампов</li><li>Точно следует инструкциям</li><li>Идеален для прогревов и постов в ТГ</li><li>Сильная редактура</li></ul></td><td class="data-cell"><ul class="cell-list cell-pros"><li>Текст + картинка + видео в одном окне</li><li>Поиск в Google в реальном времени</li><li>Доступ к Nano Banana и Veo</li><li>Высокие лимиты на Flash</li></ul></td>
+      </tr>
+      <tr>
+        <td class="param-cell"><span class="param-label">Слабые стороны</span></td>
+        <td class="data-cell"><ul class="cell-list cell-cons"><li>Тексты для соцсетей формальные</li><li>Иногда английские слова в русском</li><li>Меньше эмоций и креатива</li></ul></td><td class="data-cell"><ul class="cell-list cell-cons"><li>Нужен VPN и не-российский номер</li><li>Жёсткие лимиты на GPT-5</li><li>Картинки сильно ограничены в free</li></ul></td><td class="data-cell"><ul class="cell-list cell-cons"><li>Сложная регистрация в РФ</li><li>Не генерирует картинки</li><li>Лимит обновляется раз в 5 часов</li></ul></td><td class="data-cell"><ul class="cell-list cell-cons"><li>Нужен VPN для всех функций</li><li>На русском чуть слабее ChatGPT</li><li>Иногда «безопасные» отказы</li></ul></td>
+      </tr>
+      <tr>
+        <td class="param-cell"><span class="param-label">Под бьюти-мастера лучше</span></td>
+        <td class="data-cell"><div class="cell-text">Аналитика, расчёты, структура контент-плана, разбор конкурентов</div></td><td class="data-cell"><div class="cell-text">Идеи рилс, сценарии, сторис, ответы клиенткам, рекламные креативы</div></td><td class="data-cell"><div class="cell-text">Длинные TG-посты, прогревы, экспертные разборы, редактура текстов</div></td><td class="data-cell"><div class="cell-text">Связка «тексты + Nano Banana 2 + Veo 4», поиск трендов</div></td>
+      </tr>
+      <tr>
+        <td class="param-cell"><span class="param-label">Готовый запрос</span></td>
+        <td class="data-cell"><div class="cell-query">«Составь контент-план на 30 дней под мой бриф · включи R2»</div></td><td class="data-cell"><div class="cell-query">«Дай 30 идей рилс под мою специализацию, с хуками»</div></td><td class="data-cell"><div class="cell-query">«Перепиши этот пост на 1500 знаков, без точек в конце абзацев»</div></td><td class="data-cell"><div class="cell-query">«Какие сейчас тренды в Instagram для бьюти + сгенерируй фото на фоне пионов»</div></td>
+      </tr>
+      <tr>
+        <td class="param-cell"><span class="param-label">Совет от Анны</span></td>
+        <td class="data-cell"><div class="cell-tip">Включай R2 только для задач, где надо подумать (расчёты, стратегия). Для постов хватит обычного режима, и он быстрее.</div></td><td class="data-cell"><div class="cell-tip">Расходуй GPT-5 на ключевое (рилс, продающие тексты). Идеи и черновики - на mini. Проси «без штампов, жёстче».</div></td><td class="data-cell"><div class="cell-tip">Идеален для контента в TG-канал. Сразу проси формат: длина, тон, без чего обойтись.</div></td><td class="data-cell"><div class="cell-tip">Используй именно ради Nano Banana 2 и Veo 4. Если нужны только тексты - Claude или ChatGPT справятся лучше.</div></td>
+      </tr></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-eyebrow"><span class="eyebrow">Генерация изображений</span></div>
+    <h2 class="section-h">Фото работ, <span class="pink">ленты, креативы</span></h2>
+    <p class="section-intro">
+      Две главные нейросети 2026 года для работы с картинками. <b>Nano Banana 2</b> от Google - топ в редактировании существующих фото. <b>GPT-Image-2</b> от OpenAI - топ в генерации с нуля и работе с текстом на картинке.
+    </p>
+    
+    <div class="table-wrap">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th class="param-col"></th>
+            
+        <th class="model-th" style="--accent:#FACC15">
+          <div class="model-th-name">Nano Banana 2</div>
+          <div class="model-th-by">Google · в Gemini 3.0</div>
+        </th>
+        <th class="model-th" style="--accent:#10A37F">
+          <div class="model-th-name">GPT-Image-2</div>
+          <div class="model-th-by">OpenAI · в ChatGPT</div>
+        </th>
+          </tr>
+        </thead>
+        <tbody>
+      <tr>
+        <td class="param-cell"><span class="param-label">Доступ из РФ</span></td>
+        <td class="data-cell"><span class="badge badge-err">Нужен VPN</span></td><td class="data-cell"><span class="badge badge-err">Нужен VPN</span></td>
+      </tr>
+      <tr>
+        <td class="param-cell"><span class="param-label">Бесплатный лимит</span></td>
+        <td class="data-cell"><div class="cell-text">~100 правок в день в Gemini app</div></td><td class="data-cell"><div class="cell-text">3-5 картинок в день в ChatGPT</div></td>
+      </tr>
+      <tr>
+        <td class="param-cell"><span class="param-label">Главное умение</span></td>
+        <td class="data-cell"><div class="cell-mono" style="color:#FACC15">Редактирование существующих фото</div></td><td class="data-cell"><div class="cell-mono" style="color:#10A37F">Генерация картинок с нуля</div></td>
+      </tr>
+      <tr>
+        <td class="param-cell"><span class="param-label">Сильные стороны</span></td>
+        <td class="data-cell"><ul class="cell-list cell-pros"><li>Замена фона, удаление лишнего</li><li>Сохраняет лица и детали</li><li>Понимает естественный язык</li><li>Лидер 2026 в редактировании</li></ul></td><td class="data-cell"><ul class="cell-list cell-pros"><li>Лучший в генерации с нуля</li><li>Хорошо рендерит текст на картинке</li><li>Подходит для инфографики</li><li>Сразу видишь результат в чате</li></ul></td>
+      </tr>
+      <tr>
+        <td class="param-cell"><span class="param-label">Слабые стороны</span></td>
+        <td class="data-cell"><ul class="cell-list cell-cons"><li>Только через VPN</li><li>Генерация с нуля слабее ChatGPT</li><li>Иногда «осторожничает» в правках</li></ul></td><td class="data-cell"><ul class="cell-list cell-cons"><li>Редактирует существующие фото хуже</li><li>Лица иногда «пластиковые»</li><li>Лимит 3-5/день в free</li></ul></td>
+      </tr>
+      <tr>
+        <td class="param-cell"><span class="param-label">Под бьюти-мастера лучше</span></td>
+        <td class="data-cell"><div class="cell-text">Редактирование фото работ: замена фона, удаление дефектов, добавление аксессуаров, исправление света</div></td><td class="data-cell"><div class="cell-text">Креативы с нуля: флакончики, инструменты, рекламные баннеры с текстом, инфографика</div></td>
+      </tr>
+      <tr>
+        <td class="param-cell"><span class="param-label">Готовый запрос</span></td>
+        <td class="data-cell"><div class="cell-query">«Замени фон на тёмно-зелёный с пионами, руки оставь как есть»</div></td><td class="data-cell"><div class="cell-query">«Рекламный креатив - флакон гель-лака на розовом фоне с текстом «-30% до пятницы»»</div></td>
+      </tr>
+      <tr>
+        <td class="param-cell"><span class="param-label">Совет от Анны</span></td>
+        <td class="data-cell"><div class="cell-tip">Описывай изменения как подруге: «убери», «добавь», «замени». Никаких «улучши» - только конкретные действия.</div></td><td class="data-cell"><div class="cell-tip">Для своих фото работ - бери Nano Banana 2. Для рекламы и инфографики с нуля - GPT-Image-2. Разные задачи.</div></td>
+      </tr></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-eyebrow"><span class="eyebrow">Генерация видео</span></div>
+    <h2 class="section-h">Рилс <span class="pink">без съёмок</span></h2>
+    <p class="section-intro">
+      Три видеогенератора 2026 года. <b>Все генерируют видео с нуля</b>, никто не редактирует существующее. <b>Veo 4</b> - топ по реализму со звуком. <b>Kling 3.0</b> - топ по доступности и оживлению фото. <b>Seedance 3.0</b> - топ по динамике для TikTok-эстетики.
+    </p>
+    
+    <div class="table-wrap">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th class="param-col"></th>
+            
+        <th class="model-th" style="--accent:#4285F4">
+          <div class="model-th-name">Veo 4</div>
+          <div class="model-th-by">Google · в Gemini 3.0</div>
+        </th>
+        <th class="model-th" style="--accent:#F472B6">
+          <div class="model-th-name">Kling 3.0</div>
+          <div class="model-th-by">Kuaishou · Китай</div>
+        </th>
+        <th class="model-th" style="--accent:#A855F7">
+          <div class="model-th-name">Seedance 3.0</div>
+          <div class="model-th-by">ByteDance · в Dreamina</div>
+        </th>
+          </tr>
+        </thead>
+        <tbody>
+      <tr>
+        <td class="param-cell"><span class="param-label">Доступ из РФ</span></td>
+        <td class="data-cell"><span class="badge badge-err">Нужен VPN</span></td><td class="data-cell"><span class="badge badge-ok">Без VPN</span></td><td class="data-cell"><span class="badge badge-ok">Без VPN</span></td>
+      </tr>
+      <tr>
+        <td class="param-cell"><span class="param-label">Бесплатный лимит</span></td>
+        <td class="data-cell"><div class="cell-text">2-3 видео в сутки в Gemini</div></td><td class="data-cell"><div class="cell-text">166 кредитов на регистрацию + 66/день (хватит на 2-3 видео)</div></td><td class="data-cell"><div class="cell-text">Лимиты по кредитам в Dreamina</div></td>
+      </tr>
+      <tr>
+        <td class="param-cell"><span class="param-label">Длина видео</span></td>
+        <td class="data-cell"><div class="cell-mono" style="color:#4285F4">до 12 секунд</div></td><td class="data-cell"><div class="cell-mono" style="color:#F472B6">до 10 секунд</div></td><td class="data-cell"><div class="cell-mono" style="color:#A855F7">до 8 секунд</div></td>
+      </tr>
+      <tr>
+        <td class="param-cell"><span class="param-label">Синхронный звук</span></td>
+        <td class="data-cell"><span class="badge badge-ok">Да</span></td><td class="data-cell"><span class="badge badge-warn">Только lip-sync</span></td><td class="data-cell"><span class="badge badge-err">Нет</span></td>
+      </tr>
+      <tr>
+        <td class="param-cell"><span class="param-label">Сильные стороны</span></td>
+        <td class="data-cell"><ul class="cell-list cell-pros"><li>Самый реалистичный кадр</li><li>Звук синхронно с видео</li><li>Физика движения и света</li><li>Хорош для киношности</li></ul></td><td class="data-cell"><ul class="cell-list cell-pros"><li>Без VPN, доступен напрямую</li><li>Лидер по image-to-video</li><li>Lip-sync (аватары говорят)</li><li>Хорошо с лицами</li></ul></td><td class="data-cell"><ul class="cell-list cell-pros"><li>Без VPN</li><li>Очень быстрая генерация</li><li>TikTok-эстетика и переходы</li><li>Видео с людьми и движением</li></ul></td>
+      </tr>
+      <tr>
+        <td class="param-cell"><span class="param-label">Слабые стороны</span></td>
+        <td class="data-cell"><ul class="cell-list cell-cons"><li>VPN нужен</li><li>Лимит 2-3 видео/день</li><li>Не редактирует - только генерирует с нуля</li></ul></td><td class="data-cell"><ul class="cell-list cell-cons"><li>Звук хуже Veo</li><li>Иногда «китайский» стиль кадра</li><li>Длинные видео жрут много кредитов</li></ul></td><td class="data-cell"><ul class="cell-list cell-cons"><li>Кадр менее реалистичный</li><li>Слабее в длинных сценах</li><li>Иногда «фильтрованный» вид</li></ul></td>
+      </tr>
+      <tr>
+        <td class="param-cell"><span class="param-label">Под бьюти-мастера лучше</span></td>
+        <td class="data-cell"><div class="cell-text">Короткие рилс с нуля: ASMR-кадры, флакончики, мастер за работой</div></td><td class="data-cell"><div class="cell-text">Оживление статичных фото работ, видео из изображений, контент с лицами</div></td><td class="data-cell"><div class="cell-text">Динамичные рилс, переходы, контент в TikTok-стиле</div></td>
+      </tr>
+      <tr>
+        <td class="param-cell"><span class="param-label">Готовый запрос</span></td>
+        <td class="data-cell"><div class="cell-query">«Создай 8-секундное видео: женские руки с маникюром, медленно поворачиваются на тёмном столе»</div></td><td class="data-cell"><div class="cell-query">«Image-to-video: оживить это фото маникюра - руки слегка поворачиваются»</div></td><td class="data-cell"><div class="cell-query">«Динамичный рилс из 4 фото работ с быстрой склейкой»</div></td>
+      </tr>
+      <tr>
+        <td class="param-cell"><span class="param-label">Совет от Анны</span></td>
+        <td class="data-cell"><div class="cell-tip">Расходуй 2-3 генерации в день на самое важное (рилс на холодную). Остальные кадры - в Kling, там больше кредитов.</div></td><td class="data-cell"><div class="cell-tip">Главный рабочий инструмент для рилс. Без VPN, без сложностей. Берёшь готовое фото - получаешь живое видео.</div></td><td class="data-cell"><div class="cell-tip">Используй для динамики. Когда нужно «как у блогеров в TikTok» - Seedance справится лучше Veo.</div></td>
+      </tr></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-eyebrow"><span class="eyebrow">Сводная таблица</span></div>
+    <h2 class="section-h">Какую задачу <span class="pink">чем решать</span></h2>
+    <p class="section-intro">
+      Главная страница бонуса. Все 7 типовых задач бьюти-мастера + 6 дополнительных. Колонки: задача, топ-инструмент 2026, нужен ли VPN, альтернатива, что важно знать.
+    </p>
+    
+    <div class="table-wrap">
+      <table class="matrix-table">
+        <thead>
+          <tr>
+            <th>Задача</th>
+            <th>Топ-инструмент</th>
+            <th>Доступ</th>
+            <th>Альтернатива</th>
+            <th>Что важно знать</th>
+          </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td class="matrix-task-cell">
+            <div class="matrix-task-name">Контент-план на 30 дней</div>
+            
+          </td>
+          <td><div class="matrix-best">Claude Sonnet 4.6</div></td>
+          <td><span class="badge badge-err">VPN</span></td>
+          <td><div class="matrix-alt">DeepSeek V3.2</div></td>
+          <td><div class="matrix-note">Claude держит структуру длинных задач. Без VPN - DeepSeek тоже хорошо.</div></td>
+        </tr>
+        <tr>
+          <td class="matrix-task-cell">
+            <div class="matrix-task-name">Идеи рилс и постов</div>
+            
+          </td>
+          <td><div class="matrix-best">ChatGPT GPT-5</div></td>
+          <td><span class="badge badge-err">VPN</span></td>
+          <td><div class="matrix-alt">Claude Sonnet 4.6</div></td>
+          <td><div class="matrix-note">GPT-5 даёт более «вирусные» варианты. Claude - сдержанные и экспертные.</div></td>
+        </tr>
+        <tr>
+          <td class="matrix-task-cell">
+            <div class="matrix-task-name">Сторис-цепочки и прогревы</div>
+            
+          </td>
+          <td><div class="matrix-best">Claude Sonnet 4.6</div></td>
+          <td><span class="badge badge-err">VPN</span></td>
+          <td><div class="matrix-alt">ChatGPT GPT-5</div></td>
+          <td><div class="matrix-note">Claude точно следует структуре прогрева. ChatGPT - для эмоций.</div></td>
+        </tr>
+        <tr>
+          <td class="matrix-task-cell">
+            <div class="matrix-task-name">Тексты постов в TG</div>
+            
+          </td>
+          <td><div class="matrix-best">Claude Sonnet 4.6</div></td>
+          <td><span class="badge badge-err">VPN</span></td>
+          <td><div class="matrix-alt">ChatGPT GPT-5</div></td>
+          <td><div class="matrix-note">Claude не штампует «качество на высоте» даже без напоминаний.</div></td>
+        </tr>
+        <tr>
+          <td class="matrix-task-cell">
+            <div class="matrix-task-name">Обработать фото работ</div>
+            
+          </td>
+          <td><div class="matrix-best">Nano Banana 2</div></td>
+          <td><span class="badge badge-err">VPN</span></td>
+          <td><div class="matrix-alt">—</div></td>
+          <td><div class="matrix-note">Замена фона, удаление дефектов, добавление аксессуаров. Лидер 2026.</div></td>
+        </tr>
+        <tr>
+          <td class="matrix-task-cell">
+            <div class="matrix-task-name">Сформировать ленту</div>
+            
+          </td>
+          <td><div class="matrix-best">Nano Banana 2</div></td>
+          <td><span class="badge badge-err">VPN</span></td>
+          <td><div class="matrix-alt">GPT-Image-2</div></td>
+          <td><div class="matrix-note">Nano для редактуры реальных фото. GPT - если делаешь ленту с нуля.</div></td>
+        </tr>
+        <tr>
+          <td class="matrix-task-cell">
+            <div class="matrix-task-name">Креативы для рекламы</div>
+            
+          </td>
+          <td><div class="matrix-best">GPT-Image-2</div></td>
+          <td><span class="badge badge-err">VPN</span></td>
+          <td><div class="matrix-alt">Nano Banana 2</div></td>
+          <td><div class="matrix-note">GPT-Image-2 рендерит текст на картинке. Nano - для редактирования готового.</div></td>
+        </tr>
+        <tr>
+          <td class="matrix-task-cell">
+            <div class="matrix-task-name">Видео-рилс из фото</div>
+            
+          </td>
+          <td><div class="matrix-best">Kling 3.0</div></td>
+          <td><span class="badge badge-ok">Без VPN</span></td>
+          <td><div class="matrix-alt">Seedance 3.0</div></td>
+          <td><div class="matrix-note">Image-to-video - конёк Kling. Без VPN, кредитов хватит на 2-3 видео/день.</div></td>
+        </tr>
+        <tr>
+          <td class="matrix-task-cell">
+            <div class="matrix-task-name">Короткое видео с нуля</div>
+            
+          </td>
+          <td><div class="matrix-best">Veo 4</div></td>
+          <td><span class="badge badge-err">VPN</span></td>
+          <td><div class="matrix-alt">Seedance 3.0</div></td>
+          <td><div class="matrix-note">Veo выдаёт самый реалистичный кадр со звуком. Лимит 2-3/день.</div></td>
+        </tr>
+        <tr>
+          <td class="matrix-task-cell">
+            <div class="matrix-task-name">Динамичные рилс с эффектами</div>
+            
+          </td>
+          <td><div class="matrix-best">Seedance 3.0</div></td>
+          <td><span class="badge badge-ok">Без VPN</span></td>
+          <td><div class="matrix-alt">Kling 3.0</div></td>
+          <td><div class="matrix-note">Seedance понимает «TikTok-эстетику» лучше. Без VPN.</div></td>
+        </tr>
+        <tr>
+          <td class="matrix-task-cell">
+            <div class="matrix-task-name">Монтаж видео</div>
+            <span class="matrix-non-ai">не AI</span>
+          </td>
+          <td><div class="matrix-best">CapCut (не AI)</div></td>
+          <td><span class="badge badge-ok">Без VPN</span></td>
+          <td><div class="matrix-alt">—</div></td>
+          <td><div class="matrix-note">Видео-генераторы не монтируют. Бесплатный CapCut на телефоне справится.</div></td>
+        </tr>
+        <tr>
+          <td class="matrix-task-cell">
+            <div class="matrix-task-name">Заменить фон на видео</div>
+            <span class="matrix-non-ai">не AI</span>
+          </td>
+          <td><div class="matrix-best">CapCut AI</div></td>
+          <td><span class="badge badge-ok">Без VPN</span></td>
+          <td><div class="matrix-alt">Kling video-to-video</div></td>
+          <td><div class="matrix-note">В CapCut есть AI-удаление фона бесплатно. Kling умеет менять видео по промпту.</div></td>
+        </tr>
+        <tr>
+          <td class="matrix-task-cell">
+            <div class="matrix-task-name">Ретушь себя на видео</div>
+            <span class="matrix-non-ai">не AI</span>
+          </td>
+          <td><div class="matrix-best">CapCut Beauty</div></td>
+          <td><span class="badge badge-ok">Без VPN</span></td>
+          <td><div class="matrix-alt">—</div></td>
+          <td><div class="matrix-note">Не задача для генератора видео. CapCut Beauty - выгладит кожу, поправит черты.</div></td>
+        </tr></tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="brand"><span class="brand-dot"></span><span>НЕЙРО · АНЯ</span></div>
+    <p class="footer-msg">
+      Эта таблица - <b>срез индустрии на 2026 год</b>. Через 6-12 месяцев расклад изменится: появятся новые модели, у текущих обновятся версии. Возвращайся к обновлениям курса - я перевыпускаю эту таблицу регулярно.
+      <br><br>
+      <b>Главное правило</b>: не пытайся выучить все 9 инструментов сразу. Возьми трёх: один языковой (DeepSeek, если без VPN), один для фото (Nano Banana 2 с VPN), один для видео (Kling 3.0 без VPN). Этой троицы хватит на 90% задач.
+    </p>
+    <div class="footer-sign">
+      <div class="footer-name">Анна Ерофеева</div>
+      <div class="footer-role">Автор курса «НейроКонтент на автопилоте»</div>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>

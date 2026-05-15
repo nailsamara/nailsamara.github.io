@@ -1,0 +1,2306 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>10 шапок профиля под бьюти-ниши — НейроКонтент на автопилоте</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Unbounded:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --pink: #D73876;
+  --pink-bright: #F13684;
+  --pink-light: #FF67A7;
+  --bg-near-black: #1D1D1D;
+  --bg-black: #121212;
+  --bg-card: #1c1c1c;
+  --on-dark: #F5F5F5;
+  --muted: #C9C9C9;
+  --muted-2: #8a8585;
+  --warn: #FFB84D;
+  --ig-bg: #FFFFFF;
+  --ig-text: #000000;
+  --ig-text-2: #737373;
+  --ig-border: #DBDBDB;
+  --ig-blue: #0095F6;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  background: #0a0a0a;
+  font-family: 'Inter', sans-serif;
+  color: var(--on-dark);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.5;
+}
+.page-wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: var(--bg-near-black);
+  min-height: 100vh;
+}
+
+.hero {
+  padding: 48px 32px 56px;
+  background: radial-gradient(ellipse at 80% 20%, rgba(241,54,132,0.22), transparent 55%), var(--bg-near-black);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.hero-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 32px;
+}
+.brand {
+  display: flex; align-items: center; gap: 10px;
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.brand-dot {
+  width: 10px; height: 10px; border-radius: 50%;
+  background: var(--pink-bright);
+  box-shadow: 0 0 12px var(--pink-bright);
+}
+.hero-tag {
+  display: inline-flex; align-items: center;
+  padding: 6px 12px;
+  border-radius: 100px;
+  background: rgba(241,54,132,0.12);
+  border: 1px solid rgba(241,54,132,0.4);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--pink-light);
+  text-transform: uppercase;
+}
+.hero-eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 14px;
+}
+.hero-title {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 900;
+  font-size: clamp(44px, 7vw, 84px);
+  line-height: 0.9;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+.hero-title .num { color: var(--pink-bright); font-style: italic; }
+.hero-sub-title {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 700;
+  font-size: clamp(18px, 2.2vw, 26px);
+  letter-spacing: -0.01em;
+  color: var(--muted);
+  margin-bottom: 24px;
+  text-transform: uppercase;
+}
+.hero-desc {
+  font-size: 16px;
+  line-height: 1.5;
+  max-width: 720px;
+  opacity: 0.92;
+  margin-bottom: 28px;
+}
+.hero-desc b { color: var(--pink-light); font-weight: 700; }
+.hero-stats {
+  display: flex;
+  gap: 32px;
+  margin-top: 32px;
+  padding-top: 28px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  flex-wrap: wrap;
+}
+.hero-stat-val {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 800;
+  font-size: 34px;
+  color: var(--pink-bright);
+  line-height: 1;
+}
+.hero-stat-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--muted-2);
+  margin-top: 6px;
+}
+
+.marquee {
+  background: var(--pink-bright);
+  overflow: hidden;
+  padding: 14px 0;
+}
+.marquee-track {
+  display: flex;
+  white-space: nowrap;
+  gap: 28px;
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 800;
+  font-size: 15px;
+  color: white;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0 32px;
+}
+.marquee-star { color: rgba(255,255,255,0.6); font-size: 14px; }
+
+.intro {
+  padding: 56px 32px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.section-eyebrow {
+  display: flex; align-items: center; gap: 10px;
+  margin-bottom: 14px;
+}
+.section-eyebrow::before {
+  content: ''; width: 28px; height: 1px;
+  background: var(--pink-bright);
+}
+.eyebrow {
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.section-h {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 800;
+  font-size: clamp(28px, 4vw, 44px);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+}
+.section-h .pink { color: var(--pink-bright); }
+.intro-text {
+  font-size: 16px;
+  line-height: 1.55;
+  max-width: 760px;
+  color: var(--muted);
+  margin-bottom: 22px;
+}
+.intro-text b { color: var(--pink-light); font-weight: 700; }
+.intro-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 760px;
+}
+.intro-list li {
+  font-size: 14.5px;
+  line-height: 1.5;
+  color: var(--on-dark);
+  padding-left: 20px;
+  position: relative;
+}
+.intro-list li::before {
+  content: '◆';
+  position: absolute;
+  left: 0;
+  top: 1px;
+  color: var(--pink-bright);
+  font-size: 9px;
+}
+.intro-key {
+  background: linear-gradient(135deg, rgba(241,54,132,0.1) 0%, rgba(241,54,132,0.04) 100%);
+  border: 1px solid rgba(241,54,132,0.25);
+  border-radius: 18px;
+  padding: 22px 26px;
+  margin-top: 28px;
+  max-width: 760px;
+}
+.intro-key-label {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--pink-bright);
+  margin-bottom: 12px;
+}
+.intro-key-text {
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--on-dark);
+}
+.intro-key-text b { color: var(--pink-light); }
+
+.profile-card {
+  padding: 64px 32px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+.profile-card:nth-child(odd) {
+  background: linear-gradient(180deg, #131313 0%, var(--bg-near-black) 100%);
+}
+.profile-card-header {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  margin-bottom: 40px;
+}
+.profile-num-badge {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 800;
+  font-size: 68px;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--pink-bright);
+  min-width: 90px;
+}
+.profile-card-title-wrap { flex: 1; }
+.profile-card-title {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 800;
+  font-size: clamp(28px, 4vw, 42px);
+  letter-spacing: -0.02em;
+  line-height: 1;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.profile-card-sub {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted-2);
+  font-weight: 600;
+}
+.profile-card-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 380px;
+  gap: 40px;
+  align-items: start;
+}
+.profile-details {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.detail-block {
+  background: var(--bg-card);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 16px;
+  padding: 18px 22px;
+}
+.detail-warn {
+  background: rgba(255, 184, 77, 0.08);
+  border-color: rgba(255, 184, 77, 0.3);
+}
+.detail-warn .detail-label { color: var(--warn); }
+.detail-label {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 700;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--pink-light);
+  margin-bottom: 10px;
+}
+.detail-text {
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: var(--on-dark);
+}
+.detail-pain { font-style: italic; color: #ddd; }
+.detail-value-mono {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 800;
+  font-size: 15px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--pink-bright);
+}
+.detail-bio { display: flex; flex-direction: column; gap: 6px; }
+.detail-bio-line {
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--on-dark);
+  padding: 7px 12px;
+  background: rgba(241,54,132,0.06);
+  border-left: 2px solid var(--pink-bright);
+  border-radius: 0 6px 6px 0;
+}
+.detail-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.detail-tag {
+  display: inline-flex;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 12px;
+  background: rgba(241,54,132,0.12);
+  border: 1px solid rgba(241,54,132,0.3);
+  color: var(--pink-light);
+  border-radius: 100px;
+}
+
+.profile-mockup-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  position: sticky;
+  top: 20px;
+}
+.mockup-label {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 700;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted-2);
+}
+
+.ig-frame {
+  width: 380px;
+  max-width: 100%;
+  background: var(--ig-bg);
+  border-radius: 38px;
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: var(--ig-text);
+  box-shadow:
+    0 0 0 8px #0a0a0a,
+    0 0 0 10px #333,
+    0 30px 60px rgba(0,0,0,0.6),
+    0 12px 24px rgba(241,54,132,0.15);
+  position: relative;
+}
+
+.ig-status {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 28px 6px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--ig-text);
+}
+.ig-time { letter-spacing: -0.02em; }
+.ig-status-right {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.ig-status-icon { width: 16px; height: 11px; }
+.ig-battery { width: 24px; height: 12px; }
+
+.ig-app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  border-bottom: 0.5px solid var(--ig-border);
+}
+.ig-username {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+.ig-chevron { width: 18px; height: 18px; color: var(--ig-text); }
+.ig-app-actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+.ig-app-actions svg { width: 22px; height: 22px; color: var(--ig-text); }
+
+.ig-profile-row {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  padding: 18px 16px 14px;
+}
+.ig-avatar-wrap {
+  position: relative;
+  padding: 3px;
+  background: linear-gradient(45deg, #F58529, #DD2A7B, #8134AF, #515BD4);
+  border-radius: 50%;
+}
+.ig-avatar {
+  width: 86px;
+  height: 86px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 800;
+  font-size: 36px;
+  border: 2.5px solid white;
+}
+.ig-stats {
+  display: flex;
+  flex: 1;
+  justify-content: space-around;
+  gap: 8px;
+}
+.ig-stat { text-align: center; }
+.ig-stat-num { font-size: 18px; font-weight: 700; color: var(--ig-text); line-height: 1.2; }
+.ig-stat-label { font-size: 14px; color: var(--ig-text); font-weight: 400; }
+
+.ig-bio-block { padding: 0 16px 12px; }
+.ig-display-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ig-text);
+  margin-bottom: 1px;
+  line-height: 1.3;
+}
+.ig-category {
+  font-size: 14px;
+  color: var(--ig-text-2);
+  margin-bottom: 6px;
+}
+.ig-bio-text {
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--ig-text);
+  margin-bottom: 8px;
+}
+.ig-link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #00376B;
+}
+.ig-link svg { width: 14px; height: 14px; transform: rotate(-45deg); }
+
+.ig-buttons {
+  display: flex;
+  gap: 6px;
+  padding: 4px 16px 16px;
+}
+.ig-btn {
+  flex: 1;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+}
+.ig-btn-primary { background: var(--ig-blue); color: white; }
+.ig-btn-secondary { background: #EFEFEF; color: var(--ig-text); }
+.ig-btn-icon {
+  flex: 0 0 auto;
+  width: 38px;
+  padding: 8px;
+  background: #EFEFEF;
+  color: var(--ig-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ig-btn-icon svg { width: 16px; height: 16px; }
+
+.ig-highlights {
+  display: flex;
+  gap: 14px;
+  padding: 4px 16px 16px;
+  overflow-x: auto;
+}
+.ig-hl {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  min-width: 70px;
+}
+.ig-hl-circle {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 1.5px solid var(--ig-border);
+  padding: 3px;
+  background-clip: content-box;
+  background-origin: content-box;
+}
+.ig-hl-label {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--ig-text);
+  text-align: center;
+  max-width: 70px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ig-tabs {
+  display: flex;
+  border-top: 0.5px solid var(--ig-border);
+  border-bottom: 0.5px solid var(--ig-border);
+}
+.ig-tab {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 0;
+  color: #c7c7c7;
+}
+.ig-tab svg { width: 22px; height: 22px; }
+.ig-tab-active {
+  color: var(--ig-text);
+  border-top: 1px solid var(--ig-text);
+  margin-top: -0.5px;
+}
+
+.ig-posts-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5px;
+}
+.ig-post {
+  aspect-ratio: 1;
+  background-color: #f0f0f0;
+}
+
+.ig-bottom-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 12px 16px 8px;
+  border-top: 0.5px solid var(--ig-border);
+}
+.ig-bottom-nav svg { width: 26px; height: 26px; color: var(--ig-text); }
+.ig-avatar-small {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.ig-home-bar {
+  width: 135px;
+  height: 5px;
+  background: var(--ig-text);
+  border-radius: 100px;
+  margin: 6px auto 8px;
+}
+
+.footer {
+  padding: 48px 32px 56px;
+  background: var(--bg-black);
+  text-align: center;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+.footer .brand { justify-content: center; margin-bottom: 16px; }
+.footer-msg {
+  max-width: 580px;
+  margin: 0 auto 28px;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+.footer-msg b { color: var(--pink-light); font-weight: 700; }
+.footer-sign {
+  display: inline-block;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+.footer-name {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 800;
+  font-size: 16px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.footer-role {
+  font-size: 12px;
+  color: var(--muted-2);
+  margin-top: 6px;
+}
+
+@media (max-width: 980px) {
+  .profile-card-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .profile-mockup-wrap {
+    position: static;
+    align-items: center;
+  }
+}
+@media (max-width: 720px) {
+  .hero { padding: 36px 22px 44px; }
+  .intro { padding: 44px 22px; }
+  .profile-card { padding: 48px 22px; }
+  .footer { padding: 40px 22px; }
+  .profile-num-badge { font-size: 52px; min-width: 70px; }
+  .ig-frame { width: 100%; max-width: 360px; }
+}
+
+@media print {
+  body, .page-wrap { background: white; color: #111; }
+  .profile-card { break-inside: avoid-page; }
+  .detail-block { break-inside: avoid; }
+  .ig-frame { box-shadow: 0 0 0 1px #ddd; }
+}
+</style>
+</head>
+<body>
+<div class="page-wrap">
+
+  <section class="hero">
+    <div class="hero-top">
+      <div class="brand">
+        <span class="brand-dot"></span>
+        <span>НЕЙРО · АНЯ</span>
+      </div>
+      <div class="hero-tag">Бонус курса</div>
+    </div>
+    <div class="hero-eyebrow">НейроКонтент на автопилоте</div>
+    <h1 class="hero-title"><span class="num">10</span> шапок</h1>
+    <div class="hero-sub-title">профиля под бьюти-ниши</div>
+    <p class="hero-desc">
+      Готовые шаблоны упаковки Instagram-профиля под <b>10 бьюти-ниш</b>. Каждая шапка отвечает на главный вопрос клиентки: <b>«почему именно к этому мастеру, а не к десяткам других в моём городе»</b>. Внутри - опыт мастера, конкретные цифры, гарантии, сервис.
+    </p>
+    <div class="hero-stats">
+      <div>
+        <div class="hero-stat-val">10</div>
+        <div class="hero-stat-label">Ниш</div>
+      </div>
+      <div>
+        <div class="hero-stat-val">50</div>
+        <div class="hero-stat-label">Хайлайтсов</div>
+      </div>
+      <div>
+        <div class="hero-stat-val">04</div>
+        <div class="hero-stat-label">Строки био</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="marquee">
+    <div class="marquee-track">
+      <span>Ногти <span class="marquee-star">✦</span> Ресницы <span class="marquee-star">✦</span> Брови <span class="marquee-star">✦</span> Косметолог <span class="marquee-star">✦</span> Парикмахер <span class="marquee-star">✦</span> Визажист <span class="marquee-star">✦</span> Эпиляция <span class="marquee-star">✦</span> Дом <span class="marquee-star">✦</span> Студия <span class="marquee-star">✦</span></span>
+    </div>
+  </div>
+
+  <section class="intro">
+    <div class="section-eyebrow"><span class="eyebrow">Инструкция</span></div>
+    <h2 class="section-h">Как <span class="pink">пользоваться</span></h2>
+    <p class="intro-text">
+      Найди свою нишу в списке - дальше всё готово. Берёшь имя профиля, ставишь в Instagram. Берёшь шапку, вставляешь, меняешь только город, цифры опыта и адрес. Заводишь 5 хайлайтсов в указанной последовательности.
+    </p>
+    <ul class="intro-list">
+      <li><b>Имя профиля</b> - то, что показывается крупно и индексируется поиском. Всегда формат «УСЛУГА ГОРОД» - капсом, без подчёркиваний. В имя не пишем «на дому», «премиум», «лучший» - этого не ищут.</li>
+      <li><b>Шапка</b> - ровно 4 строки. Каждая строка - конкретный ответ на «почему именно ко мне»: опыт, скорость, гарантия, специализация, сервис. Никакого «качество на высоте» и «индивидуальный подход».</li>
+      <li><b>Био-ссылка</b> - всегда ведёт на онлайн-запись (Yclients, Masters, Dikidi и т.д.).</li>
+      <li><b>5 хайлайтсов</b> - в указанном порядке. Это последовательность того, как клиентка проверяет тебя перед записью.</li>
+    </ul>
+    <div class="intro-key">
+      <div class="intro-key-label">Главный принцип</div>
+      <div class="intro-key-text">
+        Шапка - это <b>не описание услуги</b>. Это ответ на вопрос «почему клиент должен пойти именно ко мне, а не к конкурентам в соседнем доме». Каждая строка - конкретный довод с цифрой или фактом: <b>опыт</b>, <b>специализация</b>, <b>гарантия</b>, <b>сервис</b>. Если строку можно скопировать с другого мастера - её надо переписать.
+      </div>
+    </div>
+  </section>
+
+
+    <section class="profile-card" id="profile-1">
+      <div class="profile-card-header">
+        <div class="profile-num-badge">01</div>
+        <div class="profile-card-title-wrap">
+          <h2 class="profile-card-title">Ногти</h2>
+          <div class="profile-card-sub">Маникюр и педикюр</div>
+        </div>
+      </div>
+
+      <div class="profile-card-grid">
+        <div class="profile-details">
+          <div class="detail-block">
+            <div class="detail-label">Кому подходит</div>
+            <div class="detail-text">Мастер маникюра и педикюра с опытом от 2-3 лет. Работает один в кабинете, на дому или с напарницей. Делает классику, аппаратную технику, гель-лак, дизайны.</div>
+          </div>
+
+          <div class="detail-block">
+            <div class="detail-label">Главная боль клиентки</div>
+            <div class="detail-text detail-pain">Уйти и забыть про ногти на месяц - чтоб покрытие не отслаивалось, цвет не желтел, а работа выглядела как на референсе с первого раза.</div>
+          </div>
+
+          <div class="detail-block">
+            <div class="detail-label">Имя профиля</div>
+            <div class="detail-value-mono">МАНИКЮР ПЕДИКЮР САМАРА</div>
+          </div>
+          
+
+          <div class="detail-block">
+            <div class="detail-label">Шапка профиля · «почему именно ко мне»</div>
+            <div class="detail-bio">
+              <div class="detail-bio-line">Маникюр + педикюр за 1,5 часа · покрытие 4 недели</div><div class="detail-bio-line">Опыт 7 лет, 20 курсов повышения, инструктор</div><div class="detail-bio-line">95% клиенток постоянные · 4,9 на Я.Картах</div><div class="detail-bio-line">Самара, центр · бесплатная парковка</div>
+            </div>
+          </div>
+
+          <div class="detail-block">
+            <div class="detail-label">В био-ссылке</div>
+            <div class="detail-text">Онлайн-запись → ссылка на сервис записи (Yclients, Masters, Dikidi и т.д.)</div>
+          </div>
+
+          <div class="detail-block">
+            <div class="detail-label">5 хайлайтсов</div>
+            <div class="detail-tags">
+              <span class="detail-tag">прайс</span><span class="detail-tag">работы</span><span class="detail-tag">отзывы</span><span class="detail-tag">акции</span><span class="detail-tag">адрес</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="profile-mockup-wrap">
+          <div class="mockup-label">Так это выглядит в Instagram</div>
+          
+    <div class="ig-frame">
+      <div class="ig-status">
+        <div class="ig-time">9:41</div>
+        <div class="ig-status-right">
+          <svg class="ig-status-icon" viewBox="0 0 18 12" fill="currentColor"><path d="M1.5 0a1.5 1.5 0 0 0-1.5 1.5v9A1.5 1.5 0 0 0 1.5 12h2A1.5 1.5 0 0 0 5 10.5v-9A1.5 1.5 0 0 0 3.5 0h-2zm5 3A1.5 1.5 0 0 0 5 4.5v6A1.5 1.5 0 0 0 6.5 12h2A1.5 1.5 0 0 0 10 10.5v-6A1.5 1.5 0 0 0 8.5 3h-2zm5 3A1.5 1.5 0 0 0 10 7.5v3A1.5 1.5 0 0 0 11.5 12h2A1.5 1.5 0 0 0 15 10.5v-3A1.5 1.5 0 0 0 13.5 6h-2z"/></svg>
+          <svg class="ig-status-icon" viewBox="0 0 17 11" fill="currentColor"><path d="M8.5 0C5.13 0 2.16 1.4 0 3.59l1.5 1.41C3.3 3.15 5.78 2 8.5 2s5.2 1.15 7 3l1.5-1.41C14.84 1.4 11.87 0 8.5 0zm0 4c-1.84 0-3.5.79-4.62 2.05L5.38 7.46C6.18 6.59 7.27 6 8.5 6s2.32.59 3.12 1.46l1.5-1.41C12 4.79 10.34 4 8.5 4zm0 4c-.86 0-1.6.42-2.1 1.05L8.5 11l2.1-1.95C10.1 8.42 9.36 8 8.5 8z"/></svg>
+          <svg class="ig-status-icon ig-battery" viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1"><rect x="0.5" y="0.5" width="20" height="11" rx="2.5"/><rect x="2" y="2" width="17" height="8" rx="1" fill="currentColor"/><rect x="21" y="4" width="2" height="4" rx="0.5" fill="currentColor"/></svg>
+        </div>
+      </div>
+
+      <div class="ig-app-header">
+        <div class="ig-username">
+          <span>manikur_pedikur_smr</span>
+          <svg viewBox="0 0 24 24" fill="currentColor" class="ig-chevron"><path d="M7 10l5 5 5-5z"/></svg>
+        </div>
+        <div class="ig-app-actions">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+        </div>
+      </div>
+
+      <div class="ig-profile-row">
+        <div class="ig-avatar-wrap">
+          <div class="ig-avatar" style="background-color:#F8D7E0;color:#C2185B">М</div>
+        </div>
+        <div class="ig-stats">
+          <div class="ig-stat"><div class="ig-stat-num">847</div><div class="ig-stat-label">публикаций</div></div>
+          <div class="ig-stat"><div class="ig-stat-num">12 400</div><div class="ig-stat-label">подписчиков</div></div>
+          <div class="ig-stat"><div class="ig-stat-num">284</div><div class="ig-stat-label">подписок</div></div>
+        </div>
+      </div>
+
+      <div class="ig-bio-block">
+        <div class="ig-display-name">МАНИКЮР ПЕДИКЮР САМАРА</div>
+        <div class="ig-category">Услуги красоты</div>
+        <div class="ig-bio-text">
+          Маникюр + педикюр за 1,5 часа · покрытие 4 недели<br>Опыт 7 лет, 20 курсов повышения, инструктор<br>95% клиенток постоянные · 4,9 на Я.Картах<br>Самара, центр · бесплатная парковка
+        </div>
+        <div class="ig-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+          <span>Онлайн-запись</span>
+        </div>
+      </div>
+
+      <div class="ig-buttons">
+        <button class="ig-btn ig-btn-primary">Подписаться</button>
+        <button class="ig-btn ig-btn-secondary">Сообщение</button>
+        <button class="ig-btn ig-btn-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/></svg>
+        </button>
+      </div>
+
+      <div class="ig-highlights">
+
+        <div class="ig-hl">
+          <div class="ig-hl-circle" style="background-color:#F8D7E0"></div>
+          <div class="ig-hl-label">прайс</div>
+        </div>
+        <div class="ig-hl">
+          <div class="ig-hl-circle" style="background-color:#F8D7E0"></div>
+          <div class="ig-hl-label">работы</div>
+        </div>
+        <div class="ig-hl">
+          <div class="ig-hl-circle" style="background-color:#F8D7E0"></div>
+          <div class="ig-hl-label">отзывы</div>
+        </div>
+        <div class="ig-hl">
+          <div class="ig-hl-circle" style="background-color:#F8D7E0"></div>
+          <div class="ig-hl-label">акции</div>
+        </div>
+        <div class="ig-hl">
+          <div class="ig-hl-circle" style="background-color:#F8D7E0"></div>
+          <div class="ig-hl-label">адрес</div>
+        </div>
+      </div>
+
+      <div class="ig-tabs">
+        <div class="ig-tab ig-tab-active">
+          <svg viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="3" width="6" height="6"/><rect x="11" y="3" width="6" height="6"/><rect x="19" y="3" width="2" height="6"/><rect x="3" y="11" width="6" height="6"/><rect x="11" y="11" width="6" height="6"/><rect x="19" y="11" width="2" height="6"/><rect x="3" y="19" width="6" height="2"/><rect x="11" y="19" width="6" height="2"/></svg>
+        </div>
+        <div class="ig-tab">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="3"/><polygon points="10 8 16 12 10 16 10 8" fill="currentColor"/></svg>
+        </div>
+        <div class="ig-tab">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 11l-5-5-5 5"/><path d="M17 18l-5-5-5 5"/></svg>
+        </div>
+      </div>
+
+      <div class="ig-posts-grid">
+<div class="ig-post" style="background-color:#F4E1E8;background-image:"></div><div class="ig-post" style="background-color:#F8D7E0;background-image:linear-gradient(135deg, rgba(255,255,255,0.15), transparent 50%)"></div><div class="ig-post" style="background-color:#FBC4D2;background-image:linear-gradient(45deg, rgba(0,0,0,0.1), transparent 50%)"></div><div class="ig-post" style="background-color:#FDB6CA;background-image:"></div><div class="ig-post" style="background-color:#F8D7E0;background-image:linear-gradient(135deg, rgba(255,255,255,0.15), transparent 50%)"></div><div class="ig-post" style="background-color:#FFE0EC;background-image:linear-gradient(45deg, rgba(0,0,0,0.1), transparent 50%)"></div><div class="ig-post" style="background-color:#F4E1E8;background-image:"></div><div class="ig-post" style="background-color:#FBC4D2;background-image:linear-gradient(135deg, rgba(255,255,255,0.15), transparent 50%)"></div><div class="ig-post" style="background-color:#FFE0EC;background-image:linear-gradient(45deg, rgba(0,0,0,0.1), transparent 50%)"></div>
+      </div>
+
+      <div class="ig-bottom-nav">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="3"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+        <div class="ig-avatar-small" style="background-color:#F8D7E0;color:#C2185B">М</div>
+      </div>
+
+      <div class="ig-home-bar"></div>
+    </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="profile-card" id="profile-2">
+      <div class="profile-card-header">
+        <div class="profile-num-badge">02</div>
+        <div class="profile-card-title-wrap">
+          <h2 class="profile-card-title">Ресницы</h2>
+          <div class="profile-card-sub">Лешмейкер</div>
+        </div>
+      </div>
+
+      <div class="profile-card-grid">
+        <div class="profile-details">
+          <div class="detail-block">
+            <div class="detail-label">Кому подходит</div>
+            <div class="detail-text">Лешмейкер с опытом от 2-3 лет. Делает наращивание (классика, объёмы 2D-6D), ламинирование, ботокс. Работает в кабинете или на дому.</div>
+          </div>
+
+          <div class="detail-block">
+            <div class="detail-label">Главная боль клиентки</div>
+            <div class="detail-text detail-pain">Чтоб ресницы лежали ровно, не топорщились, не было переломов. И чтоб 2 часа на процедуре можно было прожить комфортно, а не считать минуты.</div>
+          </div>
+
+          <div class="detail-block">
+            <div class="detail-label">Имя профиля</div>
+            <div class="detail-value-mono">РЕСНИЦЫ САМАРА · ЛЕШМЕЙКЕР</div>
+          </div>
+          
+
+          <div class="detail-block">
+            <div class="detail-label">Шапка профиля · «почему именно ко мне»</div>
+            <div class="detail-bio">
+              <div class="detail-bio-line">Классика, объёмы 2D-6D · процедура 1,5 часа</div><div class="detail-bio-line">Ортопедический матрас, поддержка шеи</div><div class="detail-bio-line">5 лет опыта, обучаюсь у топ-мастеров РФ</div><div class="detail-bio-line">Самара, центр · парковка во дворе</div>
+            </div>
+          </div>
+
+          <div class="detail-block">
+            <div class="detail-label">В био-ссылке</div>
+            <div class="detail-text">Онлайн-запись → ссылка на сервис записи (Yclients, Masters, Dikidi и т.д.)</div>
+          </div>
+
+          <div class="detail-block">
+            <div class="detail-label">5 хайлайтсов</div>
+            <div class="detail-tags">
+              <span class="detail-tag">прайс</span><span class="detail-tag">эффекты</span><span class="detail-tag">процесс</span><span class="detail-tag">отзывы</span><span class="detail-tag">адрес</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="profile-mockup-wrap">
+          <div class="mockup-label">Так это выглядит в Instagram</div>
+          
+    <div class="ig-frame">
+      <div class="ig-status">
+        <div class="ig-time">9:41</div>
+        <div class="ig-status-right">
+          <svg class="ig-status-icon" viewBox="0 0 18 12" fill="currentColor"><path d="M1.5 0a1.5 1.5 0 0 0-1.5 1.5v9A1.5 1.5 0 0 0 1.5 12h2A1.5 1.5 0 0 0 5 10.5v-9A1.5 1.5 0 0 0 3.5 0h-2zm5 3A1.5 1.5 0 0 0 5 4.5v6A1.5 1.5 0 0 0 6.5 12h2A1.5 1.5 0 0 0 10 10.5v-6A1.5 1.5 0 0 0 8.5 3h-2zm5 3A1.5 1.5 0 0 0 10 7.5v3A1.5 1.5 0 0 0 11.5 12h2A1.5 1.5 0 0 0 15 10.5v-3A1.5 1.5 0 0 0 13.5 6h-2z"/></svg>
+          <svg class="ig-status-icon" viewBox="0 0 17 11" fill="currentColor"><path d="M8.5 0C5.13 0 2.16 1.4 0 3.59l1.5 1.41C3.3 3.15 5.78 2 8.5 2s5.2 1.15 7 3l1.5-1.41C14.84 1.4 11.87 0 8.5 0zm0 4c-1.84 0-3.5.79-4.62 2.05L5.38 7.46C6.18 6.59 7.27 6 8.5 6s2.32.59 3.12 1.46l1.5-1.41C12 4.79 10.34 4 8.5 4zm0 4c-.86 0-1.6.42-2.1 1.05L8.5 11l2.1-1.95C10.1 8.42 9.36 8 8.5 8z"/></svg>
+          <svg class="ig-status-icon ig-battery" viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1"><rect x="0.5" y="0.5" width="20" height="11" rx="2.5"/><rect x="2" y="2" width="17" height="8" rx="1" fill="currentColor"/><rect x="21" y="4" width="2" height="4" rx="0.5" fill="currentColor"/></svg>
+        </div>
+      </div>
+
+      <div class="ig-app-header">
+        <div class="ig-username">
+          <span>lashmaker_smr</span>
+          <svg viewBox="0 0 24 24" fill="currentColor" class="ig-chevron"><path d="M7 10l5 5 5-5z"/></svg>
+        </div>
+        <div class="ig-app-actions">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+        </div>
+      </div>
+
+      <div class="ig-profile-row">
+        <div class="ig-avatar-wrap">
+          <div class="ig-avatar" style="background-color:#2C2C2C;color:#F5F5F5">Р</div>
+        </div>
+        <div class="ig-stats">
+          <div class="ig-stat"><div class="ig-stat-num">623</div><div class="ig-stat-label">публикаций</div></div>
+          <div class="ig-stat"><div class="ig-stat-num">8 920</div><div class="ig-stat-label">подписчиков</div></div>
+          <div class="ig-stat"><div class="ig-stat-num">147</div><div class="ig-stat-label">подписок</div></div>
+        </div>
+      </div>
+
+      <div class="ig-bio-block">
+        <div class="ig-display-name">РЕСНИЦЫ САМАРА · ЛЕШМЕЙКЕР</div>
+        <div class="ig-category">Услуги красоты</div>
+        <div class="ig-bio-text">
+          Классика, объёмы 2D-6D · процедура 1,5 часа<br>Ортопедический матрас, поддержка шеи<br>5 лет опыта, обучаюсь у топ-мастеров РФ<br>Самара, центр · парковка во дворе
+        </div>
+        <div class="ig-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+          <span>Онлайн-запись</span>
+        </div>
+      </div>
+
+      <div class="ig-buttons">
+        <button class="ig-btn ig-btn-primary">Подписаться</button>
+        <button class="ig-btn ig-btn-secondary">Сообщение</button>
+        <button class="ig-btn ig-btn-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/></svg>
+        </button>
+      </div>
+
+      <div class="ig-highlights">
+
+        <div class="ig-hl">
+          <div class="ig-hl-circle" style="background-color:#2C2C2C"></div>
+          <div class="ig-hl-label">прайс</div>
+        </div>
+        <div class="ig-hl">
+          <div class="ig-hl-circle" style="background-color:#2C2C2C"></div>
+          <div class="ig-hl-label">эффекты</div>
+        </div>
+        <div class="ig-hl">
+          <div class="ig-hl-circle" style="background-color:#2C2C2C"></div>
+          <div class="ig-hl-label">процесс</div>
+        </div>
+        <div class="ig-hl">
+          <div class="ig-hl-circle" style="background-color:#2C2C2C"></div>
+          <div class="ig-hl-label">отзывы</div>
+        </div>
+        <div class="ig-hl">
+          <div class="ig-hl-circle" style="background-color:#2C2C2C"></div>
+          <div class="ig-hl-label">адрес</div>
+        </div>
+      </div>
+
+      <div class="ig-tabs">
+        <div class="ig-tab ig-tab-active">
+          <svg viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="3" width="6" height="6"/><rect x="11" y="3" width="6" height="6"/><rect x="19" y="3" width="2" height="6"/><rect x="3" y="11" width="6" height="6"/><rect x="11" y="11" width="6" height="6"/><rect x="19" y="11" width="2" height="6"/><rect x="3" y="19" width="6" height="2"/><rect x="11" y="19" width="6" height="2"/></svg>
+        </div>
+        <div class="ig-tab">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="3"/><polygon points="10 8 16 12 10 16 10 8" fill="currentColor"/></svg>
+        </div>
+        <div class="ig-tab">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 11l-5-5-5 5"/><path d="M17 18l-5-5-5 5"/></svg>
+        </div>
+      </div>
+
+      <div class="ig-posts-grid">
+<div class="ig-post" style="background-color:#1F1F1F;background-image:"></div><div class="ig-post" style="background-color:#2C2C2C;background-image:linear-gradient(135deg, rgba(255,255,255,0.15), transparent 50%)"></div><div class="ig-post" style="background-color:#3A3A3A;background-image:linear-gradient(45deg, rgba(0,0,0,0.1), transparent 50%)"></div><div class="ig-post" style="background-color:#1F1F1F;background-image:"></div><div class="ig-post" style="background-color:#2C2C2C;background-image:linear-gradient(135deg, rgba(255,255,255,0.15), transparent 50%)"></div><div class="ig-post" style="background-color:#1F1F1F;background-image:linear-gradient(45deg, rgba(0,0,0,0.1), transparent 50%)"></div><div class="ig-post" style="background-color:#3A3A3A;background-image:"></div><div class="ig-post" style="background-color:#2C2C2C;background-image:linear-gradient(135deg, rgba(255,255,255,0.15), transparent 50%)"></div><div class="ig-post" style="background-color:#1F1F1F;background-image:linear-gradient(45deg, rgba(0,0,0,0.1), transparent 50%)"></div>
+      </div>
+
+      <div class="ig-bottom-nav">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="3"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+        <div class="ig-avatar-small" style="background-color:#2C2C2C;color:#F5F5F5">Р</div>
+      </div>
+
+      <div class="ig-home-bar"></div>
+    </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="profile-card" id="profile-3">
+      <div class="profile-card-header">
+        <div class="profile-num-badge">03</div>
+        <div class="profile-card-title-wrap">
+          <h2 class="profile-card-title">Брови</h2>
+          <div class="profile-card-sub">Бровист · архитектор</div>
+        </div>
+      </div>
+
+      <div class="profile-card-grid">
+        <div class="profile-details">
+          <div class="detail-block">
+            <div class="detail-label">Кому подходит</div>
+            <div class="detail-text">Бровист с опытом от 2-3 лет. Делает архитектуру, окрашивание (краска, хна), ламинирование. Главный фокус - подбор формы и цвета под клиентку.</div>
+          </div>
+
+          <div class="detail-block">
+            <div class="detail-label">Главная боль клиентки</div>
+            <div class="detail-text detail-pain">Чтоб брови были «моими», а не «как у всех». Чтоб не выглядели нарисованными, не казались злыми, а форма подходила к моему лицу.</div>
+          </div>
+
+          <div class="detail-block">
+            <div class="detail-label">Имя профиля</div>
+            <div class="detail-value-mono">БРОВИ САМАРА · АРХИТЕКТУРА</div>
+          </div>
+          
+
+          <div class="detail-block">
+            <div class="detail-label">Шапка профиля · «почему именно ко мне»</div>
+            <div class="detail-bio">
+              <div class="detail-bio-line">Архитектура + окрашивание · натуральный эффект</div><div class="detail-bio-line">Подбираю форму под овал лица и стилистику</div><div class="detail-bio-line">6 лет опыта, 8 курсов у топ-мастеров РФ</div><div class="detail-bio-line">Гарантия результата · Самара, центр</div>
+            </div>
+          </div>
+
+          <div class="detail-block">
+            <div class="detail-label">В био-ссылке</div>
+            <div class="detail-text">Онлайн-запись → ссылка на сервис записи (Yclients, Masters, Dikidi и т.д.)</div>
+          </div>
+
+          <div class="detail-block">
+            <div class="detail-label">5 хайлайтсов</div>
+            <div class="detail-tags">
+              <span class="detail-tag">работы</span><span class="detail-tag">до-после</span><span class="detail-tag">стиль</span><span class="detail-tag">отзывы</span><span class="detail-tag">прайс</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="profile-mockup-wrap">
+          <div class="mockup-label">Так это выглядит в Instagram</div>
+          
+    <div class="ig-frame">
+      <div class="ig-status">
+        <div class="ig-time">9:41</div>
+        <div class="ig-status-right">
+          <svg class="ig-status-icon" viewBox="0 0 18 12" fill="currentColor"><path d="M1.5 0a1.5 1.5 0 0 0-1.5 1.5v9A1.5 1.5 0 0 0 1.5 12h2A1.5 1.5 0 0 0 5 10.5v-9A1.5 1.5 0 0 0 3.5 0h-2zm5 3A1.5 1.5 0 0 0 5 4.5v6A1.5 1.5 0 0 0 6.5 12h2A1.5 1.5 0 0 0 10 10.5v-6A1.5 1.5 0 0 0 8.5 3h-2zm5 3A1.5 1.5 0 0 0 10 7.5v3A1.5 1.5 0 0 0 11.5 12h2A1.5 1.5 0 0 0 15 10.5v-3A1.5 1.5 0 0 0 13.5 6h-2z"/></svg>
+          <svg class="ig-status-icon" viewBox="0 0 17 11" fill="currentColor"><path d="M8.5 0C5.13 0 2.16 1.4 0 3.59l1.5 1.41C3.3 3.15 5.78 2 8.5 2s5.2 1.15 7 3l1.5-1.41C14.84 1.4 11.87 0 8.5 0zm0 4c-1.84 0-3.5.79-4.62 2.05L5.38 7.46C6.18 6.59 7.27 6 8.5 6s2.32.59 3.12 1.46l1.5-1.41C12 4.79 10.34 4 8.5 4zm0 4c-.86 0-1.6.42-2.1 1.05L8.5 11l2.1-1.95C10.1 8.42 9.36 8 8.5 8z"/></svg>
+          <svg class="ig-status-icon ig-battery" viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1"><rect x="0.5" y="0.5" width="20" height="11" rx="2.5"/><rect x="2" y="2" width="17" height="8" rx="1" fill="currentColor"/><rect x="21" y="4" width="2" height="4" rx="0.5" fill="currentColor"/></svg>
+        </div>
+      </div>
+
+      <div class="ig-app-header">
+        <div class="ig-username">
+          <span>brows_samara</span>
+          <svg viewBox="0 0 24 24" fill="currentColor" class="ig-chevron"><path d="M7 10l5 5 5-5z"/></svg>
+        </div>
+        <div class="ig-app-actions">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+        </div>
+      </div>
+
+      <div class="ig-profile-row">
+        <div class="ig-avatar-wrap">
+          <div class="ig-avatar" style="background-color:#D4A574;color:#5C3E1F">Б</div>
+        </div>
+        <div class="ig-stats">
+          <div class="ig-stat"><div class="ig-stat-num">412</div><div class="ig-stat-label">публикаций</div></div>
+          <div class="ig-stat"><div class="ig-stat-num">5 670</div><div class="ig-stat-label">подписчиков</div></div>
+          <div class="ig-stat"><div class="ig-stat-num">198</div><div class="ig-stat-label">подписок</div></div>
+        </div>
+      </div>
+
+      <div class="ig-bio-block">
+        <div class="ig-display-name">БРОВИ САМАРА · АРХИТЕКТУРА</div>
+        <div class="ig-category">Услуги красоты</div>
+        <div class="ig-bio-text">
+          Архитектура + окрашивание · натуральный эффект<br>Подбираю форму под овал лица и стилистику<br>6 лет опыта, 8 курсов у топ-мастеров РФ<br>Гарантия результата · Самара, центр
+        </div>
+        <div class="ig-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+          <span>Онлайн-запись</span>
+        </div>
+      </div>
+
+      <div class="ig-buttons">
+        <button class="ig-btn ig-btn-primary">Подписаться</button>
+        <button class="ig-btn ig-btn-secondary">Сообщение</button>
+        <button class="ig-btn ig-btn-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/></svg>
+        </button>
+      </div>
+
+      <div class="ig-highlights">
+
+        <div class="ig-hl">
+          <div class="ig-hl-circle" style="background-color:#D4A574"></div>
+          <div class="ig-hl-label">работы</div>
+        </div>
+        <div class="ig-hl">
+          <div class="ig-hl-circle" style="background-color:#D4A574"></div>
+          <div class="ig-hl-label">до-после</div>
+        </div>
+        <div class="ig-hl">
+          <div class="ig-hl-circle" style="background-color:#D4A574"></div>
+          <div class="ig-hl-label">стиль</div>
+        </div>
+        <div class="ig-hl">
+          <div class="ig-hl-circle" style="background-color:#D4A574"></div>
+          <div class="ig-hl-label">отзывы</div>
+        </div>
+        <div class="ig-hl">
+          <div class="ig-hl-circle" style="background-color:#D4A574"></div>
+          <div class="ig-hl-label">прайс</div>
+        </div>
+      </div>
+
+      <div class="ig-tabs">
+        <div class="ig-tab ig-tab-active">
+          <svg viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="3" width="6" height="6"/><rect x="11" y="3" width="6" height="6"/><rect x="19" y="3" width="2" height="6"/><rect x="3" y="11" width="6" height="6"/><rect x="11" y="11" width="6" height="6"/><rect x="19" y="11" width="2" height="6"/><rect x="3" y="19" width="6" height="2"/><rect x="11" y="19" width="6" height="2"/></svg>
+        </div>
+        <div class="ig-tab">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="3"/><polygon points="10 8 16 12 10 16 10 8" fill="currentColor"/></svg>
+        </div>
+        <div class="ig-tab">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 11l-5-5-5 5"/><path d="M17 18l-5-5-5 5"/></svg>
+        </div>
+      </div>
+
+      <div class="ig-posts-grid">
+<div class="ig-post" style="background-color:#C9A06A;background-image:"></div><div class="ig-post" style="background-color:#D4A574;background-image:linear-gradient(135deg, rgba(255,255,255,0.15), transparent 50%)"></div><div class="ig-post" style="background-color:#B8956A;background-image:linear-gradient(45deg, rgba(0,0,0,0.1), transparent 50%)"></div><div class="ig-post" style="background-color:#A88556;background-image:"></div><div class="ig-post" style="background-color:#D4A574;background-image:linear-gradient(135deg, rgba(255,255,255,0.15), transparent 50%)"></div><div class="ig-post" style="background-color:#C9A06A;background-image:linear-gradient(45deg, rgba(0,0,0,0.1), transparent 50%)"></div><div class="ig-post" style="background-color:#E8C09A;background-image:"></div><div class="ig-post" style="background-color:#B8956A;background-image:linear-gradient(135deg, rgba(255,255,255,0.15), transparent 50%)"></div><div class="ig-post" style="background-color:#D4A574;background-image:linear-gradient(45deg, rgba(0,0,0,0.1), transparent 50%)"></div>
+      </div>
+
+      <div class="ig-bottom-nav">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="3"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+        <div class="ig-avatar-small" style="background-color:#D4A574;color:#5C3E1F">Б</div>
+      </div>
+
+      <div class="ig-home-bar"></div>
+    </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="profile-card" id="profile-4">
+      <div class="profile-card-header">
+        <div class="profile-num-badge">04</div>
+        <div class="profile-card-title-wrap">
+          <h2 class="profile-card-title">Косметолог</h2>
+          <div class="profile-card-sub">Эстетическая косметология</div>
+        </div>
+      </div>
+
+      <div class="profile-card-grid">
+        <div class="profile-details">
+          <div class="detail-block">
+            <div class="detail-label">Кому подходит</div>
+            <div class="detail-text">Косметолог-эстетист с мед.образованием. Делает чистки, пилинги, уходы, аппаратные процедуры. Работает в клинике или своём кабинете с лицензией.</div>
+          </div>
+
+          <div class="detail-block">
+            <div class="detail-label">Главная боль клиентки</div>
+            <div class="detail-text detail-pain">Решить конкретную проблему - акне, пигментацию, постакне, тусклость. А не «пройти курс из 10 процедур», как навязывают везде.</div>
+          </div>
+
+          <div class="detail-block">
+            <div class="detail-label">Имя профиля</div>
+            <div class="detail-value-mono">КОСМЕТОЛОГ САМАРА</div>
+          </div>
+          
+
+          <div class="detail-block">
+            <div class="detail-label">Шапка профиля · «почему именно ко мне»</div>
+            <div class="detail-bio">
+              <div class="detail-bio-line">Врач-косметолог · спец. на акне и пигментации</div><div class="detail-bio-line">Высшее мед.образование + 12 курсов в РФ и ЕС</div><div class="detail-bio-line">200+ клиентов с чистой кожей за полгода</div><div class="detail-bio-line">Лицензия ЛО-63-01 · Самара</div>
+            </div>
+          </div>
+
+          <div class="detail-block">
+            <div class="detail-label">В био-ссылке</div>
+            <div class="detail-text">Онлайн-запись → ссылка на сервис записи (Yclients, Masters, Dikidi и т.д.)</div>
+          </div>
+
+          <div class="detail-block">
+            <div class="detail-label">5 хайлайтсов</div>
+            <div class="detail-tags">
+              <span class="detail-tag">до-после</span><span class="detail-tag">услуги</span><span class="detail-tag">кейсы</span><span class="detail-tag">отзывы</span><span class="detail-tag">лицензия</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="profile-mockup-wrap">
+          <div class="mockup-label">Так это выглядит в Instagram</div>
+          
+    <div class="ig-frame">
+      <div class="ig-status">
+        <div class="ig-time">9:41</div>
+        <div class="ig-status-right">
+          <svg class="ig-status-icon" viewBox="0 0 18 12" fill="currentColor"><path d="M1.5 0a1.5 1.5 0 0 0-1.5 1.5v9A1.5 1.5 0 0 0 1.5 12h2A1.5 1.5 0 0 0 5 10.5v-9A1.5 1.5 0 0 0 3.5 0h-2zm5 3A1.5 1.5 0 0 0 5 4.5v6A1.5 1.5 0 0 0 6.5 12h2A1.5 1.5 0 0 0 10 10.5v-6A1.5 1.5 0 0 0 8.5 3h-2zm5 3A1.5 1.5 0 0 0 10 7.5v3A1.5 1.5 0 0 0 11.5 12h2A1.5 1.5 0 0 0 15 10.5v-3A1.5 1.5 0 0 0 13.5 6h-2z"/></svg>
+          <svg class="ig-status-icon" viewBox="0 0 17 11" fill="currentColor"><path d="M8.5 0C5.13 0 2.16 1.4 0 3.59l1.5 1.41C3.3 3.15 5.78 2 8.5 2s5.2 1.15 7 3l1.5-1.41C14.84 1.4 11.87 0 8.5 0zm0 4c-1.84 0-3.5.79-4.62 2.05L5.38 7.46C6.18 6.59 7.27 6 8.5 6s2.32.59 3.12 1.46l1.5-1.41C12 4.79 10.34 4 8.5 4zm0 4c-.86 0-1.6.42-2.1 1.05L8.5 11l2.1-1.95C10.1 8.42 9.36 8 8.5 8z"/></svg>
+          <svg class="ig-status-icon ig-battery" viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1"><rect x="0.5" y="0.5" width="20" height="11" rx="2.5"/><rect x="2" y="2" width="17" height="8" rx="1" fill="currentColor"/><rect x="21" y="4" width="2" height="4" rx="0.5" fill="currentColor"/></svg>
+        </div>
+      </div>
+
+      <div class="ig-app-header">
+        <div class="ig-username">
+          <span>cosmetolog_samara</span>
+          <svg viewBox="0 0 24 24" fill="currentColor" class="ig-chevron"><path d="M7 10l5 5 5-5z"/></svg>
+        </div>
+        <div class="ig-app-actions">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+        </div>
+      </div>
+
+      <div class="ig-profile-row">
+        <div class="ig-avatar-wrap">
+          <div class="ig-avatar" style="background-color:#E8D5C4;color:#8B6F47">К</div>
+        </div>
+        <div class="ig-stats">
+          <div class="ig-stat"><div class="ig-stat-num">318</div><div class="ig-stat-label">публикаций</div></div>
+          <div class="ig-stat"><div class="ig-stat-num">4 230</div><div class="ig-stat-label">подписчиков</div></div>
+          <div class="ig-stat"><div class="ig-stat-num">412</div><div class="ig-stat-label">подписок</div></div>
+        </div>
+      </div>
+
+      <div class="ig-bio-block">
+        <div class="ig-display-name">КОСМЕТОЛОГ САМАРА</div>
+        <div class="ig-category">Медицинский кабинет</div>
+        <div class="ig-bio-text">
+          Врач-косметолог · спец. на акне и пигментации<br>Высшее мед.образование + 12 курсов в РФ и ЕС<br>200+ клиентов с чистой кожей за полгода<br>Лицензия ЛО-63-01 · Самара
+        </div>
+        <div class="ig-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+          <span>Онлайн-запись</span>
+        </div>
+      </div>
+
+      <div class="ig-buttons">
+        <button class="ig-btn ig-btn-primary">Подписаться</button>
+        <button class="ig-btn ig-btn-secondary">Сообщение</button>
+        <button class="ig-btn ig-btn-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/></svg>
+        </button>
+      </div>
+
+      <div class="ig-highlights">
+
+        <div class="ig-hl">
+          <div class="ig-hl-circle" style="background-color:#E8D5C4"></div>
+          <div class="ig-hl-label">до-после</div>
+        </div>
+        <div class="ig-hl">
+          <div class="ig-hl-circle" style="background-color:#E8D5C4"></div>
+          <div class="ig-hl-label">услуги</div>
+        </div>
+        <div class="ig-hl">
+          <div class="ig-hl-circle" style="background-color:#E8D5C4"></div>
+          <div class="ig-hl-label">кейсы</div>
+        </div>
+        <div class="ig-hl">
+          <div class="ig-hl-circle" style="background-color:#E8D5C4"></div>
+          <div class="ig-hl-label">отзывы</div>
+        </div>
+        <div class="ig-hl">
+          <div class="ig-hl-circle" style="background-color:#E8D5C4"></div>
+          <div class="ig-hl-label">лицензия</div>
+        </div>
+      </div>
+
+      <div class="ig-tabs">
+        <div class="ig-tab ig-tab-active">
+          <svg viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="3" width="6" height="6"/><rect x="11" y="3" width="6" height="6"/><rect x="19" y="3" width="2" height="6"/><rect x="3" y="11" width="6" height="6"/><rect x="11" y="11" width="6" height="6"/><rect x="19" y="11" width="2" height="6"/><rect x="3" y="19" width="6" height="2"/><rect x="11" y="19" width="6" height="2"/></svg>
+        </div>
+        <div class="ig-tab">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="3"/><polygon points="10 8 16 12 10 16 10 8" fill="currentColor"/></svg>
+        </div>
+        <div class="ig-tab">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 11l-5-5-5 5"/><path d="M17 18l-5-5-5 5"/></svg>
+        </div>
+      </div>
+
+      <div class="ig-posts-grid">
+<div class="ig-post" style="background-color:#F0E4D7;background-image:"></div><div class="ig-post" style="background-color:#E8D5C4;background-image:linear-gradient(135deg, rgba(255,255,255,0.15), transparent 50%)"></div><div class="ig-post" style="background-color:#DCC6B0;background-image:linear-gradient(45deg, rgba(0,0,0,0.1), transparent 50%)"></div><div class="ig-post" style="background-color:#E8D5C4;background-image:"></div><div class="ig-post" style="background-color:#F0E4D7;background-image:linear-gradient(135deg, rgba(255,255,255,0.15), transparent 50%)"></div><div class="ig-post" style="background-color:#D2B89E;background-image:linear-gradient(45deg, rgba(0,0,0,0.1), transparent 50%)"></div><div class="ig-post" style="background-color:#E8D5C4;background-image:"></div><div class="ig-post" style="background-color:#F0E4D7;background-image:linear-gradient(135deg, rgba(255,255,255,0.15), transparent 50%)"></div><div class="ig-post" style="background-color:#DCC6B0;background-image:linear-gradient(45deg, rgba(0,0,0,0.1), transparent 50%)"></div>
+      </div>
+
+      <div class="ig-bottom-nav">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="3"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+        <div class="ig-avatar-small" style="background-color:#E8D5C4;color:#8B6F47">К</div>
+      </div>
+
+      <div class="ig-home-bar"></div>
+    </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="profile-card" id="profile-5">
+      <div class="profile-card-header">
+        <div class="profile-num-badge">05</div>
+        <div class="profile-card-title-wrap">
+          <h2 class="profile-card-title">Парикмахер</h2>
+          <div class="profile-card-sub">Колорист · окрашивание</div>
+        </div>
+      </div>
+
+      <div class="profile-card-grid">
+        <div class="profile-details">
+          <div class="detail-block">
+            <div class="detail-label">Кому подходит</div>
+            <div class="detail-text">Парикмахер с фокусом на окрашивание - балаяж, шатуш, сложные техники. Работает в салоне или кабинете. Часто также стрижки и уходы.</div>
+          </div>
+
+          <div class="detail-block">
+            <div class="detail-label">Главная боль клиентки</div>
+            <div class="detail-text detail-pain">Не сжечь волосы, попасть в оттенок с референса, чтоб краска держалась 2-3 месяца, а не смылась через 3 недели.</div>
+          </div>
+
+          <div class="detail-block">
+            <div class="detail-label">Имя профиля</div>
+            <div class="detail-value-mono">КОЛОРИСТ САМАРА · ОКРАШИВАНИЕ</div>
+          </div>
+          
+
+          <div class="detail-block">
+            <div class="detail-label">Шапка профиля · «почему именно ко мне»</div>
+            <div class="detail-bio">
+              <div class="detail-bio-line">Балаяж и шатуш · оттенок как на референсе</div><div class="detail-bio-line">Окрашивание с уходом · не сжигаю волосы</div><div class="detail-bio-line">8 лет опыта, 25 курсов · стилист от L&#39;Oréal</div><div class="detail-bio-line">Самара, центр · до 4 часов работы за визит</div>
+            </div>
+          </div>
+
+          <div class="detail-block">
+            <div class="detail-label">В био-ссылке</div>
+            <div class="detail-text">Онлайн-запись → ссылка на сервис записи (Yclients, Masters, Dikidi и т.д.)</div>
+          </div>
+
+          <div class="detail-block">
+            <div class="detail-label">5 хайлайтсов</div>
+            <div class="detail-tags">
+              <span class="detail-tag">работы</span><span class="detail-tag">до-после</span><span class="detail-tag">прайс</span><span class="detail-tag">отзывы</span><span class="detail-tag">стрижки</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="profile-mockup-wrap">
+          <div class="mockup-label">Так это выглядит в Instagram</div>
+          
+    <div class="ig-frame">
+      <div class="ig-status">
+        <div class="ig-time">9:41</div>
+        <div class="ig-status-right">
+          <svg class="ig-status-icon" viewBox="0 0 18 12" fill="currentColor"><path d="M1.5 0a1.5 1.5 0 0 0-1.5 1.5v9A1.5 1.5 0 0 0 1.5 12h2A1.5 1.5 0 0 0 5 10.5v-9A1.5 1.5 0 0 0 3.5 0h-2zm5 3A1.5 1.5 0 0 0 5 4.5v6A1.5 1.5 0 0 0 6.5 12h2A1.5 1.5 0 0 0 10 10.5v-6A1.5 1.5 0 0 0 8.5 3h-2zm5 3A1.5 1.5 0 0 0 10 7.5v3A1.5 1.5 0 0 0 11.5 12h2A1.5 1.5 0 0 0 15 10.5v-3A1.5 1.5 0 0 0 13.5 6h-2z"/></svg>
+          <svg class="ig-status-icon" viewBox="0 0 17 11" fill="currentColor"><path d="M8.5 0C5.13 0 2.16 1.4 0 3.59l1.5 1.41C3.3 3.15 5.78 2 8.5 2s5.2 1.15 7 3l1.5-1.41C14.84 1.4 11.87 0 8.5 0zm0 4c-1.84 0-3.5.79-4.62 2.05L5.38 7.46C6.18 6.59 7.27 6 8.5 6s2.32.59 3.12 1.46l1.5-1.41C12 4.79 10.34 4 8.5 4zm0 4c-.86 0-1.6.42-2.1 1.05L8.5 11l2.1-1.95C10.1 8.42 9.36 8 8.5 8z"/></svg>
+          <svg class="ig-status-icon ig-battery" viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1"><rect x="0.5" y="0.5" width="20" height="11" rx="2.5"/><rect x="2" y="2" width="17" height="8" rx="1" fill="currentColor"/><rect x="21" y="4" width="2" height="4" rx="0.5" fill="currentColor"/></svg>
+        </div>
+      </div>
+
+      <div class="ig-app-header">
+        <div class="ig-username">
+          <span>kolorist_samara</span>
+          <svg viewBox="0 0 24 24" fill="currentColor" class="ig-chevron"><path d="M7 10l5 5 5-5z"/></svg>
+        </div>
+        <div class="ig-app-actions">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+        </div>
+      </div>
+
+      <div class="ig-profile-row">
+        <div class="ig-avatar-wrap">
+          <div class="ig-avatar" style="background-color:#8E6FA8;color:#F5E8FF">К</div>
+        </div>
+        <div class="ig-stats">
+          <div class="ig-stat"><div class="ig-stat-num">1 247</div><div class="ig-stat-label">публикаций</div></div>
+          <div class="ig-stat"><div class="ig-stat-num">18 600</div><div class="ig-stat-label">подписчиков</div></div>
+          <div class="ig-stat"><div class="ig-stat-num">523</div><div class="ig-stat-label">подписок</div></div>
+        </div>
+      </div>
+
+      <div class="ig-bio-block">
+        <div class="ig-display-name">КОЛОРИСТ САМАРА · ОКРАШИВАНИЕ</div>
+        <div class="ig-category">Услуги красоты</div>
+        <div class="ig-bio-text">
+          Балаяж и шатуш · оттенок как на референсе<br>Окрашивание с уходом · не сжигаю волосы<br>8 лет опыта, 25 курсов · стилист от L&#39;Oréal<br>Самара, центр · до 4 часов работы за визит
+        </div>
+        <div class="ig-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+          <span>Онлайн-запись</span>
+        </div>
+      </div>
+
+      <div class="ig-buttons">
+        <button class="ig-btn ig-btn-primary">Подписаться</button>
+        <button class="ig-btn ig-btn-secondary">Сообщение</button>
+        <button class="ig-btn ig-btn-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/></svg>
+        </button>
+      </div>
+
+      <div class="ig-highlights">
+
+        <div class="ig-hl">
+          <div class="ig-hl-circle" style="background-color:#8E6FA8"></div>
+          <div class="ig-hl-label">работы</div>
+        </div>
+        <div class="ig-hl">
+          <div class="ig-hl-circle" style="background-color:#8E6FA8"></div>
+          <div class="ig-hl-label">до-после</div>
+        </div>
+        <div class="ig-hl">
+          <div class="ig-hl-circle" style="background-color:#8E6FA8"></div>
+          <div class="ig-hl-label">прайс</div>
+        </div>
+        <div class="ig-hl">
+          <div class="ig-hl-circle" style="background-color:#8E6FA8"></div>
+          <div class="ig-hl-label">отзывы</div>
+        </div>
+        <div class="ig-hl">
+          <div class="ig-hl-circle" style="background-color:#8E6FA8"></div>
+          <div class="ig-hl-label">стрижки</div>
+        </div>
+      </div>
+
+      <div class="ig-tabs">
+        <div class="ig-tab ig-tab-active">
+          <svg viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="3" width="6" height="6"/><rect x="11" y="3" width="6" height="6"/><rect x="19" y="3" width="2" height="6"/><rect x="3" y="11" width="6" height="6"/><rect x="11" y="11" width="6" height="6"/><rect x="19" y="11" width="2" height="6"/><rect x="3" y="19" width="6" height="2"/><rect x="11" y="19" width="6" height="2"/></svg>
+        </div>
+        <div class="ig-tab">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="3"/><polygon points="10 8 16 12 10 16 10 8" fill="currentColor"/></svg>
+        </div>
+        <div class="ig-tab">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 11l-5-5-5 5"/><path d="M17 18l-5-5-5 5"/></svg>
+        </div>
+      </div>
+
+      <div class="ig-posts-grid">
+<div class="ig-post" style="background-color:#A78BC2;background-image:"></div><div class="ig-post" style="background-color:#8E6FA8;background-image:linear-gradient(135deg, rgba(255,255,255,0.15), transparent 50%)"></div><div class="ig-post" style="background-color:#6D4F8E;background-image:linear-gradient(45deg, rgba(0,0,0,0.1), transparent 50%)"></div><div class="ig-post" style="background-color:#A78BC2;background-image:"></div><div class="ig-post" style="background-color:#5C4174;background-image:linear-gradient(135deg, rgba(255,255,255,0.15), transparent 50%)"></div><div class="ig-post" style="background-color:#8E6FA8;background-image:linear-gradient(45deg, rgba(0,0,0,0.1), transparent 50%)"></div><div class="ig-post" style="background-color:#C2A5DC;background-image:"></div><div class="ig-post" style="background-color:#8E6FA8;background-image:linear-gradient(135deg, rgba(255,255,255,0.15), transparent 50%)"></div><div class="ig-post" style="background-color:#A78BC2;background-image:linear-gradient(45deg, rgba(0,0,0,0.1), transparent 50%)"></div>
+      </div>
+
+      <div class="ig-bottom-nav">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="3"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+        <div class="ig-avatar-small" style="background-color:#8E6FA8;color:#F5E8FF">К</div>
+      </div>
+
+      <div class="ig-home-bar"></div>
+    </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="profile-card" id="profile-6">
+      <div class="profile-card-header">
+        <div class="profile-num-badge">06</div>
+        <div class="profile-card-title-wrap">
+          <h2 class="profile-card-title">Визажист</h2>
+          <div class="profile-card-sub">Свадебный и повседневный макияж</div>
+        </div>
+      </div>
+
+      <div class="profile-card-grid">
+        <div class="profile-details">
+          <div class="detail-block">
+            <div class="detail-label">Кому подходит</div>
+            <div class="detail-text">Визажист. Делает свадебные образы, выпускные, фотосессии, повседневный макияж. Часто работает с выездом к клиентке.</div>
+          </div>
+
+          <div class="detail-block">
+            <div class="detail-label">Главная боль клиентки</div>
+            <div class="detail-text detail-pain">Чтоб я была «я, только лучше». Не «маска», не «чужое лицо», не «как у фотографа в инстаграме». Чтоб слушал, что мне нравится.</div>
+          </div>
+
+          <div class="detail-block">
+            <div class="detail-label">Имя профиля</div>
+            <div class="detail-value-mono">ВИЗАЖИСТ САМАРА · ОБРАЗЫ</div>
+          </div>
+          
+
+          <div class="detail-block">
+            <div class="detail-label">Шапка профиля · «почему именно ко мне»</div>
+            <div class="detail-bio">
+              <div class="detail-bio-line">Свадьба, выпускной, фото · образы «по тебе»</div><div class="detail-bio-line">Стойкий макияж до 14 часов, без поправок</div><div class="detail-bio-line">7 лет опыта, 300+ невест в портфолио</div><div class="detail-bio-line">Самара · выезд по городу и в гостиницы</div>
+            </div>
+          </div>
+
+          <div class="detail-block">
+            <div class="detail-label">В био-ссылке</div>
+            <div class="detail-text">Онлайн-запись → ссылка на сервис записи (Yclients, Masters, Dikidi и т.д.)</div>
+          </div>
+
+          <div class="detail-block">
+            <div class="detail-label">5 хайлайтсов</div>
+            <div class="detail-tags">
+              <span class="detail-tag">свадьба</span><span class="detail-tag">выпускной</span><span class="detail-tag">образы</span><span class="detail-tag">отзывы</span><span class="detail-tag">прайс</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="profile-mockup-wrap">
+          <div class="mockup-label">Так это выглядит в Instagram</div>
+          
+    <div class="ig-frame">
+      <div class="ig-status">
+        <div class="ig-time">9:41</div>
+        <div class="ig-status-right">
+          <svg class="ig-status-icon" viewBox="0 0 18 12" fill="currentColor"><path d="M1.5 0a1.5 1.5 0 0 0-1.5 1.5v9A1.5 1.5 0 0 0 1.5 12h2A1.5 1.5 0 0 0 5 10.5v-9A1.5 1.5 0 0 0 3.5 0h-2zm5 3A1.5 1.5 0 0 0 5 4.5v6A1.5 1.5 0 0 0 6.5 12h2A1.5 1.5 0 0 0 10 10.5v-6A1.5 1.5 0 0 0 8.5 3h-2zm5 3A1.5 1.5 0 0 0 10 7.5v3A1.5 1.5 0 0 0 11.5 12h2A1.5 1.5 0 0 0 15 10.5v-3A1.5 1.5 0 0 0 13.5 6h-2z"/></svg>
+          <svg class="ig-status-icon" viewBox="0 0 17 11" fill="currentColor"><path d="M8.5 0C5.13 0 2.16 1.4 0 3.59l1.5 1.41C3.3 3.15 5.78 2 8.5 2s5.2 1.15 7 3l1.5-1.41C14.84 1.4 11.87 0 8.5 0zm0 4c-1.84 0-3.5.79-4.62 2.05L5.38 7.46C6.18 6.59 7.27 6 8.5 6s2.32.59 3.12 1.46l1.5-1.41C12 4.79 10.34 4 8.5 4zm0 4c-.86 0-1.6.42-2.1 1.05L8.5 11l2.1-1.95C10.1 8.42 9.36 8 8.5 8z"/></svg>
+          <svg class="ig-status-icon ig-battery" viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1"><rect x="0.5" y="0.5" width="20" height="11" rx="2.5"/><rect x="2" y="2" width="17" height="8" rx="1" fill="currentColor"/><rect x="21" y="4" width="2" height="4" rx="0.5" fill="currentColor"/></svg>
+        </div>
+      </div>
+
+      <div class="ig-app-header">
+        <div class="ig-username">
+          <span>vizajist_samara</span>
+          <svg viewBox="0 0 24 24" fill="currentColor" class="ig-chevron"><path d="M7 10l5 5 5-5z"/></svg>
+        </div>
+        <div class="ig-app-actions">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+        </div>
+      </div>
+
+      <div class="ig-profile-row">
+        <div class="ig-avatar-wrap">
+          <div class="ig-avatar" style="background-color:#B85450;color:#FCE4E0">В</div>
+        </div>
+        <div class="ig-stats">
+          <div class="ig-stat"><div class="ig-stat-num">892</div><div class="ig-stat-label">публикаций</div></div>
+          <div class="ig-stat"><div class="ig-stat-num">14 200</div><div class="ig-stat-label">подписчиков</div></div>
+          <div class="ig-stat"><div class="ig-stat-num">367</div><div class="ig-stat-label">подписок</div></div>
+        </div>
+      </div>
+
+      <div class="ig-bio-block">
+        <div class="ig-display-name">ВИЗАЖИСТ САМАРА · ОБРАЗЫ</div>
+        <div class="ig-category">Услуги красоты</div>
+        <div class="ig-bio-text">
+          Свадьба, выпускной, фото · образы «по тебе»<br>Стойкий макияж до 14 часов, без поправок<br>7 лет опыта, 300+ невест в портфолио<br>Самара · выезд по городу и в гостиницы
+        </div>
+        <div class="ig-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+          <span>Онлайн-запись</span>
+        </div>
+      </div>
+
+      <div class="ig-buttons">
+        <button class="ig-btn ig-btn-primary">Подписаться</button>
+        <button class="ig-btn ig-btn-secondary">Сообщение</button>
+        <button class="ig-btn ig-btn-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/></svg>
+        </button>
+      </div>
+
+      <div class="ig-highlights">
+
+        <div class="ig-hl">
+          <div class="ig-hl-circle" style="background-color:#B85450"></div>
+          <div class="ig-hl-label">свадьба</div>
+        </div>
+        <div class="ig-hl">
+          <div class="ig-hl-circle" style="background-color:#B85450"></div>
+          <div class="ig-hl-label">выпускной</div>
+        </div>
+        <div class="ig-hl">
+          <div class="ig-hl-circle" style="background-color:#B85450"></div>
+          <div class="ig-hl-label">образы</div>
+        </div>
+        <div class="ig-hl">
+          <div class="ig-hl-circle" style="background-color:#B85450"></div>
+          <div class="ig-hl-label">отзывы</div>
+        </div>
+        <div class="ig-hl">
+          <div class="ig-hl-circle" style="background-color:#B85450"></div>
+          <div class="ig-hl-label">прайс</div>
+        </div>
+      </div>
+
+      <div class="ig-tabs">
+        <div class="ig-tab ig-tab-active">
+          <svg viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="3" width="6" height="6"/><rect x="11" y="3" width="6" height="6"/><rect x="19" y="3" width="2" height="6"/><rect x="3" y="11" width="6" height="6"/><rect x="11" y="11" width="6" height="6"/><rect x="19" y="11" width="2" height="6"/><rect x="3" y="19" width="6" height="2"/><rect x="11" y="19" width="6" height="2"/></svg>
+        </div>
+        <div class="ig-tab">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="3"/><polygon points="10 8 16 12 10 16 10 8" fill="currentColor"/></svg>
+        </div>
+        <div class="ig-tab">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 11l-5-5-5 5"/><path d="M17 18l-5-5-5 5"/></svg>
+        </div>
+      </div>
+
+      <div class="ig-posts-grid">
+<div class="ig-post" style="background-color:#CC6660;background-image:"></div><div class="ig-post" style="background-color:#B85450;background-image:linear-gradient(135deg, rgba(255,255,255,0.15), transparent 50%)"></div><div class="ig-post" style="background-color:#A04540;background-image:linear-gradient(45deg, rgba(0,0,0,0.1), transparent 50%)"></div><div class="ig-post" style="background-color:#B85450;background-image:"></div><div class="ig-post" style="background-color:#D87870;background-image:linear-gradient(135deg, rgba(255,255,255,0.15), transparent 50%)"></div><div class="ig-post" style="background-color:#9C3F3A;background-image:linear-gradient(45deg, rgba(0,0,0,0.1), transparent 50%)"></div><div class="ig-post" style="background-color:#B85450;background-image:"></div><div class="ig-post" style="background-color:#CC6660;background-image:linear-gradient(135deg, rgba(255,255,255,0.15), transparent 50%)"></div><div class="ig-post" style="background-color:#A04540;background-image:linear-gradient(45deg, rgba(0,0,0,0.1), transparent 50%)"></div>
+      </div>
+
+      <div class="ig-bottom-nav">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="3"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+        <div class="ig-avatar-small" style="background-color:#B85450;color:#FCE4E0">В</div>
+      </div>
+
+      <div class="ig-home-bar"></div>
+    </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="profile-card" id="profile-7">
+      <div class="profile-card-header">
+        <div class="profile-num-badge">07</div>
+        <div class="profile-card-title-wrap">
+          <h2 class="profile-card-title">Эпиляция</h2>
+          <div class="profile-card-sub">Шугаринг · сахарная депиляция</div>
+        </div>
+      </div>
+
+      <div class="profile-card-grid">
+        <div class="profile-details">
+          <div class="detail-block">
+            <div class="detail-label">Кому подходит</div>
+            <div class="detail-text">Мастер по эпиляции - шугаринг, воск. Работает в кабинете или с выездом. Услуга чувствительная, доверие критично.</div>
+          </div>
+
+          <div class="detail-block">
+            <div class="detail-label">Главная боль клиентки</div>
+            <div class="detail-text detail-pain">Чтоб быстро, без боли, без раздражения через 2 дня. И чтоб мастер не комментировал «густоту» и не задавал вопросов про личное.</div>
+          </div>
+
+          <div class="detail-block">
+            <div class="detail-label">Имя профиля</div>
+            <div class="detail-value-mono">ШУГАРИНГ САМАРА · ЭПИЛЯЦИЯ</div>
+          </div>
+          
+
+          <div class="detail-block">
+            <div class="detail-label">Шапка профиля · «почему именно ко мне»</div>
+            <div class="detail-bio">
+              <div class="detail-bio-line">Шугаринг с обезболиванием · без боли и крика</div><div class="detail-bio-line">Глубокое бикини за 25 минут · без вопросов</div><div class="detail-bio-line">5 лет опыта, без врастаний и раздражений</div><div class="detail-bio-line">Самара, центр · одноразовое бельё в подарок</div>
+            </div>
+          </div>
+
+          <div class="detail-block">
+            <div class="detail-label">В био-ссылке</div>
+            <div class="detail-text">Онлайн-запись → ссылка на сервис записи (Yclients, Masters, Dikidi и т.д.)</div>
+          </div>
+
+          <div class="detail-block">
+            <div class="detail-label">5 хайлайтсов</div>
+            <div class="detail-tags">
+              <span class="detail-tag">прайс</span><span class="detail-tag">зоны</span><span class="detail-tag">до-после</span><span class="detail-tag">уход</span><span class="detail-tag">отзывы</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="profile-mockup-wrap">
+          <div class="mockup-label">Так это выглядит в Instagram</div>
+          
+    <div class="ig-frame">
+      <div class="ig-status">
+        <div class="ig-time">9:41</div>
+        <div class="ig-status-right">
+          <svg class="ig-status-icon" viewBox="0 0 18 12" fill="currentColor"><path d="M1.5 0a1.5 1.5 0 0 0-1.5 1.5v9A1.5 1.5 0 0 0 1.5 12h2A1.5 1.5 0 0 0 5 10.5v-9A1.5 1.5 0 0 0 3.5 0h-2zm5 3A1.5 1.5 0 0 0 5 4.5v6A1.5 1.5 0 0 0 6.5 12h2A1.5 1.5 0 0 0 10 10.5v-6A1.5 1.5 0 0 0 8.5 3h-2zm5 3A1.5 1.5 0 0 0 10 7.5v3A1.5 1.5 0 0 0 11.5 12h2A1.5 1.5 0 0 0 15 10.5v-3A1.5 1.5 0 0 0 13.5 6h-2z"/></svg>
+          <svg class="ig-status-icon" viewBox="0 0 17 11" fill="currentColor"><path d="M8.5 0C5.13 0 2.16 1.4 0 3.59l1.5 1.41C3.3 3.15 5.78 2 8.5 2s5.2 1.15 7 3l1.5-1.41C14.84 1.4 11.87 0 8.5 0zm0 4c-1.84 0-3.5.79-4.62 2.05L5.38 7.46C6.18 6.59 7.27 6 8.5 6s2.32.59 3.12 1.46l1.5-1.41C12 4.79 10.34 4 8.5 4zm0 4c-.86 0-1.6.42-2.1 1.05L8.5 11l2.1-1.95C10.1 8.42 9.36 8 8.5 8z"/></svg>
+          <svg class="ig-status-icon ig-battery" viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1"><rect x="0.5" y="0.5" width="20" height="11" rx="2.5"/><rect x="2" y="2" width="17" height="8" rx="1" fill="currentColor"/><rect x="21" y="4" width="2" height="4" rx="0.5" fill="currentColor"/></svg>
+        </div>
+      </div>
+
+      <div class="ig-app-header">
+        <div class="ig-username">
+          <span>shugaring_samara</span>
+          <svg viewBox="0 0 24 24" fill="currentColor" class="ig-chevron"><path d="M7 10l5 5 5-5z"/></svg>
+        </div>
+        <div class="ig-app-actions">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+        </div>
+      </div>
+
+      <div class="ig-profile-row">
+        <div class="ig-avatar-wrap">
+          <div class="ig-avatar" style="background-color:#A8D5BA;color:#2D5F47">Ш</div>
+        </div>
+        <div class="ig-stats">
+          <div class="ig-stat"><div class="ig-stat-num">456</div><div class="ig-stat-label">публикаций</div></div>
+          <div class="ig-stat"><div class="ig-stat-num">6 780</div><div class="ig-stat-label">подписчиков</div></div>
+          <div class="ig-stat"><div class="ig-stat-num">234</div><div class="ig-stat-label">подписок</div></div>
+        </div>
+      </div>
+
+      <div class="ig-bio-block">
+        <div class="ig-display-name">ШУГАРИНГ САМАРА · ЭПИЛЯЦИЯ</div>
+        <div class="ig-category">Услуги красоты</div>
+        <div class="ig-bio-text">
+          Шугаринг с обезболиванием · без боли и крика<br>Глубокое бикини за 25 минут · без вопросов<br>5 лет опыта, без врастаний и раздражений<br>Самара, центр · одноразовое бельё в подарок
+        </div>
+        <div class="ig-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+          <span>Онлайн-запись</span>
+        </div>
+      </div>
+
+      <div class="ig-buttons">
+        <button class="ig-btn ig-btn-primary">Подписаться</button>
+        <button class="ig-btn ig-btn-secondary">Сообщение</button>
+        <button class="ig-btn ig-btn-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/></svg>
+        </button>
+      </div>
+
+      <div class="ig-highlights">
+
+        <div class="ig-hl">
+          <div class="ig-hl-circle" style="background-color:#A8D5BA"></div>
+          <div class="ig-hl-label">прайс</div>
+        </div>
+        <div class="ig-hl">
+          <div class="ig-hl-circle" style="background-color:#A8D5BA"></div>
+          <div class="ig-hl-label">зоны</div>
+        </div>
+        <div class="ig-hl">
+          <div class="ig-hl-circle" style="background-color:#A8D5BA"></div>
+          <div class="ig-hl-label">до-после</div>
+        </div>
+        <div class="ig-hl">
+          <div class="ig-hl-circle" style="background-color:#A8D5BA"></div>
+          <div class="ig-hl-label">уход</div>
+        </div>
+        <div class="ig-hl">
+          <div class="ig-hl-circle" style="background-color:#A8D5BA"></div>
+          <div class="ig-hl-label">отзывы</div>
+        </div>
+      </div>
+
+      <div class="ig-tabs">
+        <div class="ig-tab ig-tab-active">
+          <svg viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="3" width="6" height="6"/><rect x="11" y="3" width="6" height="6"/><rect x="19" y="3" width="2" height="6"/><rect x="3" y="11" width="6" height="6"/><rect x="11" y="11" width="6" height="6"/><rect x="19" y="11" width="2" height="6"/><rect x="3" y="19" width="6" height="2"/><rect x="11" y="19" width="6" height="2"/></svg>
+        </div>
+        <div class="ig-tab">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="3"/><polygon points="10 8 16 12 10 16 10 8" fill="currentColor"/></svg>
+        </div>
+        <div class="ig-tab">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 11l-5-5-5 5"/><path d="M17 18l-5-5-5 5"/></svg>
+        </div>
+      </div>
+
+      <div class="ig-posts-grid">
+<div class="ig-post" style="background-color:#B8DCC7;background-image:"></div><div class="ig-post" style="background-color:#A8D5BA;background-image:linear-gradient(135deg, rgba(255,255,255,0.15), transparent 50%)"></div><div class="ig-post" style="background-color:#94C5AA;background-image:linear-gradient(45deg, rgba(0,0,0,0.1), transparent 50%)"></div><div class="ig-post" style="background-color:#A8D5BA;background-image:"></div><div class="ig-post" style="background-color:#80B89C;background-image:linear-gradient(135deg, rgba(255,255,255,0.15), transparent 50%)"></div><div class="ig-post" style="background-color:#B8DCC7;background-image:linear-gradient(45deg, rgba(0,0,0,0.1), transparent 50%)"></div><div class="ig-post" style="background-color:#A8D5BA;background-image:"></div><div class="ig-post" style="background-color:#94C5AA;background-image:linear-gradient(135deg, rgba(255,255,255,0.15), transparent 50%)"></div><div class="ig-post" style="background-color:#A8D5BA;background-image:linear-gradient(45deg, rgba(0,0,0,0.1), transparent 50%)"></div>
+      </div>
+
+      <div class="ig-bottom-nav">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="3"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+        <div class="ig-avatar-small" style="background-color:#A8D5BA;color:#2D5F47">Ш</div>
+      </div>
+
+      <div class="ig-home-bar"></div>
+    </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="profile-card" id="profile-8">
+      <div class="profile-card-header">
+        <div class="profile-num-badge">08</div>
+        <div class="profile-card-title-wrap">
+          <h2 class="profile-card-title">Мастер на дому</h2>
+          <div class="profile-card-sub">Любая бьюти-услуга в домашней зоне</div>
+        </div>
+      </div>
+
+      <div class="profile-card-grid">
+        <div class="profile-details">
+          <div class="detail-block">
+            <div class="detail-label">Кому подходит</div>
+            <div class="detail-text">Мастер любого профиля (ногти, ресницы, брови, шугаринг), принимающий клиентов у себя дома в специально подготовленной зоне. Не салон, не арендный кабинет.</div>
+          </div>
+
+          <div class="detail-block">
+            <div class="detail-label">Главная боль клиентки</div>
+            <div class="detail-text detail-pain">Сделать хороший маникюр / процедуру, не переплачивая за аренду салона. И чтоб не оказаться в квартире, где «мастер на кухне между делом».</div>
+          </div>
+
+          <div class="detail-block">
+            <div class="detail-label">Имя профиля</div>
+            <div class="detail-value-mono">МАНИКЮР ПЕДИКЮР САМАРА</div>
+          </div>
+          
+          <div class="detail-block detail-warn">
+            <div class="detail-label">Важно про имя профиля</div>
+            <div class="detail-text">ВАЖНО: в имени профиля НЕ пишем «на дому» - этого не ищут в поиске. Используем обычное «УСЛУГА ГОРОД». Про формат «дома» рассказываем в шапке через выгоду (без накрутки за салон, своё оборудование).</div>
+          </div>
+
+          <div class="detail-block">
+            <div class="detail-label">Шапка профиля · «почему именно ко мне»</div>
+            <div class="detail-bio">
+              <div class="detail-bio-line">Маникюр + педикюр · цена без накрутки за салон</div><div class="detail-bio-line">Своё оборудование, отдельная зона, чисто</div><div class="detail-bio-line">6 лет опыта, 12 курсов повышения квалификации</div><div class="detail-bio-line">Самара, Промышленный · парковка во дворе</div>
+            </div>
+          </div>
+
+          <div class="detail-block">
+            <div class="detail-label">В био-ссылке</div>
+            <div class="detail-text">Онлайн-запись → ссылка на сервис записи (Yclients, Masters, Dikidi и т.д.)</div>
+          </div>
+
+          <div class="detail-block">
+            <div class="detail-label">5 хайлайтсов</div>
+            <div class="detail-tags">
+              <span class="detail-tag">услуги</span><span class="detail-tag">прайс</span><span class="detail-tag">зона</span><span class="detail-tag">отзывы</span><span class="detail-tag">как добраться</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="profile-mockup-wrap">
+          <div class="mockup-label">Так это выглядит в Instagram</div>
+          
+    <div class="ig-frame">
+      <div class="ig-status">
+        <div class="ig-time">9:41</div>
+        <div class="ig-status-right">
+          <svg class="ig-status-icon" viewBox="0 0 18 12" fill="currentColor"><path d="M1.5 0a1.5 1.5 0 0 0-1.5 1.5v9A1.5 1.5 0 0 0 1.5 12h2A1.5 1.5 0 0 0 5 10.5v-9A1.5 1.5 0 0 0 3.5 0h-2zm5 3A1.5 1.5 0 0 0 5 4.5v6A1.5 1.5 0 0 0 6.5 12h2A1.5 1.5 0 0 0 10 10.5v-6A1.5 1.5 0 0 0 8.5 3h-2zm5 3A1.5 1.5 0 0 0 10 7.5v3A1.5 1.5 0 0 0 11.5 12h2A1.5 1.5 0 0 0 15 10.5v-3A1.5 1.5 0 0 0 13.5 6h-2z"/></svg>
+          <svg class="ig-status-icon" viewBox="0 0 17 11" fill="currentColor"><path d="M8.5 0C5.13 0 2.16 1.4 0 3.59l1.5 1.41C3.3 3.15 5.78 2 8.5 2s5.2 1.15 7 3l1.5-1.41C14.84 1.4 11.87 0 8.5 0zm0 4c-1.84 0-3.5.79-4.62 2.05L5.38 7.46C6.18 6.59 7.27 6 8.5 6s2.32.59 3.12 1.46l1.5-1.41C12 4.79 10.34 4 8.5 4zm0 4c-.86 0-1.6.42-2.1 1.05L8.5 11l2.1-1.95C10.1 8.42 9.36 8 8.5 8z"/></svg>
+          <svg class="ig-status-icon ig-battery" viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1"><rect x="0.5" y="0.5" width="20" height="11" rx="2.5"/><rect x="2" y="2" width="17" height="8" rx="1" fill="currentColor"/><rect x="21" y="4" width="2" height="4" rx="0.5" fill="currentColor"/></svg>
+        </div>
+      </div>
+
+      <div class="ig-app-header">
+        <div class="ig-username">
+          <span>master_smr_centre</span>
+          <svg viewBox="0 0 24 24" fill="currentColor" class="ig-chevron"><path d="M7 10l5 5 5-5z"/></svg>
+        </div>
+        <div class="ig-app-actions">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+        </div>
+      </div>
+
+      <div class="ig-profile-row">
+        <div class="ig-avatar-wrap">
+          <div class="ig-avatar" style="background-color:#F5C49B;color:#8B5523">М</div>
+        </div>
+        <div class="ig-stats">
+          <div class="ig-stat"><div class="ig-stat-num">287</div><div class="ig-stat-label">публикаций</div></div>
+          <div class="ig-stat"><div class="ig-stat-num">3 450</div><div class="ig-stat-label">подписчиков</div></div>
+          <div class="ig-stat"><div class="ig-stat-num">189</div><div class="ig-stat-label">подписок</div></div>
+        </div>
+      </div>
+
+      <div class="ig-bio-block">
+        <div class="ig-display-name">МАНИКЮР ПЕДИКЮР САМАРА</div>
+        <div class="ig-category">Услуги красоты</div>
+        <div class="ig-bio-text">
+          Маникюр + педикюр · цена без накрутки за салон<br>Своё оборудование, отдельная зона, чисто<br>6 лет опыта, 12 курсов повышения квалификации<br>Самара, Промышленный · парковка во дворе
+        </div>
+        <div class="ig-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+          <span>Онлайн-запись</span>
+        </div>
+      </div>
+
+      <div class="ig-buttons">
+        <button class="ig-btn ig-btn-primary">Подписаться</button>
+        <button class="ig-btn ig-btn-secondary">Сообщение</button>
+        <button class="ig-btn ig-btn-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/></svg>
+        </button>
+      </div>
+
+      <div class="ig-highlights">
+
+        <div class="ig-hl">
+          <div class="ig-hl-circle" style="background-color:#F5C49B"></div>
+          <div class="ig-hl-label">услуги</div>
+        </div>
+        <div class="ig-hl">
+          <div class="ig-hl-circle" style="background-color:#F5C49B"></div>
+          <div class="ig-hl-label">прайс</div>
+        </div>
+        <div class="ig-hl">
+          <div class="ig-hl-circle" style="background-color:#F5C49B"></div>
+          <div class="ig-hl-label">зона</div>
+        </div>
+        <div class="ig-hl">
+          <div class="ig-hl-circle" style="background-color:#F5C49B"></div>
+          <div class="ig-hl-label">отзывы</div>
+        </div>
+        <div class="ig-hl">
+          <div class="ig-hl-circle" style="background-color:#F5C49B"></div>
+          <div class="ig-hl-label">как добраться</div>
+        </div>
+      </div>
+
+      <div class="ig-tabs">
+        <div class="ig-tab ig-tab-active">
+          <svg viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="3" width="6" height="6"/><rect x="11" y="3" width="6" height="6"/><rect x="19" y="3" width="2" height="6"/><rect x="3" y="11" width="6" height="6"/><rect x="11" y="11" width="6" height="6"/><rect x="19" y="11" width="2" height="6"/><rect x="3" y="19" width="6" height="2"/><rect x="11" y="19" width="6" height="2"/></svg>
+        </div>
+        <div class="ig-tab">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="3"/><polygon points="10 8 16 12 10 16 10 8" fill="currentColor"/></svg>
+        </div>
+        <div class="ig-tab">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 11l-5-5-5 5"/><path d="M17 18l-5-5-5 5"/></svg>
+        </div>
+      </div>
+
+      <div class="ig-posts-grid">
+<div class="ig-post" style="background-color:#F8D2AB;background-image:"></div><div class="ig-post" style="background-color:#F5C49B;background-image:linear-gradient(135deg, rgba(255,255,255,0.15), transparent 50%)"></div><div class="ig-post" style="background-color:#E8B27D;background-image:linear-gradient(45deg, rgba(0,0,0,0.1), transparent 50%)"></div><div class="ig-post" style="background-color:#F5C49B;background-image:"></div><div class="ig-post" style="background-color:#FACF99;background-image:linear-gradient(135deg, rgba(255,255,255,0.15), transparent 50%)"></div><div class="ig-post" style="background-color:#E8B27D;background-image:linear-gradient(45deg, rgba(0,0,0,0.1), transparent 50%)"></div><div class="ig-post" style="background-color:#F5C49B;background-image:"></div><div class="ig-post" style="background-color:#F8D2AB;background-image:linear-gradient(135deg, rgba(255,255,255,0.15), transparent 50%)"></div><div class="ig-post" style="background-color:#F5C49B;background-image:linear-gradient(45deg, rgba(0,0,0,0.1), transparent 50%)"></div>
+      </div>
+
+      <div class="ig-bottom-nav">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="3"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+        <div class="ig-avatar-small" style="background-color:#F5C49B;color:#8B5523">М</div>
+      </div>
+
+      <div class="ig-home-bar"></div>
+    </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="profile-card" id="profile-9">
+      <div class="profile-card-header">
+        <div class="profile-num-badge">09</div>
+        <div class="profile-card-title-wrap">
+          <h2 class="profile-card-title">Монопрофильная студия</h2>
+          <div class="profile-card-sub">Одна услуга · команда мастеров</div>
+        </div>
+      </div>
+
+      <div class="profile-card-grid">
+        <div class="profile-details">
+          <div class="detail-block">
+            <div class="detail-label">Кому подходит</div>
+            <div class="detail-text">Студия одной услуги (только маникюр / только ресницы / только брови) с командой из 3-7 мастеров. Хозяйка или администратор ведёт профиль.</div>
+          </div>
+
+          <div class="detail-block">
+            <div class="detail-label">Главная боль клиентки</div>
+            <div class="detail-text detail-pain">Найти удобное время на сегодня или завтра. И чтоб уровень был одинаковый у любого мастера в студии, а не «к Лене попасть невозможно».</div>
+          </div>
+
+          <div class="detail-block">
+            <div class="detail-label">Имя профиля</div>
+            <div class="detail-value-mono">СТУДИЯ МАНИКЮРА САМАРА</div>
+          </div>
+          
+
+          <div class="detail-block">
+            <div class="detail-label">Шапка профиля · «почему именно ко мне»</div>
+            <div class="detail-bio">
+              <div class="detail-bio-line">7 мастеров · удобное время на сегодня и завтра</div><div class="detail-bio-line">Все мастера с опытом от 5 лет, аккредитация</div><div class="detail-bio-line">Бар с напитками, парковка во дворе</div><div class="detail-bio-line">Самара, центр · 4,9 на Яндекс.Картах</div>
+            </div>
+          </div>
+
+          <div class="detail-block">
+            <div class="detail-label">В био-ссылке</div>
+            <div class="detail-text">Онлайн-запись → ссылка на сервис записи (Yclients, Masters, Dikidi и т.д.)</div>
+          </div>
+
+          <div class="detail-block">
+            <div class="detail-label">5 хайлайтсов</div>
+            <div class="detail-tags">
+              <span class="detail-tag">мастера</span><span class="detail-tag">прайс</span><span class="detail-tag">работы</span><span class="detail-tag">отзывы</span><span class="detail-tag">адрес</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="profile-mockup-wrap">
+          <div class="mockup-label">Так это выглядит в Instagram</div>
+          
+    <div class="ig-frame">
+      <div class="ig-status">
+        <div class="ig-time">9:41</div>
+        <div class="ig-status-right">
+          <svg class="ig-status-icon" viewBox="0 0 18 12" fill="currentColor"><path d="M1.5 0a1.5 1.5 0 0 0-1.5 1.5v9A1.5 1.5 0 0 0 1.5 12h2A1.5 1.5 0 0 0 5 10.5v-9A1.5 1.5 0 0 0 3.5 0h-2zm5 3A1.5 1.5 0 0 0 5 4.5v6A1.5 1.5 0 0 0 6.5 12h2A1.5 1.5 0 0 0 10 10.5v-6A1.5 1.5 0 0 0 8.5 3h-2zm5 3A1.5 1.5 0 0 0 10 7.5v3A1.5 1.5 0 0 0 11.5 12h2A1.5 1.5 0 0 0 15 10.5v-3A1.5 1.5 0 0 0 13.5 6h-2z"/></svg>
+          <svg class="ig-status-icon" viewBox="0 0 17 11" fill="currentColor"><path d="M8.5 0C5.13 0 2.16 1.4 0 3.59l1.5 1.41C3.3 3.15 5.78 2 8.5 2s5.2 1.15 7 3l1.5-1.41C14.84 1.4 11.87 0 8.5 0zm0 4c-1.84 0-3.5.79-4.62 2.05L5.38 7.46C6.18 6.59 7.27 6 8.5 6s2.32.59 3.12 1.46l1.5-1.41C12 4.79 10.34 4 8.5 4zm0 4c-.86 0-1.6.42-2.1 1.05L8.5 11l2.1-1.95C10.1 8.42 9.36 8 8.5 8z"/></svg>
+          <svg class="ig-status-icon ig-battery" viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1"><rect x="0.5" y="0.5" width="20" height="11" rx="2.5"/><rect x="2" y="2" width="17" height="8" rx="1" fill="currentColor"/><rect x="21" y="4" width="2" height="4" rx="0.5" fill="currentColor"/></svg>
+        </div>
+      </div>
+
+      <div class="ig-app-header">
+        <div class="ig-username">
+          <span>studia_nogti_samara</span>
+          <svg viewBox="0 0 24 24" fill="currentColor" class="ig-chevron"><path d="M7 10l5 5 5-5z"/></svg>
+        </div>
+        <div class="ig-app-actions">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+        </div>
+      </div>
+
+      <div class="ig-profile-row">
+        <div class="ig-avatar-wrap">
+          <div class="ig-avatar" style="background-color:#1C1C1C;color:#F13684">С</div>
+        </div>
+        <div class="ig-stats">
+          <div class="ig-stat"><div class="ig-stat-num">1 832</div><div class="ig-stat-label">публикаций</div></div>
+          <div class="ig-stat"><div class="ig-stat-num">24 800</div><div class="ig-stat-label">подписчиков</div></div>
+          <div class="ig-stat"><div class="ig-stat-num">412</div><div class="ig-stat-label">подписок</div></div>
+        </div>
+      </div>
+
+      <div class="ig-bio-block">
+        <div class="ig-display-name">СТУДИЯ МАНИКЮРА САМАРА</div>
+        <div class="ig-category">Студия красоты</div>
+        <div class="ig-bio-text">
+          7 мастеров · удобное время на сегодня и завтра<br>Все мастера с опытом от 5 лет, аккредитация<br>Бар с напитками, парковка во дворе<br>Самара, центр · 4,9 на Яндекс.Картах
+        </div>
+        <div class="ig-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+          <span>Онлайн-запись</span>
+        </div>
+      </div>
+
+      <div class="ig-buttons">
+        <button class="ig-btn ig-btn-primary">Подписаться</button>
+        <button class="ig-btn ig-btn-secondary">Сообщение</button>
+        <button class="ig-btn ig-btn-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/></svg>
+        </button>
+      </div>
+
+      <div class="ig-highlights">
+
+        <div class="ig-hl">
+          <div class="ig-hl-circle" style="background-color:#1C1C1C"></div>
+          <div class="ig-hl-label">мастера</div>
+        </div>
+        <div class="ig-hl">
+          <div class="ig-hl-circle" style="background-color:#1C1C1C"></div>
+          <div class="ig-hl-label">прайс</div>
+        </div>
+        <div class="ig-hl">
+          <div class="ig-hl-circle" style="background-color:#1C1C1C"></div>
+          <div class="ig-hl-label">работы</div>
+        </div>
+        <div class="ig-hl">
+          <div class="ig-hl-circle" style="background-color:#1C1C1C"></div>
+          <div class="ig-hl-label">отзывы</div>
+        </div>
+        <div class="ig-hl">
+          <div class="ig-hl-circle" style="background-color:#1C1C1C"></div>
+          <div class="ig-hl-label">адрес</div>
+        </div>
+      </div>
+
+      <div class="ig-tabs">
+        <div class="ig-tab ig-tab-active">
+          <svg viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="3" width="6" height="6"/><rect x="11" y="3" width="6" height="6"/><rect x="19" y="3" width="2" height="6"/><rect x="3" y="11" width="6" height="6"/><rect x="11" y="11" width="6" height="6"/><rect x="19" y="11" width="2" height="6"/><rect x="3" y="19" width="6" height="2"/><rect x="11" y="19" width="6" height="2"/></svg>
+        </div>
+        <div class="ig-tab">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="3"/><polygon points="10 8 16 12 10 16 10 8" fill="currentColor"/></svg>
+        </div>
+        <div class="ig-tab">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 11l-5-5-5 5"/><path d="M17 18l-5-5-5 5"/></svg>
+        </div>
+      </div>
+
+      <div class="ig-posts-grid">
+<div class="ig-post" style="background-color:#2C2C2C;background-image:"></div><div class="ig-post" style="background-color:#1C1C1C;background-image:linear-gradient(135deg, rgba(255,255,255,0.15), transparent 50%)"></div><div class="ig-post" style="background-color:#3C3C3C;background-image:linear-gradient(45deg, rgba(0,0,0,0.1), transparent 50%)"></div><div class="ig-post" style="background-color:#1C1C1C;background-image:"></div><div class="ig-post" style="background-color:#2C2C2C;background-image:linear-gradient(135deg, rgba(255,255,255,0.15), transparent 50%)"></div><div class="ig-post" style="background-color:#1C1C1C;background-image:linear-gradient(45deg, rgba(0,0,0,0.1), transparent 50%)"></div><div class="ig-post" style="background-color:#3C3C3C;background-image:"></div><div class="ig-post" style="background-color:#2C2C2C;background-image:linear-gradient(135deg, rgba(255,255,255,0.15), transparent 50%)"></div><div class="ig-post" style="background-color:#1C1C1C;background-image:linear-gradient(45deg, rgba(0,0,0,0.1), transparent 50%)"></div>
+      </div>
+
+      <div class="ig-bottom-nav">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="3"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+        <div class="ig-avatar-small" style="background-color:#1C1C1C;color:#F13684">С</div>
+      </div>
+
+      <div class="ig-home-bar"></div>
+    </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="profile-card" id="profile-10">
+      <div class="profile-card-header">
+        <div class="profile-num-badge">10</div>
+        <div class="profile-card-title-wrap">
+          <h2 class="profile-card-title">Широкопрофильная студия</h2>
+          <div class="profile-card-sub">Несколько услуг · комплексный сервис</div>
+        </div>
+      </div>
+
+      <div class="profile-card-grid">
+        <div class="profile-details">
+          <div class="detail-block">
+            <div class="detail-label">Кому подходит</div>
+            <div class="detail-text">Студия красоты с несколькими услугами под одной крышей: ногти, ресницы, брови, косметология, парикмахер. Хозяйка ведёт профиль.</div>
+          </div>
+
+          <div class="detail-block">
+            <div class="detail-label">Главная боль клиентки</div>
+            <div class="detail-text detail-pain">Сделать всё в одном месте за один визит. Не ехать в 3 разных салона. Не платить +20% за «комплекс».</div>
+          </div>
+
+          <div class="detail-block">
+            <div class="detail-label">Имя профиля</div>
+            <div class="detail-value-mono">СТУДИЯ КРАСОТЫ САМАРА</div>
+          </div>
+          
+
+          <div class="detail-block">
+            <div class="detail-label">Шапка профиля · «почему именно ко мне»</div>
+            <div class="detail-bio">
+              <div class="detail-bio-line">Ногти, ресницы, брови, косметология</div><div class="detail-bio-line">Весь комплекс за один визит · без накруток</div><div class="detail-bio-line">12 мастеров с опытом от 5 лет</div><div class="detail-bio-line">Самара, центр · 4,9 на Я.Картах · парковка</div>
+            </div>
+          </div>
+
+          <div class="detail-block">
+            <div class="detail-label">В био-ссылке</div>
+            <div class="detail-text">Онлайн-запись → ссылка на сервис записи (Yclients, Masters, Dikidi и т.д.)</div>
+          </div>
+
+          <div class="detail-block">
+            <div class="detail-label">5 хайлайтсов</div>
+            <div class="detail-tags">
+              <span class="detail-tag">услуги</span><span class="detail-tag">прайс</span><span class="detail-tag">мастера</span><span class="detail-tag">отзывы</span><span class="detail-tag">адрес</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="profile-mockup-wrap">
+          <div class="mockup-label">Так это выглядит в Instagram</div>
+          
+    <div class="ig-frame">
+      <div class="ig-status">
+        <div class="ig-time">9:41</div>
+        <div class="ig-status-right">
+          <svg class="ig-status-icon" viewBox="0 0 18 12" fill="currentColor"><path d="M1.5 0a1.5 1.5 0 0 0-1.5 1.5v9A1.5 1.5 0 0 0 1.5 12h2A1.5 1.5 0 0 0 5 10.5v-9A1.5 1.5 0 0 0 3.5 0h-2zm5 3A1.5 1.5 0 0 0 5 4.5v6A1.5 1.5 0 0 0 6.5 12h2A1.5 1.5 0 0 0 10 10.5v-6A1.5 1.5 0 0 0 8.5 3h-2zm5 3A1.5 1.5 0 0 0 10 7.5v3A1.5 1.5 0 0 0 11.5 12h2A1.5 1.5 0 0 0 15 10.5v-3A1.5 1.5 0 0 0 13.5 6h-2z"/></svg>
+          <svg class="ig-status-icon" viewBox="0 0 17 11" fill="currentColor"><path d="M8.5 0C5.13 0 2.16 1.4 0 3.59l1.5 1.41C3.3 3.15 5.78 2 8.5 2s5.2 1.15 7 3l1.5-1.41C14.84 1.4 11.87 0 8.5 0zm0 4c-1.84 0-3.5.79-4.62 2.05L5.38 7.46C6.18 6.59 7.27 6 8.5 6s2.32.59 3.12 1.46l1.5-1.41C12 4.79 10.34 4 8.5 4zm0 4c-.86 0-1.6.42-2.1 1.05L8.5 11l2.1-1.95C10.1 8.42 9.36 8 8.5 8z"/></svg>
+          <svg class="ig-status-icon ig-battery" viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1"><rect x="0.5" y="0.5" width="20" height="11" rx="2.5"/><rect x="2" y="2" width="17" height="8" rx="1" fill="currentColor"/><rect x="21" y="4" width="2" height="4" rx="0.5" fill="currentColor"/></svg>
+        </div>
+      </div>
+
+      <div class="ig-app-header">
+        <div class="ig-username">
+          <span>beauty_studio_samara</span>
+          <svg viewBox="0 0 24 24" fill="currentColor" class="ig-chevron"><path d="M7 10l5 5 5-5z"/></svg>
+        </div>
+        <div class="ig-app-actions">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+        </div>
+      </div>
+
+      <div class="ig-profile-row">
+        <div class="ig-avatar-wrap">
+          <div class="ig-avatar" style="background-color:#2E3B5C;color:#E8C490">С</div>
+        </div>
+        <div class="ig-stats">
+          <div class="ig-stat"><div class="ig-stat-num">2 145</div><div class="ig-stat-label">публикаций</div></div>
+          <div class="ig-stat"><div class="ig-stat-num">31 200</div><div class="ig-stat-label">подписчиков</div></div>
+          <div class="ig-stat"><div class="ig-stat-num">589</div><div class="ig-stat-label">подписок</div></div>
+        </div>
+      </div>
+
+      <div class="ig-bio-block">
+        <div class="ig-display-name">СТУДИЯ КРАСОТЫ САМАРА</div>
+        <div class="ig-category">Студия красоты</div>
+        <div class="ig-bio-text">
+          Ногти, ресницы, брови, косметология<br>Весь комплекс за один визит · без накруток<br>12 мастеров с опытом от 5 лет<br>Самара, центр · 4,9 на Я.Картах · парковка
+        </div>
+        <div class="ig-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+          <span>Онлайн-запись</span>
+        </div>
+      </div>
+
+      <div class="ig-buttons">
+        <button class="ig-btn ig-btn-primary">Подписаться</button>
+        <button class="ig-btn ig-btn-secondary">Сообщение</button>
+        <button class="ig-btn ig-btn-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/></svg>
+        </button>
+      </div>
+
+      <div class="ig-highlights">
+
+        <div class="ig-hl">
+          <div class="ig-hl-circle" style="background-color:#2E3B5C"></div>
+          <div class="ig-hl-label">услуги</div>
+        </div>
+        <div class="ig-hl">
+          <div class="ig-hl-circle" style="background-color:#2E3B5C"></div>
+          <div class="ig-hl-label">прайс</div>
+        </div>
+        <div class="ig-hl">
+          <div class="ig-hl-circle" style="background-color:#2E3B5C"></div>
+          <div class="ig-hl-label">мастера</div>
+        </div>
+        <div class="ig-hl">
+          <div class="ig-hl-circle" style="background-color:#2E3B5C"></div>
+          <div class="ig-hl-label">отзывы</div>
+        </div>
+        <div class="ig-hl">
+          <div class="ig-hl-circle" style="background-color:#2E3B5C"></div>
+          <div class="ig-hl-label">адрес</div>
+        </div>
+      </div>
+
+      <div class="ig-tabs">
+        <div class="ig-tab ig-tab-active">
+          <svg viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="3" width="6" height="6"/><rect x="11" y="3" width="6" height="6"/><rect x="19" y="3" width="2" height="6"/><rect x="3" y="11" width="6" height="6"/><rect x="11" y="11" width="6" height="6"/><rect x="19" y="11" width="2" height="6"/><rect x="3" y="19" width="6" height="2"/><rect x="11" y="19" width="6" height="2"/></svg>
+        </div>
+        <div class="ig-tab">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="3"/><polygon points="10 8 16 12 10 16 10 8" fill="currentColor"/></svg>
+        </div>
+        <div class="ig-tab">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 11l-5-5-5 5"/><path d="M17 18l-5-5-5 5"/></svg>
+        </div>
+      </div>
+
+      <div class="ig-posts-grid">
+<div class="ig-post" style="background-color:#3D4D72;background-image:"></div><div class="ig-post" style="background-color:#2E3B5C;background-image:linear-gradient(135deg, rgba(255,255,255,0.15), transparent 50%)"></div><div class="ig-post" style="background-color:#1F2A47;background-image:linear-gradient(45deg, rgba(0,0,0,0.1), transparent 50%)"></div><div class="ig-post" style="background-color:#2E3B5C;background-image:"></div><div class="ig-post" style="background-color:#4D6088;background-image:linear-gradient(135deg, rgba(255,255,255,0.15), transparent 50%)"></div><div class="ig-post" style="background-color:#2E3B5C;background-image:linear-gradient(45deg, rgba(0,0,0,0.1), transparent 50%)"></div><div class="ig-post" style="background-color:#1F2A47;background-image:"></div><div class="ig-post" style="background-color:#3D4D72;background-image:linear-gradient(135deg, rgba(255,255,255,0.15), transparent 50%)"></div><div class="ig-post" style="background-color:#2E3B5C;background-image:linear-gradient(45deg, rgba(0,0,0,0.1), transparent 50%)"></div>
+      </div>
+
+      <div class="ig-bottom-nav">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="3"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+        <div class="ig-avatar-small" style="background-color:#2E3B5C;color:#E8C490">С</div>
+      </div>
+
+      <div class="ig-home-bar"></div>
+    </div>
+        </div>
+      </div>
+    </section>
+
+  <footer class="footer">
+    <div class="brand">
+      <span class="brand-dot"></span>
+      <span>НЕЙРО · АНЯ</span>
+    </div>
+    <p class="footer-msg">
+      Эти шапки - <b>стартовая точка</b>. Возьми ту, что ближе всего к твоей нише, замени мои цифры на свои реальные (опыт, годы, курсы, рейтинг, кейсы) и сохрани структуру 4 строк.
+      <br><br>
+      <b>Главное правило</b>: каждая строка шапки должна отвечать на вопрос «а это что у тебя?». Опыт? Гарантия? Скорость? Сервис? Если строка не отвечает на «почему именно к тебе» - она лишняя.
+    </p>
+    <div class="footer-sign">
+      <div class="footer-name">Анна Ерофеева</div>
+      <div class="footer-role">Автор курса «НейроКонтент на автопилоте»</div>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
