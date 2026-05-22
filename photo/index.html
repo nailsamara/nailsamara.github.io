@@ -1,0 +1,2144 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>57 промптов для обработки фото мастеров</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Unbounded:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --pink: #D73876;
+  --pink-bright: #F13684;
+  --pink-light: #FF67A7;
+  --bg-near-black: #1D1D1D;
+  --bg-black: #121212;
+  --bg-card: #1c1c1c;
+  --on-dark: #F5F5F5;
+  --muted: #C9C9C9;
+  --muted-2: #8a8585;
+  --border: rgba(255,255,255,0.08);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  background: #0a0a0a;
+  font-family: 'Inter', sans-serif;
+  color: var(--on-dark);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.5;
+}
+.page-wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  background: var(--bg-near-black);
+  position: relative;
+  min-height: 100vh;
+}
+
+/* HERO */
+.hero {
+  position: relative;
+  padding: 48px 32px 56px;
+  background: radial-gradient(ellipse at 80% 20%, rgba(241,54,132,0.22), transparent 55%), var(--bg-near-black);
+  border-bottom: 1px solid var(--border);
+}
+.hero-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 32px; }
+.brand {
+  display: flex; align-items: center; gap: 10px;
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 700; font-size: 13px;
+  letter-spacing: 0.06em; text-transform: uppercase;
+}
+.brand-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--pink-bright); box-shadow: 0 0 12px var(--pink-bright); }
+.hero-tag {
+  display: inline-flex; align-items: center;
+  padding: 6px 12px; border-radius: 100px;
+  background: rgba(241,54,132,0.12);
+  border: 1px solid rgba(241,54,132,0.4);
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 0.1em; color: var(--pink-light);
+  text-transform: uppercase;
+}
+.hero-eyebrow {
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 14px;
+}
+.hero-title {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 900;
+  font-size: clamp(48px, 8vw, 92px);
+  line-height: 0.88;
+  letter-spacing: -0.035em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+.hero-title .num { color: var(--pink-bright); font-style: italic; }
+.hero-sub-title {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 700;
+  font-size: clamp(18px, 2.2vw, 26px);
+  letter-spacing: -0.01em;
+  color: var(--muted);
+  margin-bottom: 24px;
+  text-transform: uppercase;
+}
+.hero-desc {
+  font-size: 16px; line-height: 1.5;
+  max-width: 700px; opacity: 0.92;
+  margin-bottom: 28px;
+}
+.hero-desc b { color: var(--pink-light); font-weight: 700; }
+.hero-stats {
+  display: flex; gap: 32px; margin-top: 32px;
+  padding-top: 28px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  flex-wrap: wrap;
+}
+.hero-stat-val {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 800; font-size: 34px;
+  color: var(--pink-bright); line-height: 1;
+}
+.hero-stat-label {
+  font-size: 11px; text-transform: uppercase;
+  letter-spacing: 0.14em; color: var(--muted-2);
+  margin-top: 6px;
+}
+
+/* MARQUEE */
+.marquee { background: var(--pink-bright); overflow: hidden; padding: 14px 0; }
+.marquee-track {
+  display: flex; white-space: nowrap; gap: 28px;
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 800; font-size: 15px;
+  color: white; letter-spacing: 0.04em;
+  text-transform: uppercase; padding: 0 32px;
+}
+.marquee-star { color: rgba(255,255,255,0.6); font-size: 14px; }
+
+/* SECTIONS */
+section.content { padding: 56px 32px; border-top: 1px solid var(--border); }
+.section-eyebrow { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+.section-eyebrow::before { content: ''; width: 28px; height: 1px; background: var(--pink-bright); }
+.eyebrow {
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--muted);
+}
+.section-h {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 800;
+  font-size: clamp(28px, 4vw, 44px);
+  line-height: 1; letter-spacing: -0.02em;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+}
+.section-h .pink { color: var(--pink-bright); }
+
+/* HOW TO */
+.how-to .rules {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 14px;
+  margin-bottom: 28px;
+}
+.rule-card {
+  padding: 24px 22px 22px;
+  background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+  border-radius: 22px;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+.rule-num {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 800; font-size: 12px;
+  color: var(--pink-bright);
+  letter-spacing: 0.12em; margin-bottom: 10px;
+}
+.rule-title {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 700; font-size: 17px;
+  line-height: 1.15; margin-bottom: 8px;
+}
+.rule-text {
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+.tip-box {
+  background: linear-gradient(135deg, rgba(241,54,132,0.1) 0%, rgba(241,54,132,0.04) 100%);
+  border: 1px solid rgba(241,54,132,0.25);
+  border-radius: 18px;
+  padding: 22px 26px;
+  margin-top: 20px;
+}
+.tip-box-label {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 700; font-size: 11px;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--pink-bright); margin-bottom: 10px;
+}
+.tip-box-text { font-size: 14px; line-height: 1.55; color: var(--on-dark); }
+
+/* TOC */
+.toc { background: linear-gradient(180deg, var(--bg-near-black) 0%, #161616 100%); }
+.toc-list { display: flex; flex-direction: column; gap: 8px; }
+.toc-row {
+  display: grid;
+  grid-template-columns: 56px 1fr auto;
+  align-items: center;
+  gap: 18px;
+  padding: 18px 22px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  text-decoration: none;
+  color: var(--on-dark);
+}
+.toc-num {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 800; font-size: 22px;
+  color: var(--pink-bright);
+}
+.toc-name {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 600; font-size: 17px;
+}
+.toc-count {
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted-2); font-weight: 500;
+}
+
+/* CATEGORY SECTIONS */
+.cat-section {
+  padding: 64px 32px;
+  border-top: 1px solid var(--border);
+}
+.cat-section:nth-child(odd) {
+  background: linear-gradient(180deg, #131313 0%, var(--bg-near-black) 100%);
+}
+.cat-header {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 36px;
+  flex-wrap: wrap;
+}
+.cat-num-badge {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 800;
+  font-size: 56px;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--pink-bright);
+}
+.cat-title {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 800;
+  font-size: clamp(24px, 3.5vw, 36px);
+  letter-spacing: -0.02em;
+  line-height: 1;
+  text-transform: uppercase;
+  flex: 1;
+  min-width: 200px;
+}
+.cat-count-badge {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 700; font-size: 11px;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  padding: 8px 14px;
+  background: rgba(241,54,132,0.15);
+  border: 1px solid rgba(241,54,132,0.3);
+  color: var(--pink-light);
+  border-radius: 100px;
+}
+
+/* PROMPTS */
+.prompts-grid { display: flex; flex-direction: column; gap: 16px; }
+.prompt {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 24px 26px 22px;
+}
+.prompt-head {
+  display: flex; align-items: baseline; gap: 14px;
+  margin-bottom: 14px; flex-wrap: wrap;
+}
+.prompt-num {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 800; font-size: 13px;
+  color: var(--pink-bright);
+  background: rgba(241,54,132,0.12);
+  padding: 4px 10px;
+  border-radius: 6px;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+.prompt-title {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 700;
+  font-size: clamp(17px, 2vw, 21px);
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+}
+.prompt-when {
+  display: flex; align-items: baseline; gap: 10px;
+  margin-bottom: 18px;
+  padding-bottom: 18px;
+  border-bottom: 1px dashed rgba(255,255,255,0.08);
+  flex-wrap: wrap;
+}
+.when-label {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 700; font-size: 10px;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--pink-light); white-space: nowrap;
+}
+.when-text { font-size: 14px; color: var(--muted); font-style: italic; }
+.prompt-box {
+  position: relative;
+  background: var(--bg-black);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 14px;
+  margin-bottom: 18px;
+  overflow: hidden;
+}
+.copy-btn-static {
+  position: absolute;
+  top: 12px; right: 12px;
+  padding: 5px 12px;
+  border-radius: 8px;
+  background: rgba(241,54,132,0.15);
+  border: 1px solid rgba(241,54,132,0.35);
+  color: var(--pink-light);
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.prompt-text {
+  font-family: 'JetBrains Mono', 'Consolas', monospace;
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: #d4d4d4;
+  padding: 18px 22px 18px 22px;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+.prompt-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.meta-row {
+  display: flex; gap: 10px;
+  align-items: baseline;
+  font-size: 13px;
+  flex-wrap: wrap;
+}
+.meta-label {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 700; font-size: 10px;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--pink-bright);
+  padding: 3px 8px;
+  background: rgba(241,54,132,0.1);
+  border-radius: 5px;
+  white-space: nowrap;
+}
+.meta-value { color: var(--on-dark); flex: 1; }
+
+/* FOOTER */
+.footer {
+  padding: 48px 32px 56px;
+  background: var(--bg-black);
+  text-align: center;
+  border-top: 1px solid var(--border);
+}
+.footer .brand { justify-content: center; margin-bottom: 16px; }
+.footer-msg {
+  max-width: 600px; margin: 0 auto 28px;
+  font-size: 14px; line-height: 1.55;
+  color: var(--muted);
+}
+.footer-msg b { color: var(--pink-light); font-weight: 700; }
+.footer-sign {
+  display: inline-block;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+}
+.footer-name {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 800; font-size: 16px;
+  letter-spacing: 0.04em; text-transform: uppercase;
+}
+.footer-role { font-size: 12px; color: var(--muted-2); margin-top: 6px; }
+
+@media (max-width: 720px) {
+  .hero { padding: 36px 22px 44px; }
+  section.content, .cat-section, .footer { padding: 44px 22px; }
+  .toc-row { grid-template-columns: 48px 1fr; }
+  .toc-count { grid-column: 2; margin-top: 2px; }
+  .cat-num-badge { font-size: 44px; }
+  .prompt { padding: 20px 18px 18px; }
+  .prompt-text { font-size: 12.5px; padding: 16px 18px; }
+  .meta-row { flex-direction: column; gap: 4px; }
+}
+
+@media print {
+  body, .page-wrap { background: white; color: #111; }
+  .prompt { break-inside: avoid; }
+  .cat-section { break-inside: avoid-page; }
+}
+</style>
+</head>
+<body>
+<div class="page-wrap">
+
+  <section class="hero">
+    <div class="hero-top">
+      <div class="brand"><span class="brand-dot"></span><span>НЕЙРО · АНЯ</span></div>
+      <div class="hero-tag">Бонус курса</div>
+    </div>
+    <div class="hero-eyebrow">НейроКонтент на автопилоте</div>
+    <h1 class="hero-title"><span class="num">57</span> промптов</h1>
+    <div class="hero-sub-title">для обработки фото мастеров</div>
+    <p class="hero-desc">
+      Готовая <b>фотостудия в твоём телефоне</b>. 57 промптов под все задачи мастера — копируй, загружай фото в ChatGPT или другую нейросеть с генерацией картинок, отправляй. На выходе — профессиональный кадр, где <b>сама работа мастера остаётся нетронутой</b>, а вокруг неё меняется атмосфера, свет, аксессуары и фон.
+    </p>
+    <div class="hero-stats">
+      <div>
+        <div class="hero-stat-val">57</div>
+        <div class="hero-stat-label">Промптов</div>
+      </div>
+      <div>
+        <div class="hero-stat-val">05</div>
+        <div class="hero-stat-label">Категорий</div>
+      </div>
+      <div>
+        <div class="hero-stat-val">100%</div>
+        <div class="hero-stat-label">Работа защищена</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="marquee">
+    <div class="marquee-track">
+      <span>Маникюр <span class="marquee-star">✦</span> Брови <span class="marquee-star">✦</span> Ресницы <span class="marquee-star">✦</span> Губы <span class="marquee-star">✦</span> Волосы <span class="marquee-star">✦</span> Стразы <span class="marquee-star">✦</span> Неон <span class="marquee-star">✦</span> Цветы <span class="marquee-star">✦</span> Капли <span class="marquee-star">✦</span> Снег <span class="marquee-star">✦</span></span>
+    </div>
+  </div>
+
+  <section class="content how-to">
+    <div class="section-eyebrow"><span class="eyebrow">Инструкция</span></div>
+    <h2 class="section-h">Как <span class="pink">пользоваться</span></h2>
+    <div class="rules">
+      <div class="rule-card">
+        <div class="rule-num">Правило 01</div>
+        <div class="rule-title">Качественный исходник</div>
+        <div class="rule-text">Загружай фото в максимальном разрешении. Чем чище оригинал — тем меньше шансов, что нейросеть «дорисует» работу мастера от себя.</div>
+      </div>
+      <div class="rule-card">
+        <div class="rule-num">Правило 02</div>
+        <div class="rule-title">Копируй целиком</div>
+        <div class="rule-text">Не выкидывай блоки с пиксельной защитой и негативными отзывами — это они держат работу мастера неизменной. Сократишь — нейросеть начнёт фантазировать.</div>
+      </div>
+      <div class="rule-card">
+        <div class="rule-num">Правило 03</div>
+        <div class="rule-title">Подставляй [скобки]</div>
+        <div class="rule-text">В макетах с текстом подставь свои данные на месте [НАЗВАНИЕ УСЛУГИ], [ЦЕНА], [КОНТАКТ] и так далее. Без этого нейросеть впишет рандомный текст.</div>
+      </div>
+    </div>
+
+    <div class="tip-box">
+      <div class="tip-box-label">Если нейросеть всё-таки тронула работу</div>
+      <div class="tip-box-text">
+        Не переписывай промпт заново. Допиши уточнение в чат: «ты изменила маникюр / брови / ресницы — верни их идентично оригиналу, остальное оставь». В большинстве случаев со второй попытки получается идеально.
+      </div>
+    </div>
+  </section>
+
+  <section class="content toc">
+    <div class="section-eyebrow"><span class="eyebrow">Содержание</span></div>
+    <h2 class="section-h">5 категорий, <span class="pink">57 промптов</span></h2>
+    <div class="toc-list">
+            <a class="toc-row" href="#cat-1">
+              <div class="toc-num">01</div>
+              <div class="toc-name">Маникюр</div>
+              <div class="toc-count">30 промптов</div>
+            </a>
+            <a class="toc-row" href="#cat-2">
+              <div class="toc-num">02</div>
+              <div class="toc-name">Брови и ресницы</div>
+              <div class="toc-count">15 промптов</div>
+            </a>
+            <a class="toc-row" href="#cat-3">
+              <div class="toc-num">03</div>
+              <div class="toc-name">Губы</div>
+              <div class="toc-count">5 промптов</div>
+            </a>
+            <a class="toc-row" href="#cat-4">
+              <div class="toc-num">04</div>
+              <div class="toc-name">Волосы</div>
+              <div class="toc-count">2 промпта</div>
+            </a>
+            <a class="toc-row" href="#cat-5">
+              <div class="toc-num">05</div>
+              <div class="toc-name">Рекламные макеты с текстом</div>
+              <div class="toc-count">5 промптов</div>
+            </a>
+    </div>
+  </section>
+
+
+    <section class="cat-section" id="cat-1">
+      <div class="cat-header">
+        <div class="cat-num-badge">01</div>
+        <h2 class="cat-title">Маникюр</h2>
+        <div class="cat-count-badge">30 промптов</div>
+      </div>
+      <div class="prompts-grid">
+        <article class="prompt" id="prompt-1">
+          <div class="prompt-head">
+            <div class="prompt-num">№1</div>
+            <h3 class="prompt-title">Стильные минималистичные кольца</h3>
+          </div>
+          <div class="prompt-when">
+            <span class="when-label">Когда использовать</span>
+            <span class="when-text">Когда нужно добавить аксессуары без отвлечения от ногтей</span>
+          </div>
+          <div class="prompt-box">
+            <div class="copy-btn-static">Промпт</div>
+            <pre class="prompt-text">1. Отредактируй фотографию и улучши её качество без изменения цветокоррекции и без добавления фильтров. Создай снимок высокого качества. Сохраняй реалистичную текстуру кожи и видимые поры — никакого размытия, мягкой фокусировки, шумоподавления, аэрографии, эффекта пластика или искусственного сглаживания.
+
+2. КАТЕГОРИЧЕСКИ ЗАПРЕЩЕНО МЕНЯТЬ МАНИКЮР. Ногти — это полностью защищённая и изолированная зона. Они должны оставаться на 100% идентичными оригинальному изображению. Запрещены любые ретушь, коррекция, освещение, контраст, повышение резкости, цветокоррекция, глобальные или локальные изменения этой области. Под запретом: изменение формы, длины, цвета, толщины, стилизация, удлинение, осветление, затемнение, выделение. Маникюр сохраняется на пиксельном уровне.
+
+3. Добавь на пальцы модели три современных минималистичных кольца из серебра: тонкое гладкое кольцо, кольцо-печатку с матовой поверхностью и кольцо с тонкой витой текстурой. Кольца должны выглядеть реалистично, отбрасывать мягкие тени и не перекрывать ногти.
+
+4. Мягкое студийное освещение с градиентом глубины. Ультрафотореалистичный вид как в высококачественной модной фотографии. Разрешение 8K. Профессиональное студийное качество. Категорически запрещается изменять размер фотографии.
+
+5. Замени фон на матовый светло-бежевый.
+
+Отрицательный отзыв: изменённая форма ногтей, изменённый цвет кожи, изменённый цвет ногтей, сглаживание кожи, сглаживание ногтевой пластины, замыливание, чрезмерно обработанная кожа.</pre>
+          </div>
+          <div class="prompt-meta">
+            <div class="meta-row"><span class="meta-label">Заменить</span><span class="meta-value">ничего</span></div>
+            <div class="meta-row"><span class="meta-label">На выходе</span><span class="meta-value">фото с серебряными кольцами</span></div>
+          </div>
+        </article>
+        <article class="prompt" id="prompt-2">
+          <div class="prompt-head">
+            <div class="prompt-num">№2</div>
+            <h3 class="prompt-title">Объёмные золотые кольца</h3>
+          </div>
+          <div class="prompt-when">
+            <span class="when-label">Когда использовать</span>
+            <span class="when-text">Когда хочется тёплого люкса в кадре</span>
+          </div>
+          <div class="prompt-box">
+            <div class="copy-btn-static">Промпт</div>
+            <pre class="prompt-text">1. Отредактируй фотографию, улучши качество. Не добавляй фильтры, не меняй цветокоррекцию. Сохрани реалистичную текстуру кожи, видимые поры. Без размытия, без аэрографии, без искусственного сглаживания.
+
+2. НИ В КОЕМ СЛУЧАЕ НЕ МЕНЯЙ МАНИКЮР. Ногти — полностью защищённая зона на пиксельном уровне. Никаких изменений формы, длины, цвета, текстуры, контраста, резкости. Маникюр должен оставаться на 100% идентичным оригиналу.
+
+3. Добавь на пальцы модели три объёмных золотых кольца разной фактуры: широкое кольцо с лёгкой ковкой, тонкое кольцо со скрученной нитью и массивное гладкое кольцо. Золото — тёплый оттенок с натуральными бликами. Кольца отбрасывают мягкие тени, освещение совпадает с оригиналом фото.
+
+4. Мягкое студийное освещение, градиент глубины. Ультрафотореалистично, 8K, профессиональное студийное качество. Размер фото не менять.
+
+5. Замени фон на матовый шоколадно-коричневый.
+
+Отрицательный отзыв: изменённая форма ногтей, изменённый цвет кожи или ногтей, сглаживание, замыливание, пластиковая кожа.</pre>
+          </div>
+          <div class="prompt-meta">
+            <div class="meta-row"><span class="meta-label">Заменить</span><span class="meta-value">ничего</span></div>
+            <div class="meta-row"><span class="meta-label">На выходе</span><span class="meta-value">фото с золотыми кольцами</span></div>
+          </div>
+        </article>
+        <article class="prompt" id="prompt-3">
+          <div class="prompt-head">
+            <div class="prompt-num">№3</div>
+            <h3 class="prompt-title">Чёрный фон + лепестки роз</h3>
+          </div>
+          <div class="prompt-when">
+            <span class="when-label">Когда использовать</span>
+            <span class="when-text">Когда нужен драматичный люкс-кадр</span>
+          </div>
+          <div class="prompt-box">
+            <div class="copy-btn-static">Промпт</div>
+            <pre class="prompt-text">1. Отредактируй фотографию и улучши её качество без изменения цветокоррекции и без фильтров. Сохрани реалистичную текстуру кожи, видимые поры. Никакого размытия, шумоподавления, аэрографии или искусственного сглаживания.
+
+2. КАТЕГОРИЧЕСКИ НЕ МЕНЯЙ МАНИКЮР. Ногти — полностью защищённая и изолированная область. Сохраняй их на 100% идентичными оригиналу на пиксельном уровне. Запрещены любые корректировки: цвета, формы, длины, текстуры, бликов, контраста, резкости.
+
+3. Замени фон на матовый глубокий чёрный с реалистичным лёгким бликом. Создай мягкую тень от руки. Добавь рядом с рукой и частично на пальцы (не закрывая ногти) свежие лепестки бордовых и пыльно-розовых роз. Лепестки должны выглядеть бархатисто и реалистично, с естественным распределением.
+
+4. Мягкое студийное освещение с градиентом глубины. Ультрафотореалистично, 8K, профессиональное студийное качество. Размер фото не менять.
+
+Отрицательный отзыв: изменённая форма ногтей, цвет кожи, цвет ногтей, замыливание, пластиковая кожа.</pre>
+          </div>
+          <div class="prompt-meta">
+            <div class="meta-row"><span class="meta-label">Заменить</span><span class="meta-value">ничего</span></div>
+            <div class="meta-row"><span class="meta-label">На выходе</span><span class="meta-value">драматичное фото с лепестками</span></div>
+          </div>
+        </article>
+        <article class="prompt" id="prompt-4">
+          <div class="prompt-head">
+            <div class="prompt-num">№4</div>
+            <h3 class="prompt-title">Журналы и кофе на фоне</h3>
+          </div>
+          <div class="prompt-when">
+            <span class="when-label">Когда использовать</span>
+            <span class="when-text">Когда хочется эстетики lifestyle-блогера</span>
+          </div>
+          <div class="prompt-box">
+            <div class="copy-btn-static">Промпт</div>
+            <pre class="prompt-text">1. Отредактируй фотографию, улучши качество. Без фильтров, без изменения цветокоррекции. Сохрани реалистичную текстуру кожи и поры.
+
+2. НЕ МЕНЯЙ МАНИКЮР. Ногти — изолированная зона, 100% идентична оригиналу. Никаких изменений цвета, формы, длины, текстуры, резкости, бликов.
+
+3. Замени фон на эстетичный плоский кадр сверху: бежевая льняная скатерть, рядом с рукой расположи открытый глянцевый журнал мод (без читаемых букв и логотипов), чашку капучино на блюдце, ветку эвкалиптовых листьев. Все предметы — в композиции flat lay, не перекрывают пальцы и ногти.
+
+4. Мягкое естественное освещение с лёгкими тенями. Ультрафотореалистично, 8K, профессиональное качество. Размер фото оригинальный.
+
+Отрицательный отзыв: изменённая форма ногтей, цвет кожи или ногтей, сглаживание, замыливание.</pre>
+          </div>
+          <div class="prompt-meta">
+            <div class="meta-row"><span class="meta-label">Заменить</span><span class="meta-value">ничего</span></div>
+            <div class="meta-row"><span class="meta-label">На выходе</span><span class="meta-value">lifestyle flat lay</span></div>
+          </div>
+        </article>
+        <article class="prompt" id="prompt-5">
+          <div class="prompt-head">
+            <div class="prompt-num">№5</div>
+            <h3 class="prompt-title">Перья на чёрном фоне</h3>
+          </div>
+          <div class="prompt-when">
+            <span class="when-label">Когда использовать</span>
+            <span class="when-text">Когда нужна вечерняя гламурная атмосфера</span>
+          </div>
+          <div class="prompt-box">
+            <div class="copy-btn-static">Промпт</div>
+            <pre class="prompt-text">1. Отредактируй фотографию, улучши качество. Не добавляй фильтры, не меняй цветокоррекцию. Сохрани текстуру кожи и поры — без размытия и пластика.
+
+2. КАТЕГОРИЧЕСКИ НЕ МЕНЯЙ МАНИКЮР. Ногти — полностью защищены на пиксельном уровне. Никаких корректировок.
+
+3. Замени фон на матовый чёрный. Добавь рядом с рукой несколько крупных мягких страусиных перьев чёрного и пудрового цвета. Перья должны быть пушистыми, реалистично освещёнными, частично перекрывать друг друга, но не закрывать ногти.
+
+4. Мягкое студийное освещение, лёгкий контровой свет подчёркивает контур перьев. Ультрафотореалистично, 8K. Размер фото не менять.
+
+Отрицательный отзыв: изменённая форма или цвет ногтей, замыливание кожи, пластика.</pre>
+          </div>
+          <div class="prompt-meta">
+            <div class="meta-row"><span class="meta-label">Заменить</span><span class="meta-value">ничего</span></div>
+            <div class="meta-row"><span class="meta-label">На выходе</span><span class="meta-value">гламурное фото с перьями</span></div>
+          </div>
+        </article>
+        <article class="prompt" id="prompt-6">
+          <div class="prompt-head">
+            <div class="prompt-num">№6</div>
+            <h3 class="prompt-title">Конфеты и шоколад</h3>
+          </div>
+          <div class="prompt-when">
+            <span class="when-label">Когда использовать</span>
+            <span class="when-text">Когда нужна сладкая праздничная атмосфера</span>
+          </div>
+          <div class="prompt-box">
+            <div class="copy-btn-static">Промпт</div>
+            <pre class="prompt-text">1. Отредактируй фотографию, улучши качество без фильтров и без изменения цветокоррекции. Сохрани реалистичную текстуру кожи.
+
+2. НЕ ИЗМЕНЯЙ МАНИКЮР. Ногти — защищённая зона на пиксельном уровне. Никаких изменений цвета, формы, длины, бликов.
+
+3. Замени фон на нежно-розовый матовый. Рядом с рукой разложи россыпь конфет: круглые шоколадные конфеты в фольге, маленькие макаруны пастельных оттенков, кусочки молочного шоколада. Композиция эстетичная, конфеты не перекрывают ногти.
+
+4. Мягкое студийное освещение с тёплым оттенком. Ультрафотореалистично, 8K, профессиональное качество. Размер фото оригинальный.
+
+Отрицательный отзыв: изменённая форма ногтей, цвет кожи или ногтей, сглаживание, замыливание.</pre>
+          </div>
+          <div class="prompt-meta">
+            <div class="meta-row"><span class="meta-label">Заменить</span><span class="meta-value">ничего</span></div>
+            <div class="meta-row"><span class="meta-label">На выходе</span><span class="meta-value">сладкая композиция</span></div>
+          </div>
+        </article>
+        <article class="prompt" id="prompt-7">
+          <div class="prompt-head">
+            <div class="prompt-num">№7</div>
+            <h3 class="prompt-title">Неоновое розовое освещение</h3>
+          </div>
+          <div class="prompt-when">
+            <span class="when-label">Когда использовать</span>
+            <span class="when-text">Когда нужен современный клубный вайб</span>
+          </div>
+          <div class="prompt-box">
+            <div class="copy-btn-static">Промпт</div>
+            <pre class="prompt-text">1. Отредактируй фотографию, улучши качество. Без фильтров и изменений цветокоррекции. Сохрани текстуру кожи и поры.
+
+2. НИ В КОЕМ СЛУЧАЕ НЕ МЕНЯЙ МАНИКЮР. Ногти полностью защищены на пиксельном уровне — никаких изменений цвета, формы, бликов, контраста.
+
+3. Замени фон на глубокий чёрный. Добавь яркий неоновый розовый контровой свет слева, мягкий синий контровой свет справа. Свет создаёт цветной градиент на коже руки, подсвечивает контур пальцев, оставляя сами ногти в естественном освещении.
+
+4. Атмосфера современной студийной съёмки. Ультрафотореалистично, 8K, профессиональное качество. Размер фото не менять.
+
+Отрицательный отзыв: изменённая форма или цвет ногтей, замыливание, пластика, изменение цвета маникюра под неоном.</pre>
+          </div>
+          <div class="prompt-meta">
+            <div class="meta-row"><span class="meta-label">Заменить</span><span class="meta-value">ничего</span></div>
+            <div class="meta-row"><span class="meta-label">На выходе</span><span class="meta-value">неоновый кадр</span></div>
+          </div>
+        </article>
+        <article class="prompt" id="prompt-8">
+          <div class="prompt-head">
+            <div class="prompt-num">№8</div>
+            <h3 class="prompt-title">Контровой золотой свет</h3>
+          </div>
+          <div class="prompt-when">
+            <span class="when-label">Когда использовать</span>
+            <span class="when-text">Когда нужна тёплая киношная атмосфера</span>
+          </div>
+          <div class="prompt-box">
+            <div class="copy-btn-static">Промпт</div>
+            <pre class="prompt-text">1. Отредактируй фотографию, улучши качество. Без фильтров. Сохрани реалистичную текстуру кожи и поры.
+
+2. НЕ МЕНЯЙ МАНИКЮР. Сохраняй ногти на 100% идентичными оригиналу на пиксельном уровне.
+
+3. Замени фон на тёмно-графитовый матовый. Добавь тёплый золотой контровой свет сзади, создающий мягкий ореол вокруг руки. Лёгкая дымка в воздухе для атмосферной глубины. Сами ногти при этом сохраняют исходное освещение и цвет.
+
+4. Ультрафотореалистично, 8K, профессиональное студийное качество. Размер фото оригинальный.
+
+Отрицательный отзыв: изменённый цвет ногтей, изменённая форма, замыливание, пластика, перекрашивание маникюра.</pre>
+          </div>
+          <div class="prompt-meta">
+            <div class="meta-row"><span class="meta-label">Заменить</span><span class="meta-value">ничего</span></div>
+            <div class="meta-row"><span class="meta-label">На выходе</span><span class="meta-value">киношный кадр с золотым светом</span></div>
+          </div>
+        </article>
+        <article class="prompt" id="prompt-9">
+          <div class="prompt-head">
+            <div class="prompt-num">№9</div>
+            <h3 class="prompt-title">Стразы и блёстки на пальцах</h3>
+          </div>
+          <div class="prompt-when">
+            <span class="when-label">Когда использовать</span>
+            <span class="when-text">Когда нужен бьюти-арт без вмешательства в маникюр</span>
+          </div>
+          <div class="prompt-box">
+            <div class="copy-btn-static">Промпт</div>
+            <pre class="prompt-text">1. Отредактируй фотографию, улучши качество. Без фильтров и без изменения цветокоррекции. Сохрани реалистичную текстуру кожи.
+
+2. КАТЕГОРИЧЕСКИ НЕ МЕНЯЙ МАНИКЮР. Ногти — изолированная зона, 100% идентичны оригиналу. Никаких касаний области ногтей.
+
+3. Аккуратно распредели по тыльной стороне пальцев (не на ногтях) мелкие и средние переливающиеся стразы и хрустальные бусины смешанных размеров. Оттенки: серебряный, нежно-розовый, перламутровый. Каждый страз ловит свет индивидуально, чёткие отражения, без грязных пятен. Стразы не заходят на ногтевую пластину.
+
+4. Замени фон на матовый чёрный. Мягкое студийное освещение с акцентами на блики страз. Ультрафотореалистично, 8K. Размер фото не менять.
+
+Отрицательный отзыв: изменённая форма или цвет ногтей, стразы на ногтях, замыливание кожи.</pre>
+          </div>
+          <div class="prompt-meta">
+            <div class="meta-row"><span class="meta-label">Заменить</span><span class="meta-value">ничего</span></div>
+            <div class="meta-row"><span class="meta-label">На выходе</span><span class="meta-value">бьюти-арт со стразами</span></div>
+          </div>
+        </article>
+        <article class="prompt" id="prompt-10">
+          <div class="prompt-head">
+            <div class="prompt-num">№10</div>
+            <h3 class="prompt-title">Капли воды на коже</h3>
+          </div>
+          <div class="prompt-when">
+            <span class="when-label">Когда использовать</span>
+            <span class="when-text">Когда нужен свежий мокрый эффект</span>
+          </div>
+          <div class="prompt-box">
+            <div class="copy-btn-static">Промпт</div>
+            <pre class="prompt-text">1. Отредактируй фотографию, улучши качество. Без фильтров. Сохрани текстуру кожи и поры.
+
+2. НЕ ИЗМЕНЯЙ МАНИКЮР. Ногти — полностью защищённая зона на пиксельном уровне.
+
+3. Добавь на кожу пальцев и тыльную сторону кисти реалистичные капли воды разного размера. Капли прозрачные, с лёгкими бликами и тенями, выглядят как свежие после контакта с водой. Капли не касаются ногтей, не растекаются по ногтевой пластине.
+
+4. Замени фон на матовый глубокий синий. Мягкое холодное студийное освещение. Ультрафотореалистично, 8K. Размер фото не менять.
+
+Отрицательный отзыв: капли на ногтях, изменение цвета или формы ногтей, замыливание.</pre>
+          </div>
+          <div class="prompt-meta">
+            <div class="meta-row"><span class="meta-label">Заменить</span><span class="meta-value">ничего</span></div>
+            <div class="meta-row"><span class="meta-label">На выходе</span><span class="meta-value">мокрый кадр</span></div>
+          </div>
+        </article>
+        <article class="prompt" id="prompt-11">
+          <div class="prompt-head">
+            <div class="prompt-num">№11</div>
+            <h3 class="prompt-title">Пена на пальцах</h3>
+          </div>
+          <div class="prompt-when">
+            <span class="when-label">Когда использовать</span>
+            <span class="when-text">Когда нужна тема спа и ухода</span>
+          </div>
+          <div class="prompt-box">
+            <div class="copy-btn-static">Промпт</div>
+            <pre class="prompt-text">1. Отредактируй фотографию, улучши качество. Без фильтров и изменений цветокоррекции. Сохрани текстуру кожи.
+
+2. КАТЕГОРИЧЕСКИ НЕ МЕНЯЙ МАНИКЮР. Сохраняй ногти на пиксельном уровне идентично оригиналу.
+
+3. Нанеси на пальцы лёгкую белую пену с мелкими и средними пузырьками, как от мыла или шампуня. Пена воздушная, реалистичная, частично стекает с кожи. Пена не касается ногтей, не покрывает ногтевую пластину.
+
+4. Замени фон на нежно-белый с лёгким перламутровым отливом. Мягкое студийное освещение. Ультрафотореалистично, 8K. Размер фото оригинальный.
+
+Отрицательный отзыв: пена на ногтях, изменённый цвет или форма ногтей, замыливание кожи.</pre>
+          </div>
+          <div class="prompt-meta">
+            <div class="meta-row"><span class="meta-label">Заменить</span><span class="meta-value">ничего</span></div>
+            <div class="meta-row"><span class="meta-label">На выходе</span><span class="meta-value">спа-кадр с пеной</span></div>
+          </div>
+        </article>
+        <article class="prompt" id="prompt-12">
+          <div class="prompt-head">
+            <div class="prompt-num">№12</div>
+            <h3 class="prompt-title">Сливочное масло, которое стекает</h3>
+          </div>
+          <div class="prompt-when">
+            <span class="when-label">Когда использовать</span>
+            <span class="when-text">Когда нужна вирусная food-эстетика</span>
+          </div>
+          <div class="prompt-box">
+            <div class="copy-btn-static">Промпт</div>
+            <pre class="prompt-text">1. Отредактируй фотографию, улучши качество. Без фильтров. Сохрани текстуру кожи и поры.
+
+2. НЕ МЕНЯЙ МАНИКЮР. Ногти — изолированная зона, 100% идентичны оригиналу.
+
+3. Добавь на тыльную сторону пальцев следы тающего сливочного масла кремового цвета: масло реалистично стекает по коже, оставляя мягкие потёки и небольшие блестящие капли. Текстура жирная, маслянистая, с естественным блеском. Масло не касается ногтей.
+
+4. Замени фон на тёплый персиково-кремовый матовый. Мягкое тёплое студийное освещение. Ультрафотореалистично, 8K. Размер фото не менять.
+
+Отрицательный отзыв: масло на ногтях, изменение цвета или формы ногтей, замыливание.</pre>
+          </div>
+          <div class="prompt-meta">
+            <div class="meta-row"><span class="meta-label">Заменить</span><span class="meta-value">ничего</span></div>
+            <div class="meta-row"><span class="meta-label">На выходе</span><span class="meta-value">food-эстетика с маслом</span></div>
+          </div>
+        </article>
+        <article class="prompt" id="prompt-13">
+          <div class="prompt-head">
+            <div class="prompt-num">№13</div>
+            <h3 class="prompt-title">Заснеженный эффект</h3>
+          </div>
+          <div class="prompt-when">
+            <span class="when-label">Когда использовать</span>
+            <span class="when-text">Когда нужна зимняя атмосфера</span>
+          </div>
+          <div class="prompt-box">
+            <div class="copy-btn-static">Промпт</div>
+            <pre class="prompt-text">1. Отредактируй фотографию, улучши качество. Без фильтров. Сохрани текстуру кожи.
+
+2. КАТЕГОРИЧЕСКИ НЕ МЕНЯЙ МАНИКЮР. Ногти — защищённая зона на пиксельном уровне.
+
+3. Добавь на тыльную сторону кисти и пальцы лёгкие реалистичные снежинки разного размера и небольшие кристаллики инея. В воздухе вокруг руки — мягкое падение снега, лёгкая дымка. Снежинки не закрывают ногти.
+
+4. Замени фон на холодный графитово-серый матовый. Холодное студийное освещение с лёгким голубоватым оттенком. Ультрафотореалистично, 8K. Размер фото оригинальный.
+
+Отрицательный отзыв: снег на ногтях, изменение цвета или формы ногтей, замыливание, изменение цвета маникюра под холодным светом.</pre>
+          </div>
+          <div class="prompt-meta">
+            <div class="meta-row"><span class="meta-label">Заменить</span><span class="meta-value">ничего</span></div>
+            <div class="meta-row"><span class="meta-label">На выходе</span><span class="meta-value">зимний кадр со снегом</span></div>
+          </div>
+        </article>
+        <article class="prompt" id="prompt-14">
+          <div class="prompt-head">
+            <div class="prompt-num">№14</div>
+            <h3 class="prompt-title">Пионы в руке</h3>
+          </div>
+          <div class="prompt-when">
+            <span class="when-label">Когда использовать</span>
+            <span class="when-text">Когда нужна романтичная женственная атмосфера</span>
+          </div>
+          <div class="prompt-box">
+            <div class="copy-btn-static">Промпт</div>
+            <pre class="prompt-text">1. Отредактируй фотографию, улучши качество. Без фильтров и без изменения цветокоррекции.
+
+2. НЕ ИЗМЕНЯЙ МАНИКЮР. Сохраняй ногти на 100% идентичными оригиналу.
+
+3. Замени фон на матовый чёрный с лёгким бликом. Создай мягкую тень от руки. Добавь в кисть руки объёмный букет розовых пионов: цветы должны выглядеть максимально реалистично, с прорисованными лепестками и естественным освещением. Цветы не закрывают ногти.
+
+4. Мягкое студийное освещение с градиентом глубины. Ультрафотореалистично, 8K, профессиональное студийное качество. Размер фото не менять.
+
+Отрицательный отзыв: изменённая форма или цвет ногтей, замыливание, пластика, цветы перекрывают ногти.</pre>
+          </div>
+          <div class="prompt-meta">
+            <div class="meta-row"><span class="meta-label">Заменить</span><span class="meta-value">ничего</span></div>
+            <div class="meta-row"><span class="meta-label">На выходе</span><span class="meta-value">романтичное фото с пионами</span></div>
+          </div>
+        </article>
+        <article class="prompt" id="prompt-15">
+          <div class="prompt-head">
+            <div class="prompt-num">№15</div>
+            <h3 class="prompt-title">Ветка сирени</h3>
+          </div>
+          <div class="prompt-when">
+            <span class="when-label">Когда использовать</span>
+            <span class="when-text">Когда нужен весенний нежный кадр</span>
+          </div>
+          <div class="prompt-box">
+            <div class="copy-btn-static">Промпт</div>
+            <pre class="prompt-text">1. Отредактируй фотографию, улучши её качество без изменения цветокоррекции и без фильтров. Сохрани реалистичную текстуру кожи.
+
+2. КАТЕГОРИЧЕСКИ НЕ МЕНЯЙ МАНИКЮР. Ногти — полностью защищённая зона на пиксельном уровне.
+
+3. Добавь в руку модели ветку сирени нежно-сиреневого цвета с мелкими цветочками. Добавь мягкие тени от ветки, чтобы она выглядела реалистично. Учитывай освещение на фото, чтобы ветка органично вписывалась. Ветка не закрывает ногти.
+
+4. Мягкое студийное освещение с градиентом глубины. Ультрафотореалистично, 8K. Размер фото оригинальный. Замени фон на матовый чёрный.
+
+Отрицательный отзыв: изменение формы или цвета ногтей, замыливание, сглаживание ногтевой пластины.</pre>
+          </div>
+          <div class="prompt-meta">
+            <div class="meta-row"><span class="meta-label">Заменить</span><span class="meta-value">ничего</span></div>
+            <div class="meta-row"><span class="meta-label">На выходе</span><span class="meta-value">весенний кадр с сиренью</span></div>
+          </div>
+        </article>
+        <article class="prompt" id="prompt-16">
+          <div class="prompt-head">
+            <div class="prompt-num">№16</div>
+            <h3 class="prompt-title">Полевые ромашки в руке</h3>
+          </div>
+          <div class="prompt-when">
+            <span class="when-label">Когда использовать</span>
+            <span class="when-text">Когда нужна летняя естественная съёмка</span>
+          </div>
+          <div class="prompt-box">
+            <div class="copy-btn-static">Промпт</div>
+            <pre class="prompt-text">1. Отредактируй фотографию, улучши качество. Без фильтров. Сохрани реалистичную текстуру кожи.
+
+2. НЕ МЕНЯЙ МАНИКЮР. Ногти — изолированная зона, идентичная оригиналу на пиксельном уровне.
+
+3. Добавь в руку модели небольшой букетик полевых ромашек с тонкими зелёными стеблями и листьями. Цветы выглядят свежими, естественно срезанными, с мягкими тенями. Ромашки не закрывают ногти.
+
+4. Замени фон на нежно-кремовый матовый. Мягкое тёплое естественное освещение. Ультрафотореалистично, 8K. Размер фото не менять.
+
+Отрицательный отзыв: изменение цвета или формы ногтей, замыливание, цветы перекрывают ногти.</pre>
+          </div>
+          <div class="prompt-meta">
+            <div class="meta-row"><span class="meta-label">Заменить</span><span class="meta-value">ничего</span></div>
+            <div class="meta-row"><span class="meta-label">На выходе</span><span class="meta-value">летнее фото с ромашками</span></div>
+          </div>
+        </article>
+        <article class="prompt" id="prompt-17">
+          <div class="prompt-head">
+            <div class="prompt-num">№17</div>
+            <h3 class="prompt-title">Прозрачный рукав-тюль с сердечками</h3>
+          </div>
+          <div class="prompt-when">
+            <span class="when-label">Когда использовать</span>
+            <span class="when-text">Когда нужен кадр на 14 февраля или ко Дню влюблённых</span>
+          </div>
+          <div class="prompt-box">
+            <div class="copy-btn-static">Промпт</div>
+            <pre class="prompt-text">1. Отредактируй фотографию, улучши качество. Без фильтров и без изменения цветокоррекции. Сохрани текстуру кожи и поры.
+
+2. КАТЕГОРИЧЕСКИ НЕ МЕНЯЙ МАНИКЮР. Ногти — полностью защищённая зона на пиксельном уровне.
+
+3. Замени фон на белый. Добавь на руку прозрачный рукав из тонкой сетчатой ткани (тюль) с мелкими красными сердечками. Рукав выглядит реалистично: мягкие складки, лёгкая прозрачность, естественное наложение на руку. Рукав заканчивается у запястья и не закрывает пальцы и ногти.
+
+4. Мягкое студийное освещение с градиентом глубины. Ультрафотореалистично, 8K. Размер фото оригинальный.
+
+Отрицательный отзыв: изменение формы или цвета ногтей, замыливание, рукав закрывает ногти.</pre>
+          </div>
+          <div class="prompt-meta">
+            <div class="meta-row"><span class="meta-label">Заменить</span><span class="meta-value">ничего</span></div>
+            <div class="meta-row"><span class="meta-label">На выходе</span><span class="meta-value">кадр ко Дню влюблённых</span></div>
+          </div>
+        </article>
+        <article class="prompt" id="prompt-18">
+          <div class="prompt-head">
+            <div class="prompt-num">№18</div>
+            <h3 class="prompt-title">Кашемировый бежевый свитер</h3>
+          </div>
+          <div class="prompt-when">
+            <span class="when-label">Когда использовать</span>
+            <span class="when-text">Когда нужна осенне-зимняя уютная съёмка</span>
+          </div>
+          <div class="prompt-box">
+            <div class="copy-btn-static">Промпт</div>
+            <pre class="prompt-text">1. Отредактируй фотографию, улучши качество. Без фильтров. Сохрани реалистичную текстуру кожи.
+
+2. НЕ МЕНЯЙ МАНИКЮР. Сохраняй ногти на 100% идентичными оригиналу на пиксельном уровне.
+
+3. Добавь на руку модели мягкий объёмный кашемировый рукав свитера бежевого цвета. Видна крупная вязка, мягкая фактура шерсти, реалистичные складки. Рукав доходит до основания пальцев, не закрывая ногти.
+
+4. Замени фон на тёплый молочно-белый матовый. Мягкое тёплое студийное освещение. Ультрафотореалистично, 8K. Размер фото не менять.
+
+Отрицательный отзыв: изменение цвета или формы ногтей, рукав закрывает ногти, замыливание кожи.</pre>
+          </div>
+          <div class="prompt-meta">
+            <div class="meta-row"><span class="meta-label">Заменить</span><span class="meta-value">ничего</span></div>
+            <div class="meta-row"><span class="meta-label">На выходе</span><span class="meta-value">уютная зимняя съёмка</span></div>
+          </div>
+        </article>
+        <article class="prompt" id="prompt-19">
+          <div class="prompt-head">
+            <div class="prompt-num">№19</div>
+            <h3 class="prompt-title">Кружевная чёрная перчатка</h3>
+          </div>
+          <div class="prompt-when">
+            <span class="when-label">Когда использовать</span>
+            <span class="when-text">Когда нужен элегантный вечерний образ</span>
+          </div>
+          <div class="prompt-box">
+            <div class="copy-btn-static">Промпт</div>
+            <pre class="prompt-text">1. Отредактируй фотографию, улучши качество. Без фильтров и без изменения цветокоррекции.
+
+2. КАТЕГОРИЧЕСКИ НЕ МЕНЯЙ МАНИКЮР. Ногти — полностью защищённая зона, 100% идентичная оригиналу.
+
+3. Добавь на руку модели элегантную чёрную кружевную перчатку с тонким цветочным узором. Перчатка прозрачная в местах кружева, плотная на основной части. Перчатка обрезана у середины пальцев так, чтобы ногти полностью оставались открытыми и видимыми.
+
+4. Замени фон на матовый бордовый. Мягкое драматичное студийное освещение. Ультрафотореалистично, 8K. Размер фото оригинальный.
+
+Отрицательный отзыв: перчатка закрывает ногти, изменение цвета или формы ногтей, замыливание.</pre>
+          </div>
+          <div class="prompt-meta">
+            <div class="meta-row"><span class="meta-label">Заменить</span><span class="meta-value">ничего</span></div>
+            <div class="meta-row"><span class="meta-label">На выходе</span><span class="meta-value">вечерний образ с кружевом</span></div>
+          </div>
+        </article>
+        <article class="prompt" id="prompt-20">
+          <div class="prompt-head">
+            <div class="prompt-num">№20</div>
+            <h3 class="prompt-title">Шёлковый шарф в руке</h3>
+          </div>
+          <div class="prompt-when">
+            <span class="when-label">Когда использовать</span>
+            <span class="when-text">Когда нужен люкс-кадр с тканью</span>
+          </div>
+          <div class="prompt-box">
+            <div class="copy-btn-static">Промпт</div>
+            <pre class="prompt-text">1. Отредактируй фотографию, улучши качество. Без фильтров. Сохрани текстуру кожи.
+
+2. НЕ ИЗМЕНЯЙ МАНИКЮР. Ногти — изолированная зона на пиксельном уровне.
+
+3. Добавь в руку модели шёлковый шарф изумрудно-зелёного цвета. Шарф струится между пальцами, ткань с естественными бликами шёлка, мягкими складками и реалистичной драпировкой. Шарф проходит через ладонь, не закрывая ногти.
+
+4. Замени фон на матовый тёмно-зелёный. Мягкое студийное освещение с лёгкими акцентами. Ультрафотореалистично, 8K. Размер фото не менять.
+
+Отрицательный отзыв: ткань закрывает ногти, изменение цвета или формы ногтей, замыливание.</pre>
+          </div>
+          <div class="prompt-meta">
+            <div class="meta-row"><span class="meta-label">Заменить</span><span class="meta-value">ничего</span></div>
+            <div class="meta-row"><span class="meta-label">На выходе</span><span class="meta-value">люкс-кадр с шёлком</span></div>
+          </div>
+        </article>
+        <article class="prompt" id="prompt-21">
+          <div class="prompt-head">
+            <div class="prompt-num">№21</div>
+            <h3 class="prompt-title">Бокал шампанского в руке</h3>
+          </div>
+          <div class="prompt-when">
+            <span class="when-label">Когда использовать</span>
+            <span class="when-text">Когда нужна праздничная атмосфера</span>
+          </div>
+          <div class="prompt-box">
+            <div class="copy-btn-static">Промпт</div>
+            <pre class="prompt-text">1. Отредактируй фотографию, улучши качество. Без фильтров и без изменения цветокоррекции.
+
+2. КАТЕГОРИЧЕСКИ НЕ МЕНЯЙ МАНИКЮР. Сохраняй ногти на 100% идентичными оригиналу.
+
+3. Добавь в руку модели тонкий хрустальный бокал-флюте с игристым шампанским. Видны мелкие пузырьки в напитке, реалистичные блики на хрустале. Пальцы держат ножку бокала естественно, ногти полностью видны.
+
+4. Замени фон на глубокий чёрный матовый. Драматичное студийное освещение с акцентом на блик бокала. Ультрафотореалистично, 8K. Размер фото оригинальный.
+
+Отрицательный отзыв: изменение цвета или формы ногтей, бокал перекрывает ногти, замыливание.</pre>
+          </div>
+          <div class="prompt-meta">
+            <div class="meta-row"><span class="meta-label">Заменить</span><span class="meta-value">ничего</span></div>
+            <div class="meta-row"><span class="meta-label">На выходе</span><span class="meta-value">праздничный кадр с бокалом</span></div>
+          </div>
+        </article>
+        <article class="prompt" id="prompt-22">
+          <div class="prompt-head">
+            <div class="prompt-num">№22</div>
+            <h3 class="prompt-title">Стеклянный флакон духов</h3>
+          </div>
+          <div class="prompt-when">
+            <span class="when-label">Когда использовать</span>
+            <span class="when-text">Когда нужна beauty-эстетика парфюмерии</span>
+          </div>
+          <div class="prompt-box">
+            <div class="copy-btn-static">Промпт</div>
+            <pre class="prompt-text">1. Отредактируй фотографию, улучши качество. Без фильтров. Сохрани реалистичную текстуру кожи.
+
+2. НЕ МЕНЯЙ МАНИКЮР. Ногти — защищённая зона на пиксельном уровне.
+
+3. Добавь в руку модели изящный стеклянный флакон духов с золотой крышкой. Жидкость внутри янтарного цвета. Стекло прозрачное, с реалистичными бликами. Флакон удобно лежит в ладони, ногти полностью видны.
+
+4. Замени фон на матовый пудрово-розовый. Мягкое студийное освещение с тёплым оттенком. Ультрафотореалистично, 8K. Размер фото не менять.
+
+Отрицательный отзыв: изменение цвета или формы ногтей, флакон перекрывает ногти, замыливание.</pre>
+          </div>
+          <div class="prompt-meta">
+            <div class="meta-row"><span class="meta-label">Заменить</span><span class="meta-value">ничего</span></div>
+            <div class="meta-row"><span class="meta-label">На выходе</span><span class="meta-value">beauty-кадр с парфюмом</span></div>
+          </div>
+        </article>
+        <article class="prompt" id="prompt-23">
+          <div class="prompt-head">
+            <div class="prompt-num">№23</div>
+            <h3 class="prompt-title">Золотая цепочка между пальцев</h3>
+          </div>
+          <div class="prompt-when">
+            <span class="when-label">Когда использовать</span>
+            <span class="when-text">Когда нужен украшение-аксессуар без перегруза</span>
+          </div>
+          <div class="prompt-box">
+            <div class="copy-btn-static">Промпт</div>
+            <pre class="prompt-text">1. Отредактируй фотографию, улучши качество. Без фильтров и без изменения цветокоррекции.
+
+2. КАТЕГОРИЧЕСКИ НЕ МЕНЯЙ МАНИКЮР. Ногти — полностью защищённая зона, 100% идентичная оригиналу.
+
+3. Добавь между пальцами модели тонкую золотую цепочку, которая струится естественно, с реалистичными бликами золота. Цепочка проходит через ладонь и пальцы, но не перекрывает ногтевые пластины.
+
+4. Замени фон на матовый молочно-бежевый. Мягкое студийное освещение с тёплым акцентом. Ультрафотореалистично, 8K. Размер фото оригинальный.
+
+Отрицательный отзыв: цепочка закрывает ногти, изменение цвета или формы ногтей, замыливание.</pre>
+          </div>
+          <div class="prompt-meta">
+            <div class="meta-row"><span class="meta-label">Заменить</span><span class="meta-value">ничего</span></div>
+            <div class="meta-row"><span class="meta-label">На выходе</span><span class="meta-value">минималистичный кадр с цепочкой</span></div>
+          </div>
+        </article>
+        <article class="prompt" id="prompt-24">
+          <div class="prompt-head">
+            <div class="prompt-num">№24</div>
+            <h3 class="prompt-title">Хрустальный кубик льда</h3>
+          </div>
+          <div class="prompt-when">
+            <span class="when-label">Когда использовать</span>
+            <span class="when-text">Когда нужен холодный glossy-кадр</span>
+          </div>
+          <div class="prompt-box">
+            <div class="copy-btn-static">Промпт</div>
+            <pre class="prompt-text">1. Отредактируй фотографию, улучши качество. Без фильтров. Сохрани текстуру кожи.
+
+2. НЕ ИЗМЕНЯЙ МАНИКЮР. Ногти — изолированная зона на пиксельном уровне.
+
+3. Добавь в руку модели прозрачный кубик льда с реалистичной фактурой: видны микропузырьки внутри, чёткие грани, преломление света, капли тающей воды по поверхности. Кубик лежит на кончиках пальцев, не закрывая ногти.
+
+4. Замени фон на холодный графитово-синий матовый. Холодное студийное освещение. Ультрафотореалистично, 8K. Размер фото не менять.
+
+Отрицательный отзыв: лёд перекрывает ногти, изменение цвета или формы ногтей, замыливание.</pre>
+          </div>
+          <div class="prompt-meta">
+            <div class="meta-row"><span class="meta-label">Заменить</span><span class="meta-value">ничего</span></div>
+            <div class="meta-row"><span class="meta-label">На выходе</span><span class="meta-value">холодный glossy-кадр</span></div>
+          </div>
+        </article>
+        <article class="prompt" id="prompt-25">
+          <div class="prompt-head">
+            <div class="prompt-num">№25</div>
+            <h3 class="prompt-title">Атласная ткань на фоне</h3>
+          </div>
+          <div class="prompt-when">
+            <span class="when-label">Когда использовать</span>
+            <span class="when-text">Когда нужен мягкий люкс-фон</span>
+          </div>
+          <div class="prompt-box">
+            <div class="copy-btn-static">Промпт</div>
+            <pre class="prompt-text">1. Отредактируй фотографию, улучши качество. Без фильтров и без изменения цветокоррекции.
+
+2. КАТЕГОРИЧЕСКИ НЕ МЕНЯЙ МАНИКЮР. Сохраняй ногти на 100% идентичными оригиналу на пиксельном уровне.
+
+3. Замени фон на струящуюся атласную ткань пыльно-розового цвета с мягкими складками и характерными бликами атласа. Ткань уходит в глубину кадра, создавая атмосферу люкса. Освещение совпадает с оригиналом.
+
+4. Мягкое студийное освещение с градиентом глубины. Ультрафотореалистично, 8K. Размер фото оригинальный.
+
+Отрицательный отзыв: изменение цвета или формы ногтей, замыливание, сглаживание.</pre>
+          </div>
+          <div class="prompt-meta">
+            <div class="meta-row"><span class="meta-label">Заменить</span><span class="meta-value">ничего</span></div>
+            <div class="meta-row"><span class="meta-label">На выходе</span><span class="meta-value">люкс-фон из атласа</span></div>
+          </div>
+        </article>
+        <article class="prompt" id="prompt-26">
+          <div class="prompt-head">
+            <div class="prompt-num">№26</div>
+            <h3 class="prompt-title">Бархатный сапфировый фон</h3>
+          </div>
+          <div class="prompt-when">
+            <span class="when-label">Когда использовать</span>
+            <span class="when-text">Когда нужна глубокая роскошная атмосфера</span>
+          </div>
+          <div class="prompt-box">
+            <div class="copy-btn-static">Промпт</div>
+            <pre class="prompt-text">1. Отредактируй фотографию, улучши качество. Без фильтров. Сохрани реалистичную текстуру кожи.
+
+2. НЕ МЕНЯЙ МАНИКЮР. Ногти — защищённая зона на пиксельном уровне.
+
+3. Замени фон на матовый бархатный сапфирово-синий с глубокой текстурой ткани. Мягкие световые переходы добавляют объём фону. Реалистичная тень от руки.
+
+4. Драматичное студийное освещение с акцентом на руку. Ультрафотореалистично, 8K. Размер фото не менять.
+
+Отрицательный отзыв: изменение цвета или формы ногтей, замыливание, изменение цвета маникюра под фоном.</pre>
+          </div>
+          <div class="prompt-meta">
+            <div class="meta-row"><span class="meta-label">Заменить</span><span class="meta-value">ничего</span></div>
+            <div class="meta-row"><span class="meta-label">На выходе</span><span class="meta-value">роскошный бархатный фон</span></div>
+          </div>
+        </article>
+        <article class="prompt" id="prompt-27">
+          <div class="prompt-head">
+            <div class="prompt-num">№27</div>
+            <h3 class="prompt-title">Мокрый глянец на коже</h3>
+          </div>
+          <div class="prompt-when">
+            <span class="when-label">Когда использовать</span>
+            <span class="when-text">Когда нужен hi-end редакторский кадр</span>
+          </div>
+          <div class="prompt-box">
+            <div class="copy-btn-static">Промпт</div>
+            <pre class="prompt-text">1. Отредактируй фотографию, улучши качество. Без фильтров. Сохрани текстуру кожи и поры.
+
+2. КАТЕГОРИЧЕСКИ НЕ МЕНЯЙ МАНИКЮР. Ногти — 100% идентичны оригиналу на пиксельном уровне.
+
+3. Добавь на кожу руки эффект мокрого глянца: тонкая водяная плёнка с мелкими каплями, реалистичные блики, лёгкое отражение света. Кожа выглядит увлажнённой и сияющей, но не пластиковой. Эффект не затрагивает ногти.
+
+4. Замени фон на матовый угольно-чёрный. Драматичное контрастное студийное освещение. Ультрафотореалистично, 8K. Размер фото оригинальный.
+
+Отрицательный отзыв: мокрый эффект на ногтях, изменение цвета или формы ногтей, замыливание, пластиковая кожа.</pre>
+          </div>
+          <div class="prompt-meta">
+            <div class="meta-row"><span class="meta-label">Заменить</span><span class="meta-value">ничего</span></div>
+            <div class="meta-row"><span class="meta-label">На выходе</span><span class="meta-value">редакторский глянцевый кадр</span></div>
+          </div>
+        </article>
+        <article class="prompt" id="prompt-28">
+          <div class="prompt-head">
+            <div class="prompt-num">№28</div>
+            <h3 class="prompt-title">Сетчатая перчатка с жемчугом</h3>
+          </div>
+          <div class="prompt-when">
+            <span class="when-label">Когда использовать</span>
+            <span class="when-text">Когда нужен утончённый аксессуар</span>
+          </div>
+          <div class="prompt-box">
+            <div class="copy-btn-static">Промпт</div>
+            <pre class="prompt-text">1. Отредактируй фотографию, улучши качество. Без фильтров и без изменения цветокоррекции.
+
+2. НЕ ИЗМЕНЯЙ МАНИКЮР. Ногти — изолированная зона, идентичная оригиналу на пиксельном уровне.
+
+3. Добавь на руку модели прозрачную сетчатую перчатку телесного цвета с вышитыми мелкими жемчужинами. Перчатка заканчивается у середины пальцев, ногти полностью открыты. Жемчуг отражает свет натуральными бликами.
+
+4. Замени фон на матовый перламутрово-белый. Мягкое студийное освещение. Ультрафотореалистично, 8K. Размер фото не менять.
+
+Отрицательный отзыв: перчатка закрывает ногти, изменение цвета или формы ногтей, замыливание.</pre>
+          </div>
+          <div class="prompt-meta">
+            <div class="meta-row"><span class="meta-label">Заменить</span><span class="meta-value">ничего</span></div>
+            <div class="meta-row"><span class="meta-label">На выходе</span><span class="meta-value">утончённый кадр с жемчугом</span></div>
+          </div>
+        </article>
+        <article class="prompt" id="prompt-29">
+          <div class="prompt-head">
+            <div class="prompt-num">№29</div>
+            <h3 class="prompt-title">Золотая пыль в воздухе</h3>
+          </div>
+          <div class="prompt-when">
+            <span class="when-label">Когда использовать</span>
+            <span class="when-text">Когда нужен волшебный sparkle-эффект</span>
+          </div>
+          <div class="prompt-box">
+            <div class="copy-btn-static">Промпт</div>
+            <pre class="prompt-text">1. Отредактируй фотографию, улучши качество. Без фильтров. Сохрани текстуру кожи.
+
+2. КАТЕГОРИЧЕСКИ НЕ МЕНЯЙ МАНИКЮР. Ногти — защищённая зона на пиксельном уровне.
+
+3. Замени фон на глубокий чёрный. Добавь в воздухе вокруг руки эффект парящей золотой пыли: мелкие искрящиеся частицы разного размера, световые блики, лёгкое боке. Часть частиц подсвечена тёплым контровым светом.
+
+4. Драматичное студийное освещение с тёплым задним светом. Ультрафотореалистично, 8K. Размер фото оригинальный.
+
+Отрицательный отзыв: золотая пыль на ногтях, изменение цвета или формы ногтей, замыливание, перекрашивание маникюра под золотым светом.</pre>
+          </div>
+          <div class="prompt-meta">
+            <div class="meta-row"><span class="meta-label">Заменить</span><span class="meta-value">ничего</span></div>
+            <div class="meta-row"><span class="meta-label">На выходе</span><span class="meta-value">волшебный кадр с золотой пылью</span></div>
+          </div>
+        </article>
+        <article class="prompt" id="prompt-30">
+          <div class="prompt-head">
+            <div class="prompt-num">№30</div>
+            <h3 class="prompt-title">Двойной неон — фиолетовый и голубой</h3>
+          </div>
+          <div class="prompt-when">
+            <span class="when-label">Когда использовать</span>
+            <span class="when-text">Когда нужна cyberpunk-эстетика</span>
+          </div>
+          <div class="prompt-box">
+            <div class="copy-btn-static">Промпт</div>
+            <pre class="prompt-text">1. Отредактируй фотографию, улучши качество. Без фильтров и без изменения цветокоррекции. Сохрани реалистичную текстуру кожи.
+
+2. НЕ МЕНЯЙ МАНИКЮР. Ногти полностью защищены на пиксельном уровне — никаких изменений цвета, формы, бликов.
+
+3. Замени фон на глубокий чёрный матовый. Добавь яркий фиолетовый неоновый контровой свет справа и холодный голубой контровой свет слева. Свет создаёт цветной градиент на коже руки, подчёркивая контур пальцев. Ногти сохраняют исходное освещение и цвет, не перекрашиваются под цветной свет.
+
+4. Современная атмосфера cyberpunk-съёмки. Ультрафотореалистично, 8K, профессиональное студийное качество. Размер фото не менять.
+
+Отрицательный отзыв: изменение цвета или формы ногтей, перекрашивание маникюра под неоном, замыливание, пластика.</pre>
+          </div>
+          <div class="prompt-meta">
+            <div class="meta-row"><span class="meta-label">Заменить</span><span class="meta-value">ничего</span></div>
+            <div class="meta-row"><span class="meta-label">На выходе</span><span class="meta-value">cyberpunk-кадр</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="cat-section" id="cat-2">
+      <div class="cat-header">
+        <div class="cat-num-badge">02</div>
+        <h2 class="cat-title">Брови и ресницы</h2>
+        <div class="cat-count-badge">15 промптов</div>
+      </div>
+      <div class="prompts-grid">
+        <article class="prompt" id="prompt-31">
+          <div class="prompt-head">
+            <div class="prompt-num">№31</div>
+            <h3 class="prompt-title">Базовая профессиональная ретушь + чёрный фон</h3>
+          </div>
+          <div class="prompt-when">
+            <span class="when-label">Когда использовать</span>
+            <span class="when-text">Когда нужно чистое beauty-портфолио без декора</span>
+          </div>
+          <div class="prompt-box">
+            <div class="copy-btn-static">Промпт</div>
+            <pre class="prompt-text">1. Отредактируй фотографию.
+
+2. Выполни профессиональную ретушь кожи. Сохрани текстуру кожи, пигментацию теней и глубину тона — без эффекта пластика. Кожа должна выглядеть максимально естественно — без сглаживания, размытия, замыливания. Естественная текстура кожи хорошо видна. Максимальный увлажняющий эффект с лёгким естественным сиянием. Мягко удали мелкие дефекты кожи: прыщи, угри, временное покраснение, пигментные пятна — полностью сохраняя текстуру, поры, пушок, веснушки, родинки. Никакого искусственного разглаживания. Ни в коем случае не меняй внешность: черты лица, форму лица, форму губ, форму глаз, форму носа, пропорции, возраст.
+
+3. Добавь яркий круглый блик на радужку глаза. Отбели белки глаз. Сделай глаза ярче. Не меняй положение глаз и взгляд.
+
+4. КРИТИЧЕСКИЕ УСЛОВИЯ — РЕСНИЦЫ — АБСОЛЮТНОЕ сохранение пиксельного уровня. Ресницы остаются неизменными на 100%. НЕ меняй цвет, изгибы, плотность, объём, толщину, длину, форму, направление, разделение, резкость, тон. Никакого увеличения, перерисовки, затемнения, усиления контраста, утолщения, добавления прядей, искусственного мелирования, эффекта туши.
+
+БРОВИ — АБСОЛЮТНОЕ сохранение пиксельного уровня. Брови остаются неизменными на 100%. НЕ меняй цвет, густоту, резкость, форму, тон, текстуру. Не добавляй макияж на зону бровей.
+
+МАКИЯЖ — строгая точность. Не изменяй макияж. ВОЛОСЫ — сохрани текстуру, не сглаживай.
+
+5. Замени фон на матовый глубокий чёрный.
+
+Ультрафотореалистично, разрешение 8K, профессиональное студийное качество. Размер фото сохрани точь-в-точь как в оригинале. Без сглаживания, без фильтров.
+
+Отрицательный отзыв: изменение черт лица, формы лица, носа, губ, глаз, чрезмерно обработанная кожа, косметический фильтр, накладные ресницы, утолщённые ресницы, удлинённые ресницы, эффект туши, утолщённые брови, заострённые брови, изменение формы или цвета бровей, гламурный макияж, пластиковая кожа.</pre>
+          </div>
+          <div class="prompt-meta">
+            <div class="meta-row"><span class="meta-label">Заменить</span><span class="meta-value">ничего</span></div>
+            <div class="meta-row"><span class="meta-label">На выходе</span><span class="meta-value">чистое beauty-фото</span></div>
+          </div>
+        </article>
+        <article class="prompt" id="prompt-32">
+          <div class="prompt-head">
+            <div class="prompt-num">№32</div>
+            <h3 class="prompt-title">Неоновый красный контровой свет</h3>
+          </div>
+          <div class="prompt-when">
+            <span class="when-label">Когда использовать</span>
+            <span class="when-text">Когда нужна киношная драматичная подача</span>
+          </div>
+          <div class="prompt-box">
+            <div class="copy-btn-static">Промпт</div>
+            <pre class="prompt-text">1. Отредактируй фотографию. Выполни профессиональную ретушь кожи — без эффекта пластика. Сохрани текстуру кожи, поры, пушок, веснушки. Мягко удали мелкие дефекты. Не меняй черты лица, форму, пропорции, возраст.
+
+2. Добавь яркий блик на радужку глаза. Отбели белки. Не меняй взгляд.
+
+3. РЕСНИЦЫ — 100% идентичны оригиналу на пиксельном уровне. НЕ меняй цвет, длину, объём, форму, изгиб, плотность.
+
+БРОВИ — 100% идентичны оригиналу на пиксельном уровне. НЕ меняй цвет, густоту, форму, текстуру. Не добавляй макияж на брови.
+
+МАКИЯЖ — строгая точность, не изменять. ВОЛОСЫ — сохрани текстуру.
+
+4. Добавь яркий красный неоновый контровой свет слева, как от неонового источника. Свет создаёт градиент на коже, подсвечивает волосы и контур лица. Атмосфера cyberpunk-съёмки.
+
+5. Замени фон на матовый чёрный.
+
+Ультрафотореалистично, 8K, профессиональное студийное качество. Размер фото оригинальный.
+
+Отрицательный отзыв: изменение ресниц, бровей, черт лица, накладные ресницы, эффект туши, перекраска бровей, пластиковая кожа, изменение макияжа.</pre>
+          </div>
+          <div class="prompt-meta">
+            <div class="meta-row"><span class="meta-label">Заменить</span><span class="meta-value">ничего</span></div>
+            <div class="meta-row"><span class="meta-label">На выходе</span><span class="meta-value">драматичный красный кадр</span></div>
+          </div>
+        </article>
+        <article class="prompt" id="prompt-33">
+          <div class="prompt-head">
+            <div class="prompt-num">№33</div>
+            <h3 class="prompt-title">Неоновый фиолетовый контровой свет</h3>
+          </div>
+          <div class="prompt-when">
+            <span class="when-label">Когда использовать</span>
+            <span class="when-text">Когда нужна холодная неоновая эстетика</span>
+          </div>
+          <div class="prompt-box">
+            <div class="copy-btn-static">Промпт</div>
+            <pre class="prompt-text">1. Отредактируй фотографию. Выполни профессиональную ретушь кожи. Сохрани текстуру, поры, веснушки, пушок. Без сглаживания и пластика. Не меняй черты лица.
+
+2. Добавь блик на радужку глаз. Отбели белки. Не меняй взгляд.
+
+3. РЕСНИЦЫ — абсолютное сохранение на пиксельном уровне. НЕ меняй ничего: цвет, длину, объём, изгиб, форму, плотность.
+
+БРОВИ — абсолютное сохранение на пиксельном уровне. НЕ меняй цвет, форму, густоту, текстуру.
+
+МАКИЯЖ — не меняй. ВОЛОСЫ — сохрани, не сглаживай.
+
+4. Добавь яркий фиолетовый неоновый контровой свет справа, как от неонового источника. Свет создаёт цветной градиент на коже, подсвечивает волосы и плечо.
+
+5. Замени фон на матовый чёрный.
+
+Ультрафотореалистично, 8K, профессиональное качество. Размер фото оригинальный.
+
+Отрицательный отзыв: изменение ресниц, бровей, черт лица, перекраска, пластика, эффект туши.</pre>
+          </div>
+          <div class="prompt-meta">
+            <div class="meta-row"><span class="meta-label">Заменить</span><span class="meta-value">ничего</span></div>
+            <div class="meta-row"><span class="meta-label">На выходе</span><span class="meta-value">холодный неоновый кадр</span></div>
+          </div>
+        </article>
+        <article class="prompt" id="prompt-34">
+          <div class="prompt-head">
+            <div class="prompt-num">№34</div>
+            <h3 class="prompt-title">Двойной неон — голубой и розовый</h3>
+          </div>
+          <div class="prompt-when">
+            <span class="when-label">Когда использовать</span>
+            <span class="when-text">Когда нужен модный ночной портрет</span>
+          </div>
+          <div class="prompt-box">
+            <div class="copy-btn-static">Промпт</div>
+            <pre class="prompt-text">1. Отредактируй фото. Профессиональная ретушь кожи. Сохрани текстуру, поры, пушок, веснушки. Без пластика и сглаживания. Не меняй черты лица.
+
+2. Блик на радужку, отбеливание белков. Взгляд не менять.
+
+3. РЕСНИЦЫ — 100% оригинал на пиксельном уровне. БРОВИ — 100% оригинал на пиксельном уровне, без макияжа. МАКИЯЖ — строгая точность. ВОЛОСЫ — сохранить текстуру.
+
+4. Добавь холодный голубой неоновый свет слева и тёплый розовый неоновый свет справа. Оба света — контровые, создают цветной двойной градиент на лице и волосах. Атмосфера ночной модной съёмки.
+
+5. Замени фон на матовый чёрный.
+
+Ультрафотореалистично, 8K. Размер фото оригинальный.
+
+Отрицательный отзыв: изменение ресниц, бровей, черт лица, перекраска, эффект туши, пластика.</pre>
+          </div>
+          <div class="prompt-meta">
+            <div class="meta-row"><span class="meta-label">Заменить</span><span class="meta-value">ничего</span></div>
+            <div class="meta-row"><span class="meta-label">На выходе</span><span class="meta-value">модный ночной портрет</span></div>
+          </div>
+        </article>
+        <article class="prompt" id="prompt-35">
+          <div class="prompt-head">
+            <div class="prompt-num">№35</div>
+            <h3 class="prompt-title">Стразы и кристаллы на лице</h3>
+          </div>
+          <div class="prompt-when">
+            <span class="when-label">Когда использовать</span>
+            <span class="when-text">Когда нужен редакторский бьюти-арт</span>
+          </div>
+          <div class="prompt-box">
+            <div class="copy-btn-static">Промпт</div>
+            <pre class="prompt-text">1. Отредактируй фото. Профессиональная ретушь кожи без пластика. Сохрани текстуру, поры, пушок, веснушки. Не меняй черты лица.
+
+2. Блик на радужку, отбелить белки. Взгляд не менять.
+
+3. РЕСНИЦЫ — 100% оригинал на пиксельном уровне. БРОВИ — 100% оригинал, без макияжа. МАКИЯЖ — не менять. ВОЛОСЫ — сохранить.
+
+4. Аккуратно распредели по лицу и волосам мелкие и средние переливающиеся стразы и хрустальные бусины. Оттенки: серебряный, нежно-розовый, перламутровый. Сосредоточь на скулах, висках, верхней части лица — избегая линии ресниц, зоны вокруг глаз и линии губ. Каждый страз ловит свет индивидуально, без грязных пятен и размазанной текстуры.
+
+5. Замени фон на матовый глубокий чёрный.
+
+Ультрафотореалистично, 8K, профессиональное студийное качество. Размер фото оригинальный.
+
+Отрицательный отзыв: стразы на ресницах или бровях, изменение ресниц, бровей, черт лица, пластика, замыливание.</pre>
+          </div>
+          <div class="prompt-meta">
+            <div class="meta-row"><span class="meta-label">Заменить</span><span class="meta-value">ничего</span></div>
+            <div class="meta-row"><span class="meta-label">На выходе</span><span class="meta-value">редакторский бьюти-арт</span></div>
+          </div>
+        </article>
+        <article class="prompt" id="prompt-36">
+          <div class="prompt-head">
+            <div class="prompt-num">№36</div>
+            <h3 class="prompt-title">Заснеженный эффект на лице</h3>
+          </div>
+          <div class="prompt-when">
+            <span class="when-label">Когда использовать</span>
+            <span class="when-text">Когда нужна зимняя сказочная атмосфера</span>
+          </div>
+          <div class="prompt-box">
+            <div class="copy-btn-static">Промпт</div>
+            <pre class="prompt-text">1. Отредактируй фото. Профессиональная ретушь кожи без пластика. Сохрани текстуру, поры, пушок, веснушки. Не меняй черты лица.
+
+2. Блик на радужку, отбелить белки.
+
+3. РЕСНИЦЫ — 100% оригинал на пиксельном уровне. БРОВИ — 100% оригинал, без макияжа. МАКИЯЖ — не менять. ВОЛОСЫ — сохранить текстуру.
+
+4. Добавь на лицо лёгкий заснеженный эффект: мелкие снежинки на скулах, лбу, кончике носа и волосах. В воздухе вокруг лица — мягкое падение снега, лёгкая дымка. Снежинки не касаются ресниц и бровей. Кожа выглядит холодной, с лёгким румянцем от мороза.
+
+5. Замени фон на матовый холодный графитово-серый.
+
+Ультрафотореалистично, 8K. Размер фото оригинальный.
+
+Отрицательный отзыв: снег на ресницах или бровях, изменение работы мастера, пластика, изменение черт лица.</pre>
+          </div>
+          <div class="prompt-meta">
+            <div class="meta-row"><span class="meta-label">Заменить</span><span class="meta-value">ничего</span></div>
+            <div class="meta-row"><span class="meta-label">На выходе</span><span class="meta-value">зимний сказочный кадр</span></div>
+          </div>
+        </article>
+        <article class="prompt" id="prompt-37">
+          <div class="prompt-head">
+            <div class="prompt-num">№37</div>
+            <h3 class="prompt-title">Патчи под глаза</h3>
+          </div>
+          <div class="prompt-when">
+            <span class="when-label">Когда использовать</span>
+            <span class="when-text">Когда нужен beauty-уходовый контекст</span>
+          </div>
+          <div class="prompt-box">
+            <div class="copy-btn-static">Промпт</div>
+            <pre class="prompt-text">1. Отредактируй фото. Профессиональная ретушь кожи. Сохрани текстуру, поры, пушок. Без пластика. Не меняй черты лица.
+
+2. Блик на радужку, отбеливание белков.
+
+3. РЕСНИЦЫ — 100% оригинал на пиксельном уровне. БРОВИ — 100% оригинал, без макияжа. МАКИЯЖ — не менять. ВОЛОСЫ — сохранить.
+
+4. Добавь под глаза модели реалистичные косметические патчи в форме полумесяца. Цвет патчей — золотисто-перламутровый с мягким блеском. Патчи прилегают к коже естественно, не закрывают ресницы и не доходят до линии бровей. Атмосфера ухода и beauty-рутины.
+
+5. Замени фон на нежно-белый матовый. Мягкое тёплое студийное освещение.
+
+Ультрафотореалистично, 8K. Размер фото оригинальный.
+
+Отрицательный отзыв: патчи касаются ресниц, изменение ресниц, бровей, черт лица, пластика.</pre>
+          </div>
+          <div class="prompt-meta">
+            <div class="meta-row"><span class="meta-label">Заменить</span><span class="meta-value">ничего</span></div>
+            <div class="meta-row"><span class="meta-label">На выходе</span><span class="meta-value">уходовый beauty-кадр</span></div>
+          </div>
+        </article>
+        <article class="prompt" id="prompt-38">
+          <div class="prompt-head">
+            <div class="prompt-num">№38</div>
+            <h3 class="prompt-title">Цветы в волосах</h3>
+          </div>
+          <div class="prompt-when">
+            <span class="when-label">Когда использовать</span>
+            <span class="when-text">Когда нужен нежный flower-look</span>
+          </div>
+          <div class="prompt-box">
+            <div class="copy-btn-static">Промпт</div>
+            <pre class="prompt-text">1. Отредактируй фото. Профессиональная ретушь кожи. Сохрани текстуру, поры, пушок, веснушки. Не меняй черты лица.
+
+2. Блик на радужку, отбелить белки.
+
+3. РЕСНИЦЫ — 100% оригинал на пиксельном уровне. БРОВИ — 100% оригинал, без макияжа. МАКИЯЖ — не менять. ВОЛОСЫ — сохранить базовую текстуру и цвет.
+
+4. Добавь в волосы модели мелкие живые цветы: белые гипсофилы, маленькие розовые бутоны роз, веточки зелени. Цветы аккуратно вплетены в пряди, выглядят свежими и реалистичными, не закрывают лоб и брови.
+
+5. Замени фон на нежно-кремовый матовый. Мягкое тёплое естественное освещение, как при съёмке невест.
+
+Ультрафотореалистично, 8K. Размер фото оригинальный.
+
+Отрицательный отзыв: цветы на ресницах или бровях, изменение черт лица, пластика, изменение работы мастера.</pre>
+          </div>
+          <div class="prompt-meta">
+            <div class="meta-row"><span class="meta-label">Заменить</span><span class="meta-value">ничего</span></div>
+            <div class="meta-row"><span class="meta-label">На выходе</span><span class="meta-value">нежный flower-look</span></div>
+          </div>
+        </article>
+        <article class="prompt" id="prompt-39">
+          <div class="prompt-head">
+            <div class="prompt-num">№39</div>
+            <h3 class="prompt-title">Прозрачная перчатка у лица</h3>
+          </div>
+          <div class="prompt-when">
+            <span class="when-label">Когда использовать</span>
+            <span class="when-text">Когда нужен элегантный жест в кадре</span>
+          </div>
+          <div class="prompt-box">
+            <div class="copy-btn-static">Промпт</div>
+            <pre class="prompt-text">1. Отредактируй фото. Профессиональная ретушь кожи. Сохрани текстуру, поры. Не меняй черты лица.
+
+2. Блик на радужку, отбеливание белков.
+
+3. РЕСНИЦЫ — 100% оригинал на пиксельном уровне. БРОВИ — 100% оригинал, без макияжа. МАКИЯЖ — не менять. ВОЛОСЫ — сохранить.
+
+4. Добавь руку модели в чёрной кружевной перчатке, нежно прикасающуюся к щеке или подбородку. Кружево с тонким цветочным узором, элегантное. Рука не закрывает глаза, брови и ресницы.
+
+5. Замени фон на матовый бордовый. Драматичное студийное освещение.
+
+Ультрафотореалистично, 8K, профессиональное качество. Размер фото оригинальный.
+
+Отрицательный отзыв: рука или перчатка перекрывают глаза/брови/ресницы, изменение работы мастера, пластика.</pre>
+          </div>
+          <div class="prompt-meta">
+            <div class="meta-row"><span class="meta-label">Заменить</span><span class="meta-value">ничего</span></div>
+            <div class="meta-row"><span class="meta-label">На выходе</span><span class="meta-value">элегантный жест</span></div>
+          </div>
+        </article>
+        <article class="prompt" id="prompt-40">
+          <div class="prompt-head">
+            <div class="prompt-num">№40</div>
+            <h3 class="prompt-title">Мороженое в руке у лица</h3>
+          </div>
+          <div class="prompt-when">
+            <span class="when-label">Когда использовать</span>
+            <span class="when-text">Когда нужен летний игривый кадр</span>
+          </div>
+          <div class="prompt-box">
+            <div class="copy-btn-static">Промпт</div>
+            <pre class="prompt-text">1. Отредактируй фото. Профессиональная ретушь кожи. Сохрани текстуру, поры, пушок. Не меняй черты лица.
+
+2. Блик на радужку, отбелить белки.
+
+3. РЕСНИЦЫ — 100% оригинал на пиксельном уровне. БРОВИ — 100% оригинал, без макияжа. МАКИЯЖ — не менять. ВОЛОСЫ — сохранить.
+
+4. Добавь в руку модели реалистичный рожок мороженого: вафельный рожок с двумя шариками клубничного и ванильного мороженого, с лёгкими каплями стекающего пломбира. Модель держит мороженое на уровне щеки или подбородка, не закрывая глаза, брови и ресницы. Атмосфера летней beauty-съёмки.
+
+5. Замени фон на нежно-розовый матовый. Мягкое тёплое освещение.
+
+Ультрафотореалистично, 8K. Размер фото оригинальный.
+
+Отрицательный отзыв: мороженое перекрывает работу мастера, изменение ресниц, бровей, черт лица, пластика.</pre>
+          </div>
+          <div class="prompt-meta">
+            <div class="meta-row"><span class="meta-label">Заменить</span><span class="meta-value">ничего</span></div>
+            <div class="meta-row"><span class="meta-label">На выходе</span><span class="meta-value">летний игривый кадр</span></div>
+          </div>
+        </article>
+        <article class="prompt" id="prompt-41">
+          <div class="prompt-head">
+            <div class="prompt-num">№41</div>
+            <h3 class="prompt-title">Леденец у щеки</h3>
+          </div>
+          <div class="prompt-when">
+            <span class="when-label">Когда использовать</span>
+            <span class="when-text">Когда нужен candy-кадр для социальных сетей</span>
+          </div>
+          <div class="prompt-box">
+            <div class="copy-btn-static">Промпт</div>
+            <pre class="prompt-text">1. Отредактируй фото. Профессиональная ретушь кожи. Сохрани текстуру, поры. Не меняй черты лица.
+
+2. Блик на радужку, отбеливание белков.
+
+3. РЕСНИЦЫ — 100% оригинал. БРОВИ — 100% оригинал, без макияжа. МАКИЯЖ — не менять. ВОЛОСЫ — сохранить.
+
+4. Добавь в руку модели декоративный круглый прозрачный леденец на палочке. Внутри леденца — мелкие разноцветные кондитерские посыпки. Леденец расположен у щеки или у губ, не перекрывая глаза, брови и ресницы.
+
+5. Замени фон на нежно-сиреневый матовый. Мягкое студийное освещение.
+
+Ультрафотореалистично, 8K. Размер фото оригинальный.
+
+Отрицательный отзыв: леденец перекрывает работу мастера, изменение ресниц, бровей, черт лица, пластика.</pre>
+          </div>
+          <div class="prompt-meta">
+            <div class="meta-row"><span class="meta-label">Заменить</span><span class="meta-value">ничего</span></div>
+            <div class="meta-row"><span class="meta-label">На выходе</span><span class="meta-value">candy-кадр</span></div>
+          </div>
+        </article>
+        <article class="prompt" id="prompt-42">
+          <div class="prompt-head">
+            <div class="prompt-num">№42</div>
+            <h3 class="prompt-title">Солнцезащитные очки</h3>
+          </div>
+          <div class="prompt-when">
+            <span class="when-label">Когда использовать</span>
+            <span class="when-text">Когда нужен модный кадр в стиле fashion</span>
+          </div>
+          <div class="prompt-box">
+            <div class="copy-btn-static">Промпт</div>
+            <pre class="prompt-text">1. Отредактируй фото. Профессиональная ретушь кожи. Сохрани текстуру, поры. Не меняй черты лица.
+
+2. Блик на радужку (если глаза видны), отбелить белки.
+
+3. РЕСНИЦЫ — 100% оригинал. БРОВИ — 100% оригинал, без макияжа. МАКИЯЖ — не менять. ВОЛОСЫ — сохранить.
+
+4. Добавь модели стильные солнцезащитные очки в стиле минимализм: прозрачная пластиковая оправа с лёгким коричневатым оттенком стёкол. Очки сидят чуть ниже на носу — так, чтобы брови и часть ресниц оставались видны и не перекрывались. Лёгкие отражения на стёклах.
+
+5. Замени фон на тёплый бежево-золотистый матовый. Мягкое тёплое студийное освещение.
+
+Ультрафотореалистично, 8K. Размер фото оригинальный.
+
+Отрицательный отзыв: очки закрывают брови или ресницы, изменение работы мастера, пластика, изменение черт лица.</pre>
+          </div>
+          <div class="prompt-meta">
+            <div class="meta-row"><span class="meta-label">Заменить</span><span class="meta-value">ничего</span></div>
+            <div class="meta-row"><span class="meta-label">На выходе</span><span class="meta-value">модный fashion-кадр</span></div>
+          </div>
+        </article>
+        <article class="prompt" id="prompt-43">
+          <div class="prompt-head">
+            <div class="prompt-num">№43</div>
+            <h3 class="prompt-title">Мокрые глянцевые волосы</h3>
+          </div>
+          <div class="prompt-when">
+            <span class="when-label">Когда использовать</span>
+            <span class="when-text">Когда нужен wet-look как в журнале</span>
+          </div>
+          <div class="prompt-box">
+            <div class="copy-btn-static">Промпт</div>
+            <pre class="prompt-text">1. Отредактируй фото. Профессиональная ретушь кожи. Сохрани текстуру, поры, пушок. Не меняй черты лица.
+
+2. Блик на радужку, отбелить белки.
+
+3. РЕСНИЦЫ — 100% оригинал на пиксельном уровне. БРОВИ — 100% оригинал, без макияжа. МАКИЯЖ — не менять.
+
+4. Сделай волосы модели с эффектом мокрого глянца: пряди слегка влажные, с естественным блеском, отдельные пряди гладко зачёсаны назад, видны мелкие капли воды на отдельных прядях. Добавь на кожу лица лёгкий эффект сияния, как после душа. Капли воды не касаются глаз, ресниц и бровей.
+
+5. Замени фон на холодный графитово-синий матовый. Прохладное студийное освещение.
+
+Ультрафотореалистично, 8K. Размер фото оригинальный.
+
+Отрицательный отзыв: вода на ресницах или бровях, изменение работы мастера, пластика, изменение черт лица.</pre>
+          </div>
+          <div class="prompt-meta">
+            <div class="meta-row"><span class="meta-label">Заменить</span><span class="meta-value">ничего</span></div>
+            <div class="meta-row"><span class="meta-label">На выходе</span><span class="meta-value">журнальный wet-look</span></div>
+          </div>
+        </article>
+        <article class="prompt" id="prompt-44">
+          <div class="prompt-head">
+            <div class="prompt-num">№44</div>
+            <h3 class="prompt-title">Высокий гладкий хвост</h3>
+          </div>
+          <div class="prompt-when">
+            <span class="when-label">Когда использовать</span>
+            <span class="when-text">Когда нужен чистый минималистичный образ</span>
+          </div>
+          <div class="prompt-box">
+            <div class="copy-btn-static">Промпт</div>
+            <pre class="prompt-text">1. Отредактируй фото. Профессиональная ретушь кожи. Сохрани текстуру, поры. Не меняй черты лица.
+
+2. Блик на радужку, отбелить белки.
+
+3. РЕСНИЦЫ — 100% оригинал. БРОВИ — 100% оригинал, без макияжа. МАКИЯЖ — не менять.
+
+4. Измени причёску модели на высокий гладкий хвост: волосы убраны назад, гладкая укладка с лёгким блеском, тонкая чёрная резинка у основания хвоста. Волосы сохраняют исходный цвет. Несколько лёгких прядей у висков для естественности. Лицо полностью открыто, лоб виден, брови не перекрыты.
+
+5. Замени фон на матовый светло-серый. Мягкое студийное освещение.
+
+Ультрафотореалистично, 8K. Размер фото оригинальный.
+
+Отрицательный отзыв: волосы закрывают брови, изменение работы мастера, пластика, изменение черт лица или цвета волос.</pre>
+          </div>
+          <div class="prompt-meta">
+            <div class="meta-row"><span class="meta-label">Заменить</span><span class="meta-value">ничего</span></div>
+            <div class="meta-row"><span class="meta-label">На выходе</span><span class="meta-value">минималистичный образ</span></div>
+          </div>
+        </article>
+        <article class="prompt" id="prompt-45">
+          <div class="prompt-head">
+            <div class="prompt-num">№45</div>
+            <h3 class="prompt-title">Шёлковая блуза с декольте</h3>
+          </div>
+          <div class="prompt-when">
+            <span class="when-label">Когда использовать</span>
+            <span class="when-text">Когда нужно добавить одежду без перегруза</span>
+          </div>
+          <div class="prompt-box">
+            <div class="copy-btn-static">Промпт</div>
+            <pre class="prompt-text">1. Отредактируй фото. Профессиональная ретушь кожи. Сохрани текстуру, поры. Не меняй черты лица.
+
+2. Блик на радужку, отбелить белки.
+
+3. РЕСНИЦЫ — 100% оригинал. БРОВИ — 100% оригинал, без макияжа. МАКИЯЖ — не менять. ВОЛОСЫ — сохранить.
+
+4. Замени или добавь модели элегантную шёлковую блузу нежно-молочного цвета с лёгким V-образным вырезом. Видны мягкие складки шёлка, естественные блики ткани, реалистичная драпировка. Блуза не перекрывает лицо, шею и линию подбородка.
+
+5. Замени фон на матовый перламутрово-белый. Мягкое тёплое студийное освещение.
+
+Ультрафотореалистично, 8K, профессиональное студийное качество. Размер фото оригинальный.
+
+Отрицательный отзыв: одежда перекрывает работу мастера, изменение черт лица, ресниц, бровей, пластика, замыливание.</pre>
+          </div>
+          <div class="prompt-meta">
+            <div class="meta-row"><span class="meta-label">Заменить</span><span class="meta-value">ничего</span></div>
+            <div class="meta-row"><span class="meta-label">На выходе</span><span class="meta-value">образ с шёлковой блузой</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="cat-section" id="cat-3">
+      <div class="cat-header">
+        <div class="cat-num-badge">03</div>
+        <h2 class="cat-title">Губы</h2>
+        <div class="cat-count-badge">5 промптов</div>
+      </div>
+      <div class="prompts-grid">
+        <article class="prompt" id="prompt-46">
+          <div class="prompt-head">
+            <div class="prompt-num">№46</div>
+            <h3 class="prompt-title">Лапа леопарда у щеки</h3>
+          </div>
+          <div class="prompt-when">
+            <span class="when-label">Когда использовать</span>
+            <span class="when-text">Когда нужен дерзкий концептуальный кадр</span>
+          </div>
+          <div class="prompt-box">
+            <div class="copy-btn-static">Промпт</div>
+            <pre class="prompt-text">1. Отредактируй фотографию. Выполни профессиональную ретушь кожи. Строго не меняй оттенок и цвет кожи. Кожа должна выглядеть максимально естественно — без сглаживания, размытия, замыливания. Сохрани реалистичную текстуру кожи, поры, пушок, веснушки, родинки. Мягко удали мелкие дефекты. Ни в коем случае не меняй внешность: черты лица, форма, пропорции, возраст.
+
+2. КРИТИЧЕСКИЕ УСЛОВИЯ — ГУБЫ — АБСОЛЮТНОЕ сохранение пиксельного уровня. Губы остаются неизменными на 100%. СТРОГО НЕ меняй цвет, тон, оттенок, плотность, объём, толщину, длину, форму, резкость, контрастность. Не наноси макияж на губы. Сохрани губы как на исходном фото.
+
+3. Добавь у щеки модели реалистичную лапу леопарда: видна мягкая пятнистая шерсть, чёткие когти втянуты, фактура шерсти максимально реалистична. Лапа аккуратно прикасается к скуле или подбородку, не закрывая губы.
+
+4. Замени фон на матовый тёмно-бордовый. Драматичное студийное освещение.
+
+5. Ультрафотореалистично, 8K, профессиональное студийное качество. Не обрезай и не меняй ракурс фото. Размер фото сохрани точь-в-точь как в оригинале. Без сглаживания, без фильтров.
+
+Отрицательный отзыв: изменение цвета, формы или текстуры губ, макияж на губах, лапа закрывает губы, фильтр на фото, изменение цветокоррекции, пластика, изменение черт лица.</pre>
+          </div>
+          <div class="prompt-meta">
+            <div class="meta-row"><span class="meta-label">Заменить</span><span class="meta-value">ничего</span></div>
+            <div class="meta-row"><span class="meta-label">На выходе</span><span class="meta-value">дерзкий концептуальный кадр</span></div>
+          </div>
+        </article>
+        <article class="prompt" id="prompt-47">
+          <div class="prompt-head">
+            <div class="prompt-num">№47</div>
+            <h3 class="prompt-title">Морда добермана рядом</h3>
+          </div>
+          <div class="prompt-when">
+            <span class="when-label">Когда использовать</span>
+            <span class="when-text">Когда нужна сильная статусная подача</span>
+          </div>
+          <div class="prompt-box">
+            <div class="copy-btn-static">Промпт</div>
+            <pre class="prompt-text">1. Отредактируй фото. Профессиональная ретушь кожи без пластика. Сохрани текстуру, поры, веснушки. Не меняй черты лица.
+
+2. ГУБЫ — 100% идентичны оригиналу на пиксельном уровне. НЕ меняй цвет, форму, объём, текстуру, тон. Не наноси макияж на губы.
+
+3. Добавь рядом с лицом модели морду чёрного добермана: реалистичная шерсть, выразительные глаза, элегантный профиль. Собака расположена сбоку, прижимается мордой к щеке модели, не закрывая губы.
+
+4. Замени фон на матовый угольно-чёрный. Драматичное студийное освещение с лёгким бликом.
+
+5. Ультрафотореалистично, 8K, профессиональное студийное качество. Размер фото оригинальный.
+
+Отрицательный отзыв: изменение цвета или формы губ, макияж на губах, собака закрывает губы, пластика, изменение черт лица.</pre>
+          </div>
+          <div class="prompt-meta">
+            <div class="meta-row"><span class="meta-label">Заменить</span><span class="meta-value">ничего</span></div>
+            <div class="meta-row"><span class="meta-label">На выходе</span><span class="meta-value">статусный концептуальный кадр</span></div>
+          </div>
+        </article>
+        <article class="prompt" id="prompt-48">
+          <div class="prompt-head">
+            <div class="prompt-num">№48</div>
+            <h3 class="prompt-title">Розы у губ</h3>
+          </div>
+          <div class="prompt-when">
+            <span class="when-label">Когда использовать</span>
+            <span class="when-text">Когда нужен классический женственный кадр</span>
+          </div>
+          <div class="prompt-box">
+            <div class="copy-btn-static">Промпт</div>
+            <pre class="prompt-text">1. Отредактируй фото. Профессиональная ретушь кожи. Сохрани текстуру, поры. Строго не меняй цвет и оттенок кожи. Не меняй черты лица.
+
+2. ГУБЫ — 100% идентичны оригиналу на пиксельном уровне. НЕ меняй цвет, форму, объём, текстуру. Не наноси макияж.
+
+3. Добавь у губ модели свежие бутоны бордовых роз с лёгкими каплями росы. Цветы расположены рядом с лицом так, чтобы лепестки касались щеки или подбородка, но не закрывали губы. Цветы выглядят реалистично, с прорисованными лепестками и натуральными бликами.
+
+4. Замени фон на матовый глубокий бордовый. Драматичное освещение в стиле классической beauty-съёмки.
+
+5. Ультрафотореалистично, 8K, профессиональное качество. Размер фото оригинальный.
+
+Отрицательный отзыв: цветы закрывают губы, изменение цвета или формы губ, макияж на губах, пластика.</pre>
+          </div>
+          <div class="prompt-meta">
+            <div class="meta-row"><span class="meta-label">Заменить</span><span class="meta-value">ничего</span></div>
+            <div class="meta-row"><span class="meta-label">На выходе</span><span class="meta-value">классический женственный кадр</span></div>
+          </div>
+        </article>
+        <article class="prompt" id="prompt-49">
+          <div class="prompt-head">
+            <div class="prompt-num">№49</div>
+            <h3 class="prompt-title">Стразы и блёстки вокруг губ</h3>
+          </div>
+          <div class="prompt-when">
+            <span class="when-label">Когда использовать</span>
+            <span class="when-text">Когда нужен редакторский кадр с акцентом на губы</span>
+          </div>
+          <div class="prompt-box">
+            <div class="copy-btn-static">Промпт</div>
+            <pre class="prompt-text">1. Отредактируй фото. Профессиональная ретушь кожи. Сохрани текстуру, поры, пушок. Не меняй черты лица.
+
+2. ГУБЫ — 100% идентичны оригиналу на пиксельном уровне. НЕ меняй цвет, тон, форму, объём, текстуру. Не наноси макияж на губы. Сохрани цвет губ.
+
+3. Аккуратно распредели вокруг губ и на скулах мелкие переливающиеся стразы и хрустальные бусины смешанных размеров. Оттенки: серебряный, нежно-розовый, перламутровый. Стразы расположены аккуратно по контуру вокруг губ, не касаясь линии губ и не заходя на их поверхность. Каждый страз ловит свет индивидуально.
+
+4. Замени фон на матовый глубокий чёрный. Мягкое студийное освещение с акцентом на блики страз.
+
+5. Ультрафотореалистично, 8K. Размер фото оригинальный.
+
+Отрицательный отзыв: стразы на губах, изменение цвета или формы губ, макияж, пластика, изменение черт лица.</pre>
+          </div>
+          <div class="prompt-meta">
+            <div class="meta-row"><span class="meta-label">Заменить</span><span class="meta-value">ничего</span></div>
+            <div class="meta-row"><span class="meta-label">На выходе</span><span class="meta-value">редакторский кадр со стразами</span></div>
+          </div>
+        </article>
+        <article class="prompt" id="prompt-50">
+          <div class="prompt-head">
+            <div class="prompt-num">№50</div>
+            <h3 class="prompt-title">Капли воды на коже вокруг губ</h3>
+          </div>
+          <div class="prompt-when">
+            <span class="when-label">Когда использовать</span>
+            <span class="when-text">Когда нужен свежий glossy-портрет</span>
+          </div>
+          <div class="prompt-box">
+            <div class="copy-btn-static">Промпт</div>
+            <pre class="prompt-text">1. Отредактируй фото. Профессиональная ретушь кожи. Сохрани текстуру, поры. Строго не меняй цвет кожи. Не меняй черты лица.
+
+2. ГУБЫ — 100% идентичны оригиналу на пиксельном уровне. НЕ меняй цвет, форму, текстуру, объём. Не наноси макияж. Сохрани губы как на исходном фото.
+
+3. Добавь на кожу вокруг губ, на скулы и подбородок реалистичные капли воды разного размера: прозрачные, с лёгкими бликами и тенями. Капли свежие, как после контакта с водой. Капли НЕ касаются поверхности губ и НЕ перекрывают линию губ.
+
+4. Замени фон на холодный графитово-синий матовый. Прохладное студийное освещение.
+
+5. Ультрафотореалистично, 8K, профессиональное качество. Размер фото оригинальный.
+
+Отрицательный отзыв: капли на губах, изменение цвета или формы губ, макияж, пластика, замыливание, изменение черт лица.</pre>
+          </div>
+          <div class="prompt-meta">
+            <div class="meta-row"><span class="meta-label">Заменить</span><span class="meta-value">ничего</span></div>
+            <div class="meta-row"><span class="meta-label">На выходе</span><span class="meta-value">свежий glossy-портрет</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="cat-section" id="cat-4">
+      <div class="cat-header">
+        <div class="cat-num-badge">04</div>
+        <h2 class="cat-title">Волосы</h2>
+        <div class="cat-count-badge">2 промпта</div>
+      </div>
+      <div class="prompts-grid">
+        <article class="prompt" id="prompt-51">
+          <div class="prompt-head">
+            <div class="prompt-num">№51</div>
+            <h3 class="prompt-title">Чёрный студийный фон + контровой свет</h3>
+          </div>
+          <div class="prompt-when">
+            <span class="when-label">Когда использовать</span>
+            <span class="when-text">Когда нужно подать причёску драматично, как в студии красоты</span>
+          </div>
+          <div class="prompt-box">
+            <div class="copy-btn-static">Промпт</div>
+            <pre class="prompt-text">1. Отредактируй мою фотографию и улучши её качество без изменения цветокоррекции и без фильтров. Сохрани реалистичную текстуру кожи, поры.
+
+2. НИ В КОЕМ СЛУЧАЕ НЕ ИЗМЕНЯЙ ВОЛОСЫ. Волосы — полностью защищённая и изолированная область, 100% идентичная исходному изображению на пиксельном уровне. Никакие инструменты ретуши, корректировки, освещения, контраста, резкости, цветокоррекции, глобальные или локальные изменения не применяются. Запрещено: трогать, изменять, улучшать, очищать, разделять, определять, затемнять, осветлять, утолщать, удлинять, изменять форму, окрашивать, стилизировать или манипулировать прядями. Волосы сохраняют абсолютную целостность.
+
+3. Замени фон на высококачественный чёрный матовый с лёгкими бликами, как в профессиональной студии красоты.
+
+4. УЛУЧШЕНИЕ ОСВЕЩЕНИЯ:
+— кинематографические белые и чёрные заливки по всей сцене
+— сильная контурная/задняя подсветка для добавления глубины и скульптурного объёма
+— контурная подсветка выделяет плечи и контур волос (но не меняет цвет и текстуру волос)
+— высококонтрастный студийный вид
+
+5. Ультрафотореалистично, разрешение 8K, профессиональное студийное качество. Размер фото сохрани из оригинала.
+
+Отрицательный отзыв: изменение цвета, длины, текстуры или формы волос, перекраска, осветление, затемнение прядей, замыливание, пластиковая кожа.</pre>
+          </div>
+          <div class="prompt-meta">
+            <div class="meta-row"><span class="meta-label">Заменить</span><span class="meta-value">ничего</span></div>
+            <div class="meta-row"><span class="meta-label">На выходе</span><span class="meta-value">драматичный студийный кадр</span></div>
+          </div>
+        </article>
+        <article class="prompt" id="prompt-52">
+          <div class="prompt-head">
+            <div class="prompt-num">№52</div>
+            <h3 class="prompt-title">Белый матовый фон + мягкий рассеянный свет</h3>
+          </div>
+          <div class="prompt-when">
+            <span class="when-label">Когда использовать</span>
+            <span class="when-text">Когда нужен светлый чистый кадр для портфолио</span>
+          </div>
+          <div class="prompt-box">
+            <div class="copy-btn-static">Промпт</div>
+            <pre class="prompt-text">1. Отредактируй мою фотографию и улучши её качество без изменения цветокоррекции и без фильтров. Сохрани реалистичную текстуру кожи.
+
+2. НИ В КОЕМ СЛУЧАЕ НЕ ИЗМЕНЯЙ ВОЛОСЫ. Волосы — полностью защищённая зона, 100% идентичная оригиналу на пиксельном уровне. Никаких изменений цвета, длины, формы, текстуры, бликов, контраста, разделения прядей. Запрещены любые корректировки этой области.
+
+3. Замени фон на нежный матовый молочно-белый с лёгким градиентом, как в светлой профессиональной фотостудии.
+
+4. УЛУЧШЕНИЕ ОСВЕЩЕНИЯ:
+— мягкий рассеянный свет со всех сторон
+— лёгкое контровое освещение сзади создаёт нежный ореол вокруг силуэта
+— мягкие чистые тени без резких контрастов
+— атмосфера светлой свежей съёмки
+
+5. Ультрафотореалистично, разрешение 8K, профессиональное студийное качество. Размер фото сохрани из оригинала.
+
+Отрицательный отзыв: изменение цвета или текстуры волос, осветление прядей, перекраска, замыливание, пластиковая кожа.</pre>
+          </div>
+          <div class="prompt-meta">
+            <div class="meta-row"><span class="meta-label">Заменить</span><span class="meta-value">ничего</span></div>
+            <div class="meta-row"><span class="meta-label">На выходе</span><span class="meta-value">светлый чистый кадр</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="cat-section" id="cat-5">
+      <div class="cat-header">
+        <div class="cat-num-badge">05</div>
+        <h2 class="cat-title">Рекламные макеты с текстом</h2>
+        <div class="cat-count-badge">5 промптов</div>
+      </div>
+      <div class="prompts-grid">
+        <article class="prompt" id="prompt-53">
+          <div class="prompt-head">
+            <div class="prompt-num">№53</div>
+            <h3 class="prompt-title">Минималистичный макет с услугой и ценой</h3>
+          </div>
+          <div class="prompt-when">
+            <span class="when-label">Когда использовать</span>
+            <span class="when-text">Когда нужен простой пост в формат сторис</span>
+          </div>
+          <div class="prompt-box">
+            <div class="copy-btn-static">Промпт</div>
+            <pre class="prompt-text">1. Отредактируй фотографию, улучши качество. Без фильтров. Сохрани реалистичную текстуру кожи.
+
+2. КАТЕГОРИЧЕСКИ НЕ МЕНЯЙ ОСНОВНУЮ РАБОТУ МАСТЕРА (ногти/брови/ресницы/губы). Эта зона — 100% идентична оригиналу на пиксельном уровне. Никаких корректировок.
+
+3. Создай рекламный макет на основе моего фото. Расширь фон сверху или сбоку, чтобы освободить место для текста. Добавь крупным шрифтом сверху название услуги: «[НАЗВАНИЕ УСЛУГИ]». Под ним мелким шрифтом цену: «от [ЦЕНА] ₽». Шрифт — современный, sans-serif, тонкий, элегантный. Цвет текста — белый на тёмном фоне или чёрный на светлом фоне (выбери в зависимости от фона фото). Композиция минималистичная, текст не перекрывает работу мастера.
+
+4. Ультрафотореалистично, 8K. Размер итогового макета — вертикальный формат 9:16 (для сторис).
+
+Отрицательный отзыв: изменение работы мастера, текст поверх работы, замыливание, дешёвый вид.</pre>
+          </div>
+          <div class="prompt-meta">
+            <div class="meta-row"><span class="meta-label">Заменить</span><span class="meta-value">[НАЗВАНИЕ УСЛУГИ], [ЦЕНА]</span></div>
+            <div class="meta-row"><span class="meta-label">На выходе</span><span class="meta-value">макет для сторис</span></div>
+          </div>
+        </article>
+        <article class="prompt" id="prompt-54">
+          <div class="prompt-head">
+            <div class="prompt-num">№54</div>
+            <h3 class="prompt-title">Журнальная обложка</h3>
+          </div>
+          <div class="prompt-when">
+            <span class="when-label">Когда использовать</span>
+            <span class="when-text">Когда нужна имиджевая публикация</span>
+          </div>
+          <div class="prompt-box">
+            <div class="copy-btn-static">Промпт</div>
+            <pre class="prompt-text">1. Отредактируй фотографию, улучши качество. Без фильтров и без изменения цветокоррекции.
+
+2. НЕ ИЗМЕНЯЙ ОСНОВНУЮ РАБОТУ МАСТЕРА. Сохраняй её на 100% идентично оригиналу.
+
+3. Создай макет в стиле обложки модного журнала. Сверху размести крупное название студии или мастера: «[НАЗВАНИЕ]» — крупным жирным шрифтом с засечками. По бокам и снизу добавь короткие текстовые блоки в стиле журнальных подзаголовков: «NEW SEASON», «TRENDS [ГОД]», «BEAUTY EDITION». Цвет текста — белый или чёрный в зависимости от фона. Композиция стильная, текст не закрывает основную работу.
+
+4. Атмосфера глянцевого журнала. Ультрафотореалистично, 8K. Вертикальный формат 9:16.
+
+Отрицательный отзыв: изменение работы мастера, текст перекрывает работу, дешёвый шрифт, замыливание.</pre>
+          </div>
+          <div class="prompt-meta">
+            <div class="meta-row"><span class="meta-label">Заменить</span><span class="meta-value">[НАЗВАНИЕ], [ГОД]</span></div>
+            <div class="meta-row"><span class="meta-label">На выходе</span><span class="meta-value">имиджевая обложка</span></div>
+          </div>
+        </article>
+        <article class="prompt" id="prompt-55">
+          <div class="prompt-head">
+            <div class="prompt-num">№55</div>
+            <h3 class="prompt-title">Макет с акцией и скидкой</h3>
+          </div>
+          <div class="prompt-when">
+            <span class="when-label">Когда использовать</span>
+            <span class="when-text">Когда запускается распродажа или промо</span>
+          </div>
+          <div class="prompt-box">
+            <div class="copy-btn-static">Промпт</div>
+            <pre class="prompt-text">1. Отредактируй фотографию, улучши качество. Без фильтров. Сохрани текстуру кожи.
+
+2. КАТЕГОРИЧЕСКИ НЕ МЕНЯЙ ОСНОВНУЮ РАБОТУ МАСТЕРА. Эта зона на 100% идентична оригиналу на пиксельном уровне.
+
+3. Создай рекламный макет с акцией. Расширь фон, чтобы освободить место для текста. Сверху крупным шрифтом: «-[%]%». Ниже мелким шрифтом: «[УСЛОВИЕ АКЦИИ — например, &quot;до конца недели&quot; или &quot;новым клиентам&quot;]». В углу — кнопка-плашка «Записаться» с тонкой обводкой. Шрифт современный, минималистичный. Цвет текста контрастный к фону. Текст не закрывает работу мастера.
+
+4. Ультрафотореалистично, 8K. Вертикальный формат 9:16 для сторис.
+
+Отрицательный отзыв: изменение работы мастера, текст поверх работы, дешёвый шрифт, замыливание.</pre>
+          </div>
+          <div class="prompt-meta">
+            <div class="meta-row"><span class="meta-label">Заменить</span><span class="meta-value">[%], [УСЛОВИЕ]</span></div>
+            <div class="meta-row"><span class="meta-label">На выходе</span><span class="meta-value">макет акции</span></div>
+          </div>
+        </article>
+        <article class="prompt" id="prompt-56">
+          <div class="prompt-head">
+            <div class="prompt-num">№56</div>
+            <h3 class="prompt-title">Акцентный макет с одним словом</h3>
+          </div>
+          <div class="prompt-when">
+            <span class="when-label">Когда использовать</span>
+            <span class="when-text">Когда нужен сильный визуальный мессадж</span>
+          </div>
+          <div class="prompt-box">
+            <div class="copy-btn-static">Промпт</div>
+            <pre class="prompt-text">1. Отредактируй фотографию, улучши качество. Без фильтров.
+
+2. НЕ ИЗМЕНЯЙ ОСНОВНУЮ РАБОТУ МАСТЕРА. Сохраняй её на пиксельном уровне идентично оригиналу.
+
+3. Создай макет с акцентным текстом-комментарием. Внизу или сбоку фото добавь крупное короткое слово (например, «ГЛЯНЕЦ», «ИДЕАЛ», «ЭСТЕТИКА», «STYLE») — выбери одно слово из этого списка или впиши своё: «[СЛОВО]». Шрифт — крупный, жирный, акцентный, может быть с лёгким эффектом курсива. Под ним тонкой строкой — имя мастера или название студии: «[ИМЯ]». Цвет текста контрастный к фону. Текст не перекрывает работу.
+
+4. Ультрафотореалистично, 8K. Вертикальный формат 9:16.
+
+Отрицательный отзыв: изменение работы мастера, перекрытие работы текстом, замыливание.</pre>
+          </div>
+          <div class="prompt-meta">
+            <div class="meta-row"><span class="meta-label">Заменить</span><span class="meta-value">[СЛОВО], [ИМЯ]</span></div>
+            <div class="meta-row"><span class="meta-label">На выходе</span><span class="meta-value">акцентный макет</span></div>
+          </div>
+        </article>
+        <article class="prompt" id="prompt-57">
+          <div class="prompt-head">
+            <div class="prompt-num">№57</div>
+            <h3 class="prompt-title">Прайс-лист услуг</h3>
+          </div>
+          <div class="prompt-when">
+            <span class="when-label">Когда использовать</span>
+            <span class="when-text">Когда нужно выложить актуальные цены</span>
+          </div>
+          <div class="prompt-box">
+            <div class="copy-btn-static">Промпт</div>
+            <pre class="prompt-text">1. Отредактируй фотографию, улучши качество. Без фильтров и без изменения цветокоррекции.
+
+2. КАТЕГОРИЧЕСКИ НЕ МЕНЯЙ ОСНОВНУЮ РАБОТУ МАСТЕРА. Эта зона полностью защищена на пиксельном уровне.
+
+3. Создай макет-прайс на основе моего фото. Расширь фон в сторону или вниз, чтобы освободить место для текстового блока. В освобождённой зоне добавь короткий прайс из 3–4 строк, например:
+— «[УСЛУГА 1] — [ЦЕНА]»
+— «[УСЛУГА 2] — [ЦЕНА]»
+— «[УСЛУГА 3] — [ЦЕНА]»
+
+Шрифт — тонкий, элегантный, современный. Цвет текста контрастный к фону. Сверху — короткий заголовок типа «PRICE» или «УСЛУГИ». Внизу — контакт или ник в соцсетях: «[КОНТАКТ]». Композиция чистая, текст не закрывает работу мастера.
+
+4. Ультрафотореалистично, 8K. Вертикальный формат 9:16.
+
+Отрицательный отзыв: изменение работы мастера, перекрытие текстом работы, замыливание, дешёвый шрифт.</pre>
+          </div>
+          <div class="prompt-meta">
+            <div class="meta-row"><span class="meta-label">Заменить</span><span class="meta-value">[УСЛУГИ], [ЦЕНЫ], [КОНТАКТ]</span></div>
+            <div class="meta-row"><span class="meta-label">На выходе</span><span class="meta-value">макет прайса</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+  <footer class="footer">
+    <div class="brand"><span class="brand-dot"></span><span>НЕЙРО · АНЯ</span></div>
+    <p class="footer-msg">
+      Эти 57 промптов покрывают <b>главную задачу мастера в соцсетях</b> — сделать фото работы такими, чтобы хотелось кликнуть. Возвращайся за обновлениями: я дополняю промпты вместе с курсом, потому что нейросети меняются быстро.
+      <br><br>
+      Главное — нейросеть не должна <b>трогать работу мастера</b>. Она работает с фоном, атмосферой, аксессуарами. Работа — твоя.
+    </p>
+    <div class="footer-sign">
+      <div class="footer-name">Анна Ерофеева</div>
+      <div class="footer-role">Автор курса «НейроКонтент на автопилоте»</div>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
